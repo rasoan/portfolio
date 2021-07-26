@@ -4,8 +4,11 @@ import {Route, Switch} from 'react-router-dom';
 import AboutMe from "../../pages/AboutMe";
 import MyProjects from "../../pages/MyProjects";
 import {Box, Container, makeStyles} from "@material-ui/core";
+import Header from "../Header";
 
 const useStyles = makeStyles(theme => ({
+    wrapper: {
+    },
     mainContainerContent: {
         display: "flex",
         justifyContent: "center",
@@ -30,18 +33,18 @@ const useStyles = makeStyles(theme => ({
 
 const AppWithRoutes = () => {
     const classes = useStyles();
-
+    console.log(PATH)
     return (<>
         <Box className={classes.wrapper}
              minHeight={"100vh"}>
-            {"HEADER"}
+            <Header />
             <Container
                 className={classes.mainContainerContent}>
                 {"Navigation"}
                 <div style={{flexGrow: 1}}>
                     <Switch>
-                        <Route path={PATH.ABOUT_ME} render={() => <AboutMe/>}/>
-                        <Route path={PATH.MY_PROJECTS} render={() => <MyProjects/>}/>
+                        <Route path={PATH.ABOUT_ME} component={AboutMe} />
+                        <Route path={PATH.MY_PROJECTS} component={MyProjects} />
                     </Switch>
                 </div>
             </Container>
