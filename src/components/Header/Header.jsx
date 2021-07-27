@@ -19,15 +19,20 @@ const Header = () => {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
-
     return (<header>
+        <nav className="navbar navbar-light bg-light">
+            <div className="container-fluid">
+                <span className="navbar-brand">
+                    <img src="../../../public/logo.png" alt="" width="30" height="24"
+                         className="d-inline-block align-text-top" />
+                        Bootstrap
+                </span>
+            </div>
+        </nav>
         <Paper square className={classes.root}>
             <Tabs
                 value={value}
-                onChange={handleChange}
+                onChange={(event,newValue) => setValue(newValue)}
                 variant="fullWidth"
                 indicatorColor="secondary"
                 textColor="secondary"

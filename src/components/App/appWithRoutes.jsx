@@ -8,34 +8,37 @@ import Header from "../Header";
 
 const useStyles = makeStyles(theme => ({
     wrapper: {
+        padding: 0,
+        // [theme.breakpoints.up('xs')]: {
+        //     maxWidth: 576,
+        // },
+        // [theme.breakpoints.up('sm')]: {
+        //     maxWidth: 768,
+        // },
+        // [theme.breakpoints.up('md')]: {
+        //     maxWidth: 1192,
+        // },
+        // [theme.breakpoints.up('lg')]: {
+        //     maxWidth: 1400,
+        // },
+        // [theme.breakpoints.up('xl')]: {
+        //     maxWidth: 1600,
+        // },
     },
     mainContainerContent: {
         display: "flex",
         justifyContent: "center",
         padding: 0,
-        [theme.breakpoints.up('xs')]: {
-            width: 200,
-        },
-        [theme.breakpoints.up('sm')]: {
-            width: 400,
-        },
-        [theme.breakpoints.up('md')]: {
-            width: 700,
-        },
-        [theme.breakpoints.up('lg')]: {
-            width: 1000,
-        },
-        [theme.breakpoints.up('xl')]: {
-            width: 1200,
-        },
     }
 }));
 
 const AppWithRoutes = () => {
     const classes = useStyles();
-    console.log(PATH)
+
     return (<>
-        <Box className={classes.wrapper}
+        <Container
+            className={classes.wrapper}
+            maxWidth={"xl"}
              minHeight={"100vh"}>
             <Header />
             <Container
@@ -43,12 +46,13 @@ const AppWithRoutes = () => {
                 {"Navigation"}
                 <div style={{flexGrow: 1}}>
                     <Switch>
-                        <Route path={PATH.ABOUT_ME} component={AboutMe} />
+                        <Route path={PATH.ABOUT_ME} render={() => <div>hello</div>} />
                         <Route path={PATH.MY_PROJECTS} component={MyProjects} />
+                        <Route path={PATH.ALL} render={() => <div>всё!</div>} />
                     </Switch>
                 </div>
             </Container>
-        </Box>
+        </Container>
     </>);
 }
 
