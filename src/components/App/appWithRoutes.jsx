@@ -43,7 +43,6 @@ const AppWithRoutes = () => {
             <Header />
             <Container
                 className={classes.mainContainerContent}>
-                {"Navigation"}
                 <div style={{flexGrow: 1}}>
                     <Switch>
                         <Route path={PATH.ABOUT_ME} render={() => <div>hello</div>} />
