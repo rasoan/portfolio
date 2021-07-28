@@ -89,37 +89,6 @@ const useStyles = makeStyles(theme => ({
     hide: {
         display: 'none',
     },
-    drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-        whiteSpace: 'nowrap',
-    },
-    drawerOpen: {
-        width: drawerWidth,
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    },
-    drawerClose: {
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        overflowX: 'hidden',
-        width: theme.spacing(7) + 1,
-        [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9) + 1,
-        },
-    },
-    toolbar: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
-    },
     content: {
         flexGrow: 1,
         padding: theme.spacing(3),
@@ -159,24 +128,15 @@ const Header = observer(() => {
         setAnchorEl(null);
     };
 
-
     const changeLanguage = (language) => {
         setLanguage(language);
         handleClose();
     }
 
-    // js материала
-    const themeMaterialUi = useTheme();
-
-
-
-
-
-
-    return (<div className={classes.root}>
+    return (<>
+        <div className={classes.root}>
             <CssBaseline/>
             <AppBar
-
                 className={clsx(classes.appBar, {
                     [classes.appBarShift]: storeApp.getNavBar(),
                 })}
@@ -199,7 +159,6 @@ const Header = observer(() => {
                             <WorkOutline className={classes.logoImage} color="primary"/>
                             <Typography component={"h1"} variant={"h6"}>Портфолио</Typography>
                             <Box ml={"auto"} mr={2}>
-
                                 <Button className={classes.translateButton}
                                         aria-controls="simple-menu"
                                         aria-haspopup="true"
@@ -208,7 +167,6 @@ const Header = observer(() => {
                                     {language}
                                     <KeyboardArrowDownIcon className={classes.translateArrow} color={"primary"}/>
                                 </Button>
-
                                 <Menu
                                     id="simple-menu"
                                     anchorEl={anchorEl}
@@ -234,43 +192,13 @@ const Header = observer(() => {
                                 />
                             </Box>
                         </Box>
-
-
                     </div>
                 </Toolbar>
             </AppBar>
-            <Drawer
-                variant="permanent"
-                className={clsx(classes.drawer, {
-                    [classes.drawerOpen]: storeApp.getNavBar(),
-                    [classes.drawerClose]: !storeApp.getNavBar(),
-                })}
-                classes={{
-                    paper: clsx({
-                        [classes.drawerOpen]: storeApp.getNavBar(),
-                        [classes.drawerClose]: !storeApp.getNavBar(),
-                    }),
-                }}
-            >
-                <div className={classes.toolbar}>
-                    <IconButton onClick={() => storeApp.changeNavBar(false)}>
-                        {themeMaterialUi.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
-                    </IconButton>
-                </div>
-                <Divider/>
-                <List>
-                        <ListItem to={PATH.ABOUT_ME} component={NavLink} button>
-                            <ListItemIcon><InboxIcon/></ListItemIcon>
-                            <ListItemText primary={"Личная информация"}  />
-                        </ListItem>
-                    <ListItem to={PATH.MY_PROJECTS} component={NavLink} button>
-                        <ListItemIcon><InboxIcon/></ListItemIcon>
-                        <ListItemText primary={"Мои проекты"}  />
-                    </ListItem>
-                </List>
-            </Drawer>
+
         </div>
-    );
+
+    </>);
 })
 
 export default Header;

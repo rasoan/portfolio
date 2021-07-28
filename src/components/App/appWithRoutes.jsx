@@ -6,6 +6,7 @@ import MyProjects from "../../pages/MyProjects";
 import {Box, Container, makeStyles} from "@material-ui/core";
 import Header from "../Header";
 import storeApp from "../../store/storeApp";
+import Navigation from "../Navigation";
 
 const useStyles = makeStyles(theme => ({
     wrapper: {
@@ -46,6 +47,7 @@ console.log(props.storeApp);
             maxWidth={"xl"}
             minHeight={"100vh"}>
             <Header />
+            <Navigation />
             <Container
                 className={classes.mainContainerContent}>
                 <div style={{flexGrow: 1}}>
