@@ -5,9 +5,12 @@ import AboutMe from "../../pages/AboutMe";
 import MyProjects from "../../pages/MyProjects";
 import {Box, Container, makeStyles} from "@material-ui/core";
 import Header from "../Header";
+import storeApp from "../../store/storeApp";
 
 const useStyles = makeStyles(theme => ({
     wrapper: {
+        position: "relative",
+        display: "flex",
         padding: 0,
         // [theme.breakpoints.up('xs')]: {
         //     maxWidth: 576,
@@ -28,24 +31,26 @@ const useStyles = makeStyles(theme => ({
     mainContainerContent: {
         display: "flex",
         justifyContent: "center",
-        padding: 0,
+
+            flexGrow: 1,
+            padding: theme.spacing(12, 0, 0, 2),
     }
 }));
 
-const AppWithRoutes = () => {
+const AppWithRoutes = (props) => {
     const classes = useStyles();
-
+console.log(props.storeApp);
     return (<>
         <Container
             className={classes.wrapper}
             maxWidth={"xl"}
-             minHeight={"100vh"}>
+            minHeight={"100vh"}>
             <Header />
             <Container
                 className={classes.mainContainerContent}>
                 <div style={{flexGrow: 1}}>
                     <Switch>
-                        <Route path={PATH.ABOUT_ME} render={() => <div>hello</div>} />
+                        <Route path={PATH.ABOUT_ME} component={() => <AboutMe />} />
                         <Route path={PATH.MY_PROJECTS} component={MyProjects} />
                         <Route path={PATH.ALL} render={() => <div>всё!</div>} />
                     </Switch>
