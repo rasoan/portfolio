@@ -28,17 +28,17 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-const DrawerContent = () => {
+const DrawerContent = ({storeApp}) => {
     const classes = useStyles();
     return <div>
         <div className={classes.toolbar}/>
         <Divider/>
         <List>
-            <ListItem to={PATH.ABOUT_ME} component={NavLink} button>
+            <ListItem onClick={() => storeApp.toggle(false)} to={PATH.ABOUT_ME} component={NavLink} button>
                 <ListItemIcon><InboxIcon/></ListItemIcon>
                 <ListItemText primary={"Личная информация"}/>
             </ListItem>
-            <ListItem to={PATH.MY_PROJECTS} component={NavLink} button>
+            <ListItem onClick={() => storeApp.toggle(false)} to={PATH.MY_PROJECTS} component={NavLink} button>
                 <ListItemIcon><InboxIcon/></ListItemIcon>
                 <ListItemText primary={"Мои проекты"}/>
             </ListItem>
@@ -68,7 +68,7 @@ const Navigation = observer((props) => {
                         keepMounted: true, // Better open performance on mobile.
                     }}
                 >
-                    <DrawerContent />
+                    <DrawerContent storeApp={storeApp} />
                 </Drawer>
             </Hidden>
             <Hidden xsDown implementation="css">
@@ -79,7 +79,7 @@ const Navigation = observer((props) => {
                     variant="permanent"
                     open
                 >
-                    <DrawerContent />
+                    <DrawerContent storeApp={storeApp} />
                 </Drawer>
             </Hidden>
         </nav>

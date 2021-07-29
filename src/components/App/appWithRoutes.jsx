@@ -30,17 +30,15 @@ const useStyles = makeStyles(theme => ({
         // },
     },
     mainContainerContent: {
-        display: "flex",
-        justifyContent: "center",
-
-            flexGrow: 1,
-            padding: theme.spacing(12, 0, 0, 2),
-    }
+        flexGrow: 1,
+        padding: theme.spacing(3),
+    },
+    toolbar: theme.mixins.toolbar,
 }));
 
 const AppWithRoutes = (props) => {
     const classes = useStyles();
-console.log(props.storeApp);
+
     return (<>
         <Container
             className={classes.wrapper}
@@ -48,8 +46,8 @@ console.log(props.storeApp);
             minHeight={"100vh"}>
             <Header />
             <Navigation />
-            <Container
-                className={classes.mainContainerContent}>
+            <main className={classes.mainContainerContent}>
+                <div className={classes.toolbar} />
                 <div style={{flexGrow: 1}}>
                     <Switch>
                         <Route path={PATH.ABOUT_ME} component={() => <AboutMe />} />
@@ -57,7 +55,7 @@ console.log(props.storeApp);
                         <Route path={PATH.ALL} render={() => <div>всё!</div>} />
                     </Switch>
                 </div>
-            </Container>
+            </main>
         </Container>
     </>);
 }

@@ -35,6 +35,10 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     // мои стили
+    header: {
+        height: "min-content",
+        margin: "auto 0",
+    },
     navigationPanel: {
         flexGrow: 1,
     },
@@ -85,9 +89,9 @@ function Header() {
                     >
                         <MenuIcon/>
                     </IconButton>
-                    <Box display="flex" alignItems="flex-end" py={2} pl={6}>
+                    <Box display="flex" alignItems="flex-center" width={"100%"}>
                         <WorkOutline className={classes.logoImage} color="primary"/>
-                        <Typography component={"h1"} variant={"h6"}>Портфолио</Typography>
+                        <Typography className={classes.header} component={"h1"} variant={"h6"}>Портфолио</Typography>
                         <Box ml={"auto"} mr={2}>
                             <Button className={classes.translateShowButton}
                                     aria-controls="simple-menu"

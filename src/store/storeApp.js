@@ -15,8 +15,13 @@ class storeApp {
         return this.navBar;
     }
 
-    toggle = () => {
-        this.navBar = !this.navBar;
+    toggle = (flag) => {
+        if (typeof flag !== "undefined") {
+            this.navBar = flag;
+        }
+        else {
+            this.navBar = !this.navBar;
+        }
     }
 }
 
