@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Drawer from "@material-ui/core/Drawer";
 import clsx from "clsx";
 import storeApp from "../../store/storeApp";
@@ -15,67 +15,86 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import ListItemText from "@material-ui/core/ListItemText";
 import {makeStyles, useTheme} from "@material-ui/core/styles";
 import {observer} from "mobx-react";
+import Hidden from "@material-ui/core/Hidden";
+import MailIcon from "@material-ui/icons/Mail";
+import PropTypes from "prop-types";
+import ResponsiveDrawer from "../Header";
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
+    root: {
+        display: 'flex',
+    },
     drawer: {
-        width: drawerWidth,
-        flexShrink: 0,
-        whiteSpace: 'nowrap',
-    },
-    drawerOpen: {
-        width: drawerWidth,
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.enteringScreen,
-        }),
-    },
-    drawerClose: {
-        transition: theme.transitions.create('width', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen,
-        }),
-        overflowX: 'hidden',
-        width: theme.spacing(7) + 1,
         [theme.breakpoints.up('sm')]: {
-            width: theme.spacing(9) + 1,
+            width: drawerWidth,
+            flexShrink: 0,
         },
     },
-    toolbar: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        padding: theme.spacing(0, 1),
-        // necessary for content to be below app bar
-        ...theme.mixins.toolbar,
+    appBar: {
+        [theme.breakpoints.up('sm')]: {
+            width: `calc(100% - ${drawerWidth}px)`,
+            marginLeft: drawerWidth,
+        },
+    },
+    menuButton: {
+        marginRight: theme.spacing(2),
+        [theme.breakpoints.up('sm')]: {
+            display: 'none',
+        },
+    },
+    toolbar: theme.mixins.toolbar,
+    drawerPaper: {
+        width: drawerWidth,
     },
 }));
 
 
-const Navigation = observer(() => {
-    const themeMaterialUi = useTheme();
+const Navigation = observer((props) => {
+
     const classes = useStyles();
-    return (
-        <Drawer
-            variant="permanent"
-            className={clsx(classes.drawer, {
-                [classes.drawerOpen]: storeApp.getNavBar(),
-                [classes.drawerClose]: !storeApp.getNavBar(),
-            })}
-            classes={{
-                paper: clsx({
-                    [classes.drawerOpen]: storeApp.getNavBar(),
-                    [classes.drawerClose]: !storeApp.getNavBar(),
-                }),
-            }}
-        >
-            <div className={classes.toolbar}>
-                <IconButton onClick={() => storeApp.changeNavBar(false)}>
-                    {themeMaterialUi.direction === 'rtl' ? <ChevronRightIcon/> : <ChevronLeftIcon/>}
-                </IconButton>
-            </div>
-            <Divider/>
+
+    const { window } = props;
+
+    const theme = useTheme();
+    const [mobileOpen, setMobileOpen] = React.useState(false);
+
+    const handleDrawerToggle = () => {
+        setMobileOpen(!mobileOpen);
+    };
+
+    const [language, setLanguage] = useState("Русский")
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [MyTheme, setTheme] = useState(false);
+
+    const handleChangeTheme = (event) => {
+        setTheme(event.target.checked);
+    }
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const changeLanguage = (language) => {
+        setLanguage(language);
+        handleClose();
+    }
+
+
+
+    const container = window !== undefined ? () => window().document.body : undefined;
+
+
+
+    const drawer = (
+        <div>
+            <div className={classes.toolbar} />
+            <Divider />
             <List>
                 <ListItem to={PATH.ABOUT_ME} component={NavLink} button>
                     <ListItemIcon><InboxIcon/></ListItemIcon>
@@ -86,8 +105,50 @@ const Navigation = observer(() => {
                     <ListItemText primary={"Мои проекты"}  />
                 </ListItem>
             </List>
-        </Drawer>
-    )
+        </div>
+    );
+
+    return (<>
+    <nav className={classes.drawer} aria-label="mailbox folders">
+        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+        <Hidden smUp implementation="css">
+            <Drawer
+                container={container}
+                variant="temporary"
+                anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+                open={storeApp.navBar}
+                onClose={storeApp.toggle}
+                classes={{
+                    paper: classes.drawerPaper,
+                }}
+                ModalProps={{
+                    keepMounted: true, // Better open performance on mobile.
+                }}
+            >
+                {drawer}
+            </Drawer>
+        </Hidden>
+        <Hidden xsDown implementation="css">
+            <Drawer
+                classes={{
+                    paper: classes.drawerPaper,
+                }}
+                variant="permanent"
+                open
+            >
+                {drawer}
+            </Drawer>
+        </Hidden>
+    </nav>
+    </>)
 });
+
+Navigation.propTypes = {
+    /**
+     * Injected by the documentation to work in an iframe.
+     * You won't need it on your project.
+     */
+    window: PropTypes.func,
+};
 
 export default Navigation;

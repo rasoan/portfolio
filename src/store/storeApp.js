@@ -15,8 +15,8 @@ class storeApp {
         return this.navBar;
     }
 
-    changeNavBar = (flag) => {
-        this.navBar = flag;
+    toggle = () => {
+        this.navBar = !this.navBar;
     }
 }
 
