@@ -12,6 +12,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import {makeStyles, useTheme} from "@material-ui/core/styles";
 import {observer} from "mobx-react";
 import Hidden from "@material-ui/core/Hidden";
+import PropTypes from "prop-types";
 
 const drawerWidth = 240;
 
@@ -48,19 +49,22 @@ const DrawerContent = ({storeApp}) => {
 
 
 const Navigation = observer((props) => {
+    const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
 
+    const container = window !== undefined ? () => window().document.body : undefined;
     return (<>
         <nav className={classes.drawer}
              aria-label="mailbox folders">
             {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
             <Hidden smUp implementation="css">
                 <Drawer
+                    container={container}
                     variant="temporary"
                     anchor={theme.direction === 'rtl' ? 'right' : 'left'}
                     open={storeApp.navBar}
-                    onClose={storeApp.toggle}
+                    onClose={() => storeApp.toggle(false)}
                     classes={{
                         paper: classes.drawerPaper,
                     }}
@@ -85,5 +89,13 @@ const Navigation = observer((props) => {
         </nav>
     </>)
 });
+
+Navigation.propTypes = {
+    /**
+     * Injected by the documentation to work in an iframe.
+     * You won't need it on your project.
+     */
+    window: PropTypes.func,
+};
 
 export default Navigation;

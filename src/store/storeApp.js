@@ -16,6 +16,7 @@ class storeApp {
     }
 
     toggle = (flag) => {
+        console.log(flag);
         if (typeof flag !== "undefined") {
             this.navBar = flag;
         }

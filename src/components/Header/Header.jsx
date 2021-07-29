@@ -84,7 +84,7 @@ function Header() {
                         color="inherit"
                         aria-label="open drawer"
                         edge="start"
-                        onClick={storeApp.toggle}
+                        onClick={() => storeApp.toggle(true)}
                         className={classes.buttonToggleNavigationPanel}
                     >
                         <MenuIcon/>
