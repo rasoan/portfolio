@@ -23,43 +23,105 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     wrapperAppBar: {
-        [theme.breakpoints.up('sm')]: {
-            width: `calc(100% - ${drawerWidth}px)`,
-            marginLeft: drawerWidth,
-        },
+
+
+
+        //
+        height: "max-content",
     },
     buttonToggleNavigationPanel: {
         marginRight: theme.spacing(2),
         [theme.breakpoints.up('sm')]: {
             display: 'none',
         },
+        [theme.breakpoints.down('xs')]: {
+            marginRight: theme.spacing(1),
+        },
     },
     // мои стили
     header: {
         height: "min-content",
         margin: "auto 0",
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "1rem",
+        },
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "0.8rem",
+        },
+
+        // [theme.breakpoints.up('xs')]: {
+        //     maxWidth: 576,
+        // },
+        // [theme.breakpoints.up('sm')]: {
+        //     maxWidth: 768,
+        // },
+        // [theme.breakpoints.up('md')]: {
+        //     maxWidth: 1192,
+        // },
+        // [theme.breakpoints.up('lg')]: {
+        //     maxWidth: 1400,
+        // },
+        // [theme.breakpoints.up('xl')]: {
+        //     maxWidth: 1600,
+        // },
     },
     navigationPanel: {
         flexGrow: 1,
     },
+    controlElementsContainer: {
+        margin: "0 10px 0 auto",
+        [theme.breakpoints.down("xs")]: {
+            marginRight: 0,
+        }
+    },
     logoImage: {
-        marginRight: 10,
+        margin: "auto 10px auto 0",
         fontSize: 40,
+        [theme.breakpoints.down("sm")]: {
+            display: "none",
+        },
     },
-    translateImg: {
+    imgChangeLanguageButton: {
         marginRight: 8,
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "1rem",
+        },
+        [theme.breakpoints.down("xs")]: {
+            marginRight: 2,
+        }
     },
-    translateShowButton: {
-        minWidth: 160,
+    changeLanguageButton: {
         marginRight: 40,
+        [theme.breakpoints.down("sm")]: {
+            marginRight: 10,
+        }
     },
-    translateArrow: {
+    textChangeLanguageButton: {
+        textTransform: "none",
+        marginRight: 10,
+        [theme.breakpoints.down("sm")]: {
+            fontSize: "0.8rem",
+        },
+        [theme.breakpoints.down("xs")]: {
+            display: "none",
+        }
+    },
+    arrowChangeLanguageButton: {
         marginLeft: "auto",
     },
     rootTranslateItemLanguage: {
         minWidth: 180,
         paddingLeft: 30,
     },
+    themeBlackAndWhiteFormControl: {
+        marginRight: 0,
+    },
+    themeBlackAndWhiteLabel: {
+        marginRight: 0,
+        [theme.breakpoints.down("sm")]: {
+            display: "none",
+        }
+    }
 }));
 
 function Header() {
@@ -76,7 +138,7 @@ function Header() {
     return (
         <div className={classes.root}>
             <CssBaseline/>
-            <AppBar position="fixed"
+            <AppBar position={"relative"}
                     className={classes.wrapperAppBar}
                     color={"default"}>
                 <Toolbar>
@@ -92,14 +154,14 @@ function Header() {
                     <Box display="flex" alignItems="flex-center" width={"100%"}>
                         <WorkOutline className={classes.logoImage} color="primary"/>
                         <Typography className={classes.header} component={"h1"} variant={"h6"}>Портфолио</Typography>
-                        <Box ml={"auto"} mr={2}>
-                            <Button className={classes.translateShowButton}
+                        <Box className={classes.controlElementsContainer}>
+                            <Button className={classes.changeLanguageButton}
                                     aria-controls="simple-menu"
                                     aria-haspopup="true"
                                     onClick={event => setShowMenuLanguage(event.currentTarget)}>
-                                <Translate className={classes.translateImg} color={"primary"}/>
-                                {language}
-                                <KeyboardArrowDownIcon className={classes.translateArrow} color={"primary"}/>
+                                <Translate className={classes.imgChangeLanguageButton} color={"primary"}/>
+                                <Typography className={classes.textChangeLanguageButton}>{language}</Typography>
+                                <KeyboardArrowDownIcon className={classes.arrowChangeLanguageButton} color={"primary"}/>
                             </Button>
                             <Menu
                                 id="simple-menu"
@@ -118,6 +180,7 @@ function Header() {
                                 </MenuItem>
                             </Menu>
                             <FormControlLabel
+                                className={classes.themeBlackAndWhiteFormControl}
                                 control={
                                     <Switch
                                         checked={theme}
@@ -126,7 +189,7 @@ function Header() {
                                         name="checkedA"
                                     />
                                 }
-                                label="Тёмная тема"
+                                label={<Typography className={classes.themeBlackAndWhiteLabel}>Тёмная тема</Typography>}
                             />
                         </Box>
                     </Box>

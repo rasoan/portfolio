@@ -18,6 +18,7 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     drawer: {
+        position: "relative",
         [theme.breakpoints.up('sm')]: {
             width: drawerWidth,
             flexShrink: 0,

@@ -44,18 +44,20 @@ const AppWithRoutes = (props) => {
             className={classes.wrapper}
             maxWidth={"xl"}
             minHeight={"100vh"}>
-            <Header />
-            <Navigation />
-            <main className={classes.mainContainerContent}>
-                <div className={classes.toolbar} />
-                <div style={{flexGrow: 1}}>
-                    <Switch>
-                        <Route path={PATH.ABOUT_ME} component={() => <AboutMe />} />
-                        <Route path={PATH.MY_PROJECTS} component={MyProjects} />
-                        <Route path={PATH.ALL} render={() => <div>всё!</div>} />
-                    </Switch>
-                </div>
-            </main>
+            <Navigation/>
+            <div style={{width: '100%'}}>
+                <Header/>
+                <main className={classes.mainContainerContent}>
+                    <div className={classes.toolbar}/>
+                    <div style={{flexGrow: 1}}>
+                        <Switch>
+                            <Route path={PATH.ABOUT_ME} component={() => <AboutMe/>}/>
+                            <Route path={PATH.MY_PROJECTS} component={MyProjects}/>
+                            <Route path={PATH.ALL} render={() => <div>всё!</div>}/>
+                        </Switch>
+                    </div>
+                </main>
+            </div>
         </Container>
     </>);
 }
