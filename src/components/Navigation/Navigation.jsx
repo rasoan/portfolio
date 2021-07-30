@@ -18,7 +18,6 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     drawer: {
-        position: "relative",
         [theme.breakpoints.up('sm')]: {
             width: drawerWidth,
             flexShrink: 0,
@@ -27,7 +26,14 @@ const useStyles = makeStyles(theme => ({
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
         width: drawerWidth,
+        position: "relative",
     },
+    wrapperNavigationPanelDesktop: {
+        height: "100%",
+    },
+    navigationPanelDesktop: {
+        height: "100%",
+    }
 }));
 
 const DrawerContent = ({storeApp}) => {
@@ -76,8 +82,9 @@ const Navigation = observer((props) => {
                     <DrawerContent storeApp={storeApp} />
                 </Drawer>
             </Hidden>
-            <Hidden xsDown implementation="css">
+            <Hidden className={classes.wrapperNavigationPanelDesktop} xsDown implementation="css" >
                 <Drawer
+                    className={classes.navigationPanelDesktop}
                     classes={{
                         paper: classes.drawerPaper,
                     }}

@@ -10,8 +10,10 @@ import Navigation from "../Navigation";
 
 const useStyles = makeStyles(theme => ({
     wrapper: {
+        height: "100%",
         position: "relative",
         display: "flex",
+        flexDirection: "column",
         padding: 0,
         // [theme.breakpoints.up('xs')]: {
         //     maxWidth: 576,
@@ -39,26 +41,28 @@ const useStyles = makeStyles(theme => ({
 const AppWithRoutes = (props) => {
     const classes = useStyles();
 
-
     return (<>
         <Container
             className={classes.wrapper}
             maxWidth={"xl"}
-            minHeight={"100vh"}>
-            <Navigation/>
-            <div style={{width: '100%'}}>
-                <Header/>
-                <main className={classes.mainContainerContent}>
-                    <div className={classes.toolbar}/>
-                    <div style={{flexGrow: 1}}>
-                        <Switch>
-                            <Route path={PATH.ABOUT_ME} component={() => <AboutMe/>}/>
-                            <Route path={PATH.MY_PROJECTS} component={MyProjects}/>
-                            <Route path={PATH.ALL} render={() => <div>всё!</div>}/>
-                        </Switch>
-                    </div>
-                </main>
+            minHeight={"100vh"}
+            >
+            <div style={{display: "flex", flexGrow: 1}}>
+                <Navigation/>
+                <div style={{width: '100%'}}>
+                    <Header/>
+                    <main className={classes.mainContainerContent}>
+                        <div style={{flexGrow: 1}}>
+                            <Switch>
+                                <Route path={PATH.ABOUT_ME} component={() => <AboutMe/>}/>
+                                <Route path={PATH.MY_PROJECTS} component={MyProjects}/>
+                                <Route path={PATH.ALL} render={() => <div>всё!</div>}/>
+                            </Switch>
+                        </div>
+                    </main>
+                </div>
             </div>
+            <div style={{backgroundColor: "black", color: "white"}}>Подвал</div>
         </Container>
     </>);
 }
