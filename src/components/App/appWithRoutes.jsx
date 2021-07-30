@@ -8,62 +8,15 @@ import Header from "../Header";
 import storeApp from "../../store/storeApp";
 import Navigation from "../Navigation";
 
-const useStyles = makeStyles(theme => ({
-    wrapper: {
-        height: "100%",
-        position: "relative",
-        display: "flex",
-        flexDirection: "column",
-        padding: 0,
-        // [theme.breakpoints.up('xs')]: {
-        //     maxWidth: 576,
-        // },
-        // [theme.breakpoints.up('sm')]: {
-        //     maxWidth: 768,
-        // },
-        // [theme.breakpoints.up('md')]: {
-        //     maxWidth: 1192,
-        // },
-        // [theme.breakpoints.up('lg')]: {
-        //     maxWidth: 1400,
-        // },
-        // [theme.breakpoints.up('xl')]: {
-        //     maxWidth: 1600,
-        // },
-    },
-    mainContainerContent: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-    },
-    toolbar: theme.mixins.toolbar,
-}));
 
 const AppWithRoutes = (props) => {
-    const classes = useStyles();
 
     return (<>
-        <Container
-            className={classes.wrapper}
-            maxWidth={"xl"}
-            minHeight={"100vh"}
-            >
-            <div style={{display: "flex", flexGrow: 1}}>
-                <Navigation/>
-                <div style={{width: '100%'}}>
-                    <Header/>
-                    <main className={classes.mainContainerContent}>
-                        <div style={{flexGrow: 1}}>
-                            <Switch>
-                                <Route path={PATH.ABOUT_ME} component={() => <AboutMe/>}/>
-                                <Route path={PATH.MY_PROJECTS} component={MyProjects}/>
-                                <Route path={PATH.ALL} render={() => <div>всё!</div>}/>
-                            </Switch>
-                        </div>
-                    </main>
-                </div>
-            </div>
-            <div style={{backgroundColor: "black", color: "white"}}>Подвал</div>
-        </Container>
+        <Switch>
+            <Route path={PATH.ABOUT_ME} component={() => <AboutMe/>}/>
+            <Route path={PATH.MY_PROJECTS} component={MyProjects}/>
+            <Route path={PATH.ALL} render={() => <div>всё!</div>}/>
+        </Switch>
     </>);
 }
 

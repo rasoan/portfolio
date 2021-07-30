@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
         position: "relative",
     },
     wrapperNavigationPanelDesktop: {
-        height: "100%",
+      height: "100%",
     },
     navigationPanelDesktop: {
         height: "100%",
@@ -64,7 +64,6 @@ const Navigation = observer((props) => {
     return (<>
         <nav className={classes.drawer}
              aria-label="mailbox folders">
-            {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
             <Hidden smUp implementation="css">
                 <Drawer
                     container={container}
