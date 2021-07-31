@@ -44,16 +44,14 @@ const App = () => {
             maxWidth={"xl"}
             minHeight={"100vh"}
         >
+            <Header/>
             <div style={{display: "flex", flexGrow: 1}}>
                 <Navigation/>
-                <div style={{width: '100%'}}>
-                    <Header/>
-                    <main className={classes.mainContainerContent}>
-                        <AppWithRoutes/>
-                    </main>
-                </div>
+                <main className={classes.mainContainerContent}>
+                    <AppWithRoutes/>
+                </main>
             </div>
-            <Footer />
+            <Footer/>
         </Container>
     </>);
 };

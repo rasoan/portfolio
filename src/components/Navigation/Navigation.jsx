@@ -33,22 +33,25 @@ const useStyles = makeStyles(theme => ({
     },
     navigationPanelDesktop: {
         height: "100%",
+    },
+    myDrawerPaperDesctop: {
+        position: "static",
     }
+
 }));
 
 const DrawerContent = ({storeApp}) => {
     const classes = useStyles();
     return <div>
-        <div className={classes.toolbar}/>
         <Divider/>
         <List>
             <ListItem onClick={() => storeApp.toggle(false)} to={PATH.ABOUT_ME} component={NavLink} button>
                 <ListItemIcon><InboxIcon/></ListItemIcon>
-                <ListItemText primary={"Личная информация"}/>
+                <ListItemText primary={"Профайл"}/>
             </ListItem>
             <ListItem onClick={() => storeApp.toggle(false)} to={PATH.MY_PROJECTS} component={NavLink} button>
                 <ListItemIcon><InboxIcon/></ListItemIcon>
-                <ListItemText primary={"Мои проекты"}/>
+                <ListItemText primary={"Проекты"}/>
             </ListItem>
         </List>
     </div>
@@ -85,12 +88,14 @@ const Navigation = observer((props) => {
                 <Drawer
                     className={classes.navigationPanelDesktop}
                     classes={{
-                        paper: classes.drawerPaper,
+                        paper: `${classes.drawerPaper} ${classes.myDrawerPaperDesctop}`,
                     }}
                     variant="permanent"
                     open
                 >
+
                     <DrawerContent storeApp={storeApp} />
+
                 </Drawer>
             </Hidden>
         </nav>
