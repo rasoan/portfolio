@@ -13,6 +13,8 @@ import {makeStyles, useTheme} from "@material-ui/core/styles";
 import {observer} from "mobx-react";
 import Hidden from "@material-ui/core/Hidden";
 import PropTypes from "prop-types";
+import {Person, PersonOutline, Whatshot} from "@material-ui/icons";
+import WorkOutline from "@material-ui/icons/WorkOutline";
 
 const drawerWidth = 240;
 
@@ -46,11 +48,11 @@ const DrawerContent = ({storeApp}) => {
         <Divider/>
         <List>
             <ListItem onClick={() => storeApp.toggle(false)} to={PATH.ABOUT_ME} component={NavLink} button>
-                <ListItemIcon><InboxIcon/></ListItemIcon>
+                <ListItemIcon><PersonOutline/></ListItemIcon>
                 <ListItemText primary={"Профайл"}/>
             </ListItem>
             <ListItem onClick={() => storeApp.toggle(false)} to={PATH.MY_PROJECTS} component={NavLink} button>
-                <ListItemIcon><InboxIcon/></ListItemIcon>
+                <ListItemIcon><Whatshot/></ListItemIcon>
                 <ListItemText primary={"Проекты"}/>
             </ListItem>
         </List>
