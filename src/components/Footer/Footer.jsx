@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     },
     currentDate: {
         position: "absolute",
-        bottom: 2,
+        bottom: 10,
         left: `calc(50% - 42px)`,
         width: "max-content",
         fontSize: 12,
