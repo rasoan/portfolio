@@ -83,6 +83,7 @@ const useStyles = makeStyles((theme) => ({
     },
     imgChangeLanguageButton: {
         marginRight: 8,
+        fontSize: 20,
         [theme.breakpoints.down("sm")]: {
             fontSize: "1rem",
         },
@@ -107,6 +108,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     arrowChangeLanguageButton: {
+        fontSize: 20,
         marginLeft: "auto",
     },
     rootTranslateItemLanguage: {

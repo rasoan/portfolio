@@ -42,7 +42,7 @@ const App = () => {
         <Container
             className={classes.wrapper}
             maxWidth={"xl"}
-            minHeight={"100vh"}
+
         >
             <Header/>
             <div style={{display: "flex", flexGrow: 1}}>
