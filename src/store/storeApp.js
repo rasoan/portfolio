@@ -2,10 +2,13 @@ import React from "react"
 import ReactDOM from "react-dom"
 import {action, makeAutoObservable, observable, makeObservable} from "mobx"
 import { observer } from "mobx-react";
+import languages from "../translations/languages/languages";
+import i18next from "../translations/i18next/i18next";
 
 // Model the application state.
 class storeApp {
     navBar = false;
+    language = languages.ru.value;
 
     constructor() {
         makeAutoObservable(this)
@@ -23,6 +26,14 @@ class storeApp {
         else {
             this.navBar = !this.navBar;
         }
+    }
+
+    getLanguage = () => {
+        return this.language;
+    }
+
+    changeLanguage = (language) => {
+        this.language = language;
     }
 }
 

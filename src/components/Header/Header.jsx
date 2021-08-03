@@ -16,6 +16,8 @@ import {FormControlLabel} from "@material-ui/core";
 import {Menu} from "@material-ui/core";
 import {MenuItem} from "@material-ui/core";
 import {Switch} from "@material-ui/core";
+import languages from "../../translations/languages/languages";
+import i18next from "../../translations/i18next/i18next"
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -132,9 +134,10 @@ function Header() {
     const [showMenuLanguage, setShowMenuLanguage] = useState(null);
     const [theme, setTheme] = useState(false);
 
-    const handleChangeLanguage = (language) => {
-        setLanguage(language);
-        setShowMenuLanguage(null)
+    const changeLanguage = (language) => {
+        storeApp.changeLanguage(language);
+        setShowMenuLanguage(null);
+        i18next.changeLanguage(language)
     }
 
     return (
@@ -162,7 +165,7 @@ function Header() {
                                     aria-haspopup="true"
                                     onClick={event => setShowMenuLanguage(event.currentTarget)}>
                                 <Translate className={classes.imgChangeLanguageButton} color={"primary"}/>
-                                <Typography className={classes.textChangeLanguageButton}>{language}</Typography>
+                                <Typography className={classes.textChangeLanguageButton}>{storeApp.getLanguage()}</Typography>
                                 <KeyboardArrowDownIcon className={classes.arrowChangeLanguageButton} color={"primary"}/>
                             </Button>
                             <Menu
@@ -172,13 +175,17 @@ function Header() {
                                 open={Boolean(showMenuLanguage)}
                                 onClose={() => setShowMenuLanguage(null)}
                             >
-                                <MenuItem onClick={() => handleChangeLanguage("English")}
+                                <MenuItem onClick={() => changeLanguage(languages.en.value)}
                                           classes={{root: classes.rootTranslateItemLanguage}}>
-                                    English
+                                    {languages.en.value}
                                 </MenuItem>
-                                <MenuItem onClick={() => handleChangeLanguage("Русский")}
+                                <MenuItem onClick={() => changeLanguage(languages.ru.value)}
                                           classes={{root: classes.rootTranslateItemLanguage}}>
-                                    Русский
+                                    {languages.ru.value}
+                                </MenuItem>
+                                <MenuItem onClick={() => changeLanguage(languages.ch.value)}
+                                          classes={{root: classes.rootTranslateItemLanguage}}>
+                                    {languages.ch.value}
                                 </MenuItem>
                             </Menu>
                             <FormControlLabel

@@ -4,6 +4,10 @@ import {Container, makeStyles} from "@material-ui/core";
 import Navigation from "../Navigation";
 import Header from "../Header";
 import Footer from "../Footer";
+import {observer} from "mobx-react";
+
+
+import i18next from "../../translations/i18next/i18next";
 
 const useStyles = makeStyles(theme => ({
     wrapper: {
@@ -39,20 +43,21 @@ const App = () => {
     const classes = useStyles();
 
     return (<>
-        <Container
-            className={classes.wrapper}
-            maxWidth={"xl"}
 
-        >
-            <Header/>
-            <div style={{display: "flex", flexGrow: 1}}>
-                <Navigation/>
-                <main className={classes.mainContainerContent}>
-                    <AppWithRoutes/>
-                </main>
-            </div>
-            <Footer/>
-        </Container>
+            <Container
+                className={classes.wrapper}
+                maxWidth={"xl"}
+            >
+                <Header/>
+                <div style={{display: "flex", flexGrow: 1}}>
+                    <Navigation/>
+                    <main className={classes.mainContainerContent}>
+                        <AppWithRoutes/>
+                    </main>
+                </div>
+                <Footer/>
+            </Container>
+
     </>);
 };
 
