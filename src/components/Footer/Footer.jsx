@@ -2,6 +2,7 @@ import React from "react";
 import {Link, List, ListItem, Paper, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {FaVk, FaInstagram, FaTelegramPlane, FaMailBulk} from "react-icons/fa";
+import i18next from "i18next";
 
 const getCurrentDate = () => {
     const currentDate = new Date();
@@ -87,7 +88,7 @@ const Footer = () => {
                 </Link>
             </ListItem>
         </List>
-        <Typography className={classes.currentDate}>{getCurrentDate()}</Typography>
+        <Typography className={classes.currentDate}>{i18next.format(new Date)}</Typography>
     </Paper>
 }
 
