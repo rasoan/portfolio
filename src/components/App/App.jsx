@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
     toolbar: theme.mixins.toolbar,
 }));
 
-const App = () => {
+const App = observer(() => {
     const classes = useStyles();
 
     return (<>
@@ -59,6 +59,6 @@ const App = () => {
             </Container>
 
     </>);
-};
+});
 
 export default App;

@@ -3,12 +3,14 @@ import ReactDOM from "react-dom"
 import {action, makeAutoObservable, observable, makeObservable} from "mobx"
 import { observer } from "mobx-react";
 import languages from "../translations/languages/languages";
-import i18next from "../translations/i18next/i18next";
+import i18n from "i18next";
+
+
 
 // Model the application state.
 class storeApp {
     navBar = false;
-    language = languages.ru.value;
+    language = i18n.language
 
     constructor() {
         makeAutoObservable(this)

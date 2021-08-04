@@ -1,53 +1,57 @@
-import i18next from 'i18next';
 import storeApp from "../../store/storeApp";
 import languages from "../languages/languages";
-import LanguageDetector from "i18next-browser-languagedetector";
 
-i18next.use(LanguageDetector).init({
-    lng: storeApp.language, // if you're using a language detector, do not define the lng option
-    debug: true,
-    ns: ["translation"],
-    defaultNS: "translation",
+import Backend from "i18next-http-backend";
+import i18n from 'i18next';
+import {initReactI18next} from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
+i18n
+    // detect user language
+    // learn more: https://github.com/i18next/i18next-browser-languageDetector
+    .use(LanguageDetector)
+    // pass the i18n instance to react-i18next.
+    .use(initReactI18next)
+    // init i18next
+    // for all options read: https://www.i18next.com/overview/configuration-options
+    .init({
+        debug: true,
+        fallbackLng: languages.en.value,
 
 
-    interpolation: {
-        escapeValue: false, // not needed for react!!
-        formatSeparator: ","
-    },
 
-    react: {
-        wait: true
-    },
-    resources: {
-        [languages.en.value]: {
-            translation: {
-                key: [
-                    {
-                        a: 1,
-                        b: 2,
-                    },
-                    {
-                        a: 3,
-                        b: 4,
-                    },
-                ]
+        resources: {
+            en: {
+                translation: {
+                    key: [
+                        {
+                            a: 1,
+                            b: 2,
+                        },
+                        {
+                            a: 3,
+                            b: 4,
+                        },
+                    ],
+                    test: "test",
+                },
             },
-        },
-        [languages.ru.value]: {
-            translation: {
-                key: [
-                    {
-                        a: 10,
-                        b: 20,
-                    },
-                    {
-                        a: 30,
-                        b: 40,
-                    },
-                ]
+            ru: {
+                translation: {
+                    key: [
+                        {
+                            a: 10,
+                            b: 20,
+                        },
+                        {
+                            a: 30,
+                            b: 40,
+                        },
+                    ],
+                    test: "тест"
+                },
             },
-        },
-    }
-});
+        }
+    });
 
-export default i18next;
+export default i18n;
