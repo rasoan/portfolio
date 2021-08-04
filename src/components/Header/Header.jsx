@@ -17,7 +17,7 @@ import {Menu} from "@material-ui/core";
 import {MenuItem} from "@material-ui/core";
 import {Switch} from "@material-ui/core";
 import languages from "../../translations/languages/languages";
-import {useTranslation} from "react-i18next";
+import {useTranslation, withTranslation} from "react-i18next";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -128,15 +128,15 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function Header() {
+function Header(props) {
+    //const { i18n } = props;
     const classes = useStyles();
     const [language, setLanguage] = useState("Русский")
     const [showMenuLanguage, setShowMenuLanguage] = useState(null);
     const [theme, setTheme] = useState(false);
-    const { i18n } = useTranslation();
     const changeLanguage = (language) => {
         storeApp.changeLanguage(language);
-        i18n.changeLanguage(language);
+       // i18n.changeLanguage(language);
         setShowMenuLanguage(null);
     }
 

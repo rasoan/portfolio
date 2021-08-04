@@ -1,13 +1,16 @@
-import React from "react";
+import React, {createContext} from "react";
 import AppWithRoutes from "./appWithRoutes";
 import {Container, makeStyles} from "@material-ui/core";
 import Navigation from "../Navigation";
 import Header from "../Header";
 import Footer from "../Footer";
 import {observer} from "mobx-react";
+import { withTranslation } from 'react-i18next';
+
+const MyContext = createContext({});
 
 
-import i18next from "../../translations/i18next/i18next";
+
 
 const useStyles = makeStyles(theme => ({
     wrapper: {
@@ -39,11 +42,11 @@ const useStyles = makeStyles(theme => ({
     toolbar: theme.mixins.toolbar,
 }));
 
-const App = observer(() => {
+const App = observer((props) => {
     const classes = useStyles();
 
     return (<>
-
+        <MyContext.Provider value={{i: 1}}>
             <Container
                 className={classes.wrapper}
                 maxWidth={"xl"}
@@ -57,8 +60,8 @@ const App = observer(() => {
                 </div>
                 <Footer/>
             </Container>
-
+        </MyContext.Provider>
     </>);
 });
 
-export default App;
+export default withTranslation()(App);

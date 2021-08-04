@@ -1,15 +1,17 @@
 import React from "react";
 import storeApp from "../../store/storeApp";
 import {observer} from "mobx-react";
-import { useTranslation, Trans } from 'react-i18next';
+import {useTranslation, Trans, withTranslation} from 'react-i18next';
 
 
-const AboutMe = () => {
-    const { t, i18n } = useTranslation();
+const AboutMe = (props) => {
+   // const { t } = props;
+    console.log(props)
     console.log("helo")
     return <div>
 
-    <span>обо мне  {i18n.t('key.0.a')}</span>
+    <span>обо мне </span>
+        {/*{t('test')}*/}
     </div>;
 }
 
