@@ -1,8 +1,9 @@
 import React from "react";
+import i18next from "i18next";
 
 const MyProjects = () => {
     return <>
-    <span>Мои проекты</span>
+    <span>{i18next.t('navigation.projects')}</span>
     </>
 }
 

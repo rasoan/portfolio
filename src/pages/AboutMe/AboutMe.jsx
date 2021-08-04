@@ -1,17 +1,12 @@
 import React from "react";
-import storeApp from "../../store/storeApp";
-import {observer} from "mobx-react";
-import {useTranslation, Trans, withTranslation} from 'react-i18next';
+import i18next from "i18next";
 
 
-const AboutMe = (props) => {
-   // const { t } = props;
-    console.log(props)
-    console.log("helo")
+const AboutMe = () => {
+
     return <div>
+    <span>{i18next.t('navigation.profile')}</span>
 
-    <span>обо мне </span>
-        {/*{t('test')}*/}
     </div>;
 }
 

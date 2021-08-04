@@ -17,7 +17,8 @@ import {Menu} from "@material-ui/core";
 import {MenuItem} from "@material-ui/core";
 import {Switch} from "@material-ui/core";
 import languages from "../../translations/languages/languages";
-import {useTranslation, withTranslation} from "react-i18next";
+import i18next from "i18next";
+
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -128,15 +129,12 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function Header(props) {
-    //const { i18n } = props;
+function Header() {
     const classes = useStyles();
-    const [language, setLanguage] = useState("Русский")
     const [showMenuLanguage, setShowMenuLanguage] = useState(null);
     const [theme, setTheme] = useState(false);
     const changeLanguage = (language) => {
         storeApp.changeLanguage(language);
-       // i18n.changeLanguage(language);
         setShowMenuLanguage(null);
     }
 
@@ -158,14 +156,14 @@ function Header(props) {
                     </IconButton>
                     <Box display="flex" alignItems="flex-center" width={"100%"}>
                         <WorkOutline className={classes.logoImage} color="primary"/>
-                        <Typography className={classes.header} component={"h1"} variant={"h6"}>Портфолио</Typography>
+                        <Typography className={classes.header} component={"h1"} variant={"h6"}>{i18next.t('header')}</Typography>
                         <Box className={classes.controlElementsContainer}>
                             <Button className={classes.changeLanguageButton}
                                     aria-controls="simple-menu"
                                     aria-haspopup="true"
                                     onClick={event => setShowMenuLanguage(event.currentTarget)}>
                                 <Translate className={classes.imgChangeLanguageButton} color={"primary"}/>
-                                <Typography className={classes.textChangeLanguageButton}>{storeApp.getLanguage()}</Typography>
+                                <Typography className={classes.textChangeLanguageButton}>{storeApp.getLanguage().name}</Typography>
                                 <KeyboardArrowDownIcon className={classes.arrowChangeLanguageButton} color={"primary"}/>
                             </Button>
                             <Menu
@@ -175,17 +173,13 @@ function Header(props) {
                                 open={Boolean(showMenuLanguage)}
                                 onClose={() => setShowMenuLanguage(null)}
                             >
-                                <MenuItem onClick={() => changeLanguage("en")}
+                                <MenuItem onClick={() => changeLanguage(languages["en-EN"])}
                                           classes={{root: classes.rootTranslateItemLanguage}}>
-                                    {languages.en.value}
+                                    {languages["en-EN"].name}
                                 </MenuItem>
-                                <MenuItem onClick={() => changeLanguage("ru")}
+                                <MenuItem onClick={() => changeLanguage(languages["ru-RU"])}
                                           classes={{root: classes.rootTranslateItemLanguage}}>
-                                    {languages.ru.value}
-                                </MenuItem>
-                                <MenuItem onClick={() => changeLanguage(languages.ch.value)}
-                                          classes={{root: classes.rootTranslateItemLanguage}}>
-                                    {languages.ch.value}
+                                    {languages["ru-RU"].name}
                                 </MenuItem>
                             </Menu>
                             <FormControlLabel

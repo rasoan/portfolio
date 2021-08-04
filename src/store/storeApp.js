@@ -1,16 +1,12 @@
 import React from "react"
-import ReactDOM from "react-dom"
-import {action, makeAutoObservable, observable, makeObservable} from "mobx"
-import { observer } from "mobx-react";
+import {makeAutoObservable} from "mobx"
+import i18next from "i18next";
 import languages from "../translations/languages/languages";
-import i18n from "i18next";
-
-
 
 // Model the application state.
 class storeApp {
     navBar = false;
-    language = i18n.language
+    language = window.localStorage.i18nextLng ? languages[window.localStorage.i18nextLng]: languages["ru-RU"];
 
     constructor() {
         makeAutoObservable(this)
@@ -21,7 +17,6 @@ class storeApp {
     }
 
     toggle = (flag) => {
-        console.log(flag);
         if (typeof flag !== "undefined") {
             this.navBar = flag;
         }
@@ -35,7 +30,11 @@ class storeApp {
     }
 
     changeLanguage = (language) => {
-        this.language = language;
+
+        i18next.changeLanguage(language.value, (err) => {
+            if (err) return console.log("Ошибка");
+            this.language = language;
+        });
     }
 }
 
@@ -45,9 +44,7 @@ export default new storeApp();
 const myTimer = new Timer();
 
 // Build a "user interface" that uses the observable state.
-const TimerView = observer(({ timer }) => (
-    <button onClick={() => timer.reset()}>Seconds passed: {timer.secondsPassed}</button>
-))
+
 
 ReactDOM.render(<TimerView timer={myTimer} />, document.body)
 

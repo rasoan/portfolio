@@ -15,6 +15,7 @@ import Hidden from "@material-ui/core/Hidden";
 import PropTypes from "prop-types";
 import {Person, PersonOutline, Whatshot} from "@material-ui/icons";
 import WorkOutline from "@material-ui/icons/WorkOutline";
+import i18next from "../../translations/i18next";
 
 const drawerWidth = 240;
 
@@ -49,18 +50,18 @@ const DrawerContent = ({storeApp}) => {
         <List>
             <ListItem onClick={() => storeApp.toggle(false)} to={PATH.ABOUT_ME} component={NavLink} button>
                 <ListItemIcon><PersonOutline/></ListItemIcon>
-                <ListItemText primary={"Профайл"}/>
+                <ListItemText primary={i18next.t('navigation.profile')}/>
             </ListItem>
             <ListItem onClick={() => storeApp.toggle(false)} to={PATH.MY_PROJECTS} component={NavLink} button>
                 <ListItemIcon><Whatshot/></ListItemIcon>
-                <ListItemText primary={"Проекты"}/>
+                <ListItemText primary={i18next.t('navigation.projects')}/>
             </ListItem>
         </List>
     </div>
 }
 
 
-const Navigation = observer((props) => {
+const Navigation = (props) => {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
@@ -102,7 +103,7 @@ const Navigation = observer((props) => {
             </Hidden>
         </nav>
     </>)
-});
+};
 
 Navigation.propTypes = {
     /**

@@ -4,8 +4,8 @@ import {Container, makeStyles} from "@material-ui/core";
 import Navigation from "../Navigation";
 import Header from "../Header";
 import Footer from "../Footer";
+import { withTranslation, getI18n } from 'react-i18next';
 import {observer} from "mobx-react";
-import { withTranslation } from 'react-i18next';
 
 const MyContext = createContext({});
 
@@ -42,11 +42,10 @@ const useStyles = makeStyles(theme => ({
     toolbar: theme.mixins.toolbar,
 }));
 
-const App = observer((props) => {
+const App = observer(() => {
     const classes = useStyles();
 
     return (<>
-        <MyContext.Provider value={{i: 1}}>
             <Container
                 className={classes.wrapper}
                 maxWidth={"xl"}
@@ -60,7 +59,6 @@ const App = observer((props) => {
                 </div>
                 <Footer/>
             </Container>
-        </MyContext.Provider>
     </>);
 });
 
