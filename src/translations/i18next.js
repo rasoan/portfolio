@@ -5,7 +5,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import messagesEn from "./messages/messagesEn.js";
 import messagesRu from "./messages/messagesRu.js";
 import {format} from 'date-fns'
-import {ru, enUS} from 'date-fns/locale'
+import {ru, enUS, be} from 'date-fns/locale'
+import messagesBe from "./messages/messagesBe";
 
 i18next.use(LanguageDetector)
     .use(initReactI18next)
@@ -17,12 +18,14 @@ i18next.use(LanguageDetector)
             escapeValue: false,
             format: function (value, _, lng) {
                 if (value instanceof Date) {
-                    //return moment(value).locale(lng).format('DD/MMMM/YYYY');
                     switch (lng) {
                         case languages.en.value:
                             return format(value, 'dd MMMM yyyy', {locale: enUS});
                         case languages.ru.value:
                             return format(value, 'dd MMMM yyyy', {locale: ru});
+                        case languages.be.value:
+                        default:
+                            return format(value, 'dd MMMM yyyy', {locale: be});
                     }
                 }
                 return value;
@@ -37,6 +40,11 @@ i18next.use(LanguageDetector)
             [languages.ru.value]: {
                 translation: {
                     ...messagesRu,
+                },
+            },
+            [languages.be.value]: {
+                translation: {
+                    ...messagesBe,
                 },
             },
         }

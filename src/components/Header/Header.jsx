@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
     wrapperAppBar: {
 
 
-
         //
         height: "max-content",
     },
@@ -156,14 +155,16 @@ function Header() {
                     </IconButton>
                     <Box display="flex" alignItems="flex-center" width={"100%"}>
                         <WorkOutline className={classes.logoImage} color="primary"/>
-                        <Typography className={classes.header} component={"h1"} variant={"h6"}>{i18next.t('header')}</Typography>
+                        <Typography className={classes.header} component={"h1"}
+                                    variant={"h6"}>{i18next.t('header')}</Typography>
                         <Box className={classes.controlElementsContainer}>
                             <Button className={classes.changeLanguageButton}
                                     aria-controls="simple-menu"
                                     aria-haspopup="true"
                                     onClick={event => setShowMenuLanguage(event.currentTarget)}>
                                 <Translate className={classes.imgChangeLanguageButton} color={"primary"}/>
-                                <Typography className={classes.textChangeLanguageButton}>{storeApp.getLanguage().name}</Typography>
+                                <Typography
+                                    className={classes.textChangeLanguageButton}>{storeApp.getLanguage().name}</Typography>
                                 <KeyboardArrowDownIcon className={classes.arrowChangeLanguageButton} color={"primary"}/>
                             </Button>
                             <Menu
@@ -173,6 +174,10 @@ function Header() {
                                 open={Boolean(showMenuLanguage)}
                                 onClose={() => setShowMenuLanguage(null)}
                             >
+                                <MenuItem onClick={() => changeLanguage(languages.be)}
+                                          classes={{root: classes.rootTranslateItemLanguage}}>
+                                    {languages.be.name}
+                                </MenuItem>
                                 <MenuItem onClick={() => changeLanguage(languages.en)}
                                           classes={{root: classes.rootTranslateItemLanguage}}>
                                     {languages.en.name}
@@ -182,17 +187,12 @@ function Header() {
                                     {languages.ru.name}
                                 </MenuItem>
                             </Menu>
-                            <FormControlLabel
+                            <Switch
                                 className={classes.themeBlackAndWhiteFormControl}
-                                control={
-                                    <Switch
-                                        checked={theme}
-                                        onChange={event => setTheme(event.target.checked)}
-                                        color="primary"
-                                        name="checkedA"
-                                    />
-                                }
-                                label={<Typography className={classes.themeBlackAndWhiteLabel}>Тёмная тема</Typography>}
+                                checked={theme}
+                                onChange={event => setTheme(event.target.checked)}
+                                color="primary"
+                                name="checkedA"
                             />
                         </Box>
                     </Box>
