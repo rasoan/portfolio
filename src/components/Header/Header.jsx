@@ -173,13 +173,13 @@ function Header() {
                                 open={Boolean(showMenuLanguage)}
                                 onClose={() => setShowMenuLanguage(null)}
                             >
-                                <MenuItem onClick={() => changeLanguage(languages["en-EN"])}
+                                <MenuItem onClick={() => changeLanguage(languages.en)}
                                           classes={{root: classes.rootTranslateItemLanguage}}>
-                                    {languages["en-EN"].name}
+                                    {languages.en.name}
                                 </MenuItem>
-                                <MenuItem onClick={() => changeLanguage(languages["ru-RU"])}
+                                <MenuItem onClick={() => changeLanguage(languages.ru)}
                                           classes={{root: classes.rootTranslateItemLanguage}}>
-                                    {languages["ru-RU"].name}
+                                    {languages.ru.name}
                                 </MenuItem>
                             </Menu>
                             <FormControlLabel

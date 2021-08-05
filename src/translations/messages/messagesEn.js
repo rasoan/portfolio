@@ -6,7 +6,7 @@ const messagesEn = {
     profile: "Profile",
     projects: "Projects"
   },
-  date: '{{date, MM/DD/YYYY}}',
+  date: '{{date}}',
   projects: projectsEn,
 }
 

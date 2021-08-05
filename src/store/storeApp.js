@@ -6,7 +6,7 @@ import languages from "../translations/languages/languages";
 // Model the application state.
 class storeApp {
     navBar = false;
-    language = window.localStorage.i18nextLng ? languages[window.localStorage.i18nextLng]: languages["ru-RU"];
+    language = window.localStorage.i18nextLng ? languages[window.localStorage.i18nextLng]: languages.ru;
 
     constructor() {
         makeAutoObservable(this)

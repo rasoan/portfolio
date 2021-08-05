@@ -88,7 +88,7 @@ const Footer = () => {
                 </Link>
             </ListItem>
         </List>
-        <Typography className={classes.currentDate}>{i18next.format(new Date)}</Typography>
+        <Typography className={classes.currentDate}>{i18next.t('date', {date: new Date})}</Typography>
     </Paper>
 }
 

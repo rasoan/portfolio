@@ -4,32 +4,43 @@ import {initReactI18next} from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import messagesEn from "./messages/messagesEn.js";
 import messagesRu from "./messages/messagesRu.js";
-import moment from 'moment';
+import {format} from 'date-fns'
+import {ru, enUS} from 'date-fns/locale'
 
 i18next.use(LanguageDetector)
     .use(initReactI18next)
     .init({
         debug: true,
-        fallbackLng: languages["ru-RU"].value,
+        fallbackLng: languages.en.value,
         interpolation: {
-            format: function(value, format, lng) {
-                if (format === 'uppercase') return value.toUpperCase();
-                if(value instanceof Date) return moment(value).format(format);
+            alwaysFormat: true,
+            escapeValue: false,
+            format: function (value, _, lng) {
+                if (value instanceof Date) {
+                    //return moment(value).locale(lng).format('DD/MMMM/YYYY');
+                    switch (lng) {
+                        case languages.en.value:
+                            return format(value, 'dd MMMM yyyy', {locale: enUS});
+                        case languages.ru.value:
+                            return format(value, 'dd MMMM yyyy', {locale: ru});
+                    }
+                }
                 return value;
             }
         },
         resources: {
-            [languages["en-EN"].value]: {
+            [languages.en.value]: {
                 translation: {
                     ...messagesEn,
                 },
             },
-            [languages["ru-RU"].value]: {
+            [languages.ru.value]: {
                 translation: {
                     ...messagesRu,
                 },
             },
         }
     });
+
 
 export default i18next;

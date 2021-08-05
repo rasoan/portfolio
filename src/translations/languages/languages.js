@@ -1,11 +1,11 @@
 const languages = {
-    "en-EN": {
+    en: {
         name: "English",
-        value: "en-EN",
+        value: "en",
     },
-    "ru-RU": {
+    ru: {
         name: "Русский",
-        value: "ru-RU",
+        value: "ru",
     },
 }
 
