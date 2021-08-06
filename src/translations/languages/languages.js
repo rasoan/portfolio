@@ -1,15 +1,15 @@
 const languages = {
-    be: {
+    "be-BE": {
         name: "Беларускi",
-        value: "be",
+        value: "be-BE",
     },
-    en: {
+    "en-EN": {
         name: "English",
-        value: "en",
+        value: "en-EN",
     },
-    ru: {
+    "ru-RU": {
         name: "Русский",
-        value: "ru",
+        value: "ru-RU",
     },
 }
 

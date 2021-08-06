@@ -12,18 +12,19 @@ i18next.use(LanguageDetector)
     .use(initReactI18next)
     .init({
         debug: true,
-        fallbackLng: languages.en.value,
+        fallbackLng: languages["be-BE"].value,
         interpolation: {
             alwaysFormat: true,
             escapeValue: false,
             format: function (value, _, lng) {
                 if (value instanceof Date) {
                     switch (lng) {
-                        case languages.en.value:
+                        case languages["en-EN"].value:
                             return format(value, 'dd MMMM yyyy', {locale: enUS});
-                        case languages.ru.value:
+                        case languages["ru-RU"].value:
                             return format(value, 'dd MMMM yyyy', {locale: ru});
-                        case languages.be.value:
+                        case languages["be-BE"].value:
+                            return format(value, 'dd MMMM yyyy', {locale: be});
                         default:
                             return format(value, 'dd MMMM yyyy', {locale: be});
                     }
@@ -32,17 +33,17 @@ i18next.use(LanguageDetector)
             }
         },
         resources: {
-            [languages.en.value]: {
+            [languages["en-EN"].value]: {
                 translation: {
                     ...messagesEn,
                 },
             },
-            [languages.ru.value]: {
+            [languages["ru-RU"].value]: {
                 translation: {
                     ...messagesRu,
                 },
             },
-            [languages.be.value]: {
+            [languages["be-BE"].value]: {
                 translation: {
                     ...messagesBe,
                 },

@@ -1,12 +1,13 @@
 import React from "react"
 import {makeAutoObservable} from "mobx"
-import i18next from "i18next";
+import i18next from "../translations/i18next";
 import languages from "../translations/languages/languages";
 
 // Model the application state.
 class storeApp {
     navBar = false;
-    language = window.localStorage.i18nextLng ? languages[window.localStorage.i18nextLng]: languages.ru;
+    // language = window.localStorage.i18nextLng ? languages[window.localStorage.i18nextLng]: languages.be;
+    language = i18next.language;
 
     constructor() {
         makeAutoObservable(this)

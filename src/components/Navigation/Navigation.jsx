@@ -15,7 +15,8 @@ import Hidden from "@material-ui/core/Hidden";
 import PropTypes from "prop-types";
 import {Person, PersonOutline, Whatshot} from "@material-ui/icons";
 import WorkOutline from "@material-ui/icons/WorkOutline";
-import i18next from "../../translations/i18next";
+import {useTranslation} from "react-i18next";
+
 
 const drawerWidth = 240;
 
@@ -45,16 +46,18 @@ const useStyles = makeStyles(theme => ({
 
 const DrawerContent = ({storeApp}) => {
     const classes = useStyles();
+    const {t} = useTranslation();
+
     return <div>
         <Divider/>
         <List>
             <ListItem onClick={() => storeApp.toggle(false)} to={PATH.ABOUT_ME} component={NavLink} button>
                 <ListItemIcon><PersonOutline/></ListItemIcon>
-                <ListItemText primary={i18next.t('navigation.profile')}/>
+                <ListItemText primary={t('navigation.profile')}/>
             </ListItem>
             <ListItem onClick={() => storeApp.toggle(false)} to={PATH.MY_PROJECTS} component={NavLink} button>
                 <ListItemIcon><Whatshot/></ListItemIcon>
-                <ListItemText primary={i18next.t('navigation.projects')}/>
+                <ListItemText primary={t('navigation.projects')}/>
             </ListItem>
         </List>
     </div>
@@ -65,6 +68,7 @@ const Navigation = observer((props) => {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
+    const {t} = useTranslation();
 
     const container = window !== undefined ? () => window().document.body : undefined;
     console.log(storeApp.navBar, ' это навбар');

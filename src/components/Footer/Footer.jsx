@@ -2,7 +2,7 @@ import React from "react";
 import {Link, List, ListItem, Paper, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import {FaVk, FaInstagram, FaTelegramPlane, FaMailBulk} from "react-icons/fa";
-import i18next from "i18next";
+import {useTranslation} from "react-i18next";
 
 const getCurrentDate = () => {
     const currentDate = new Date();
@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Footer = () => {
     const classes = useStyles();
+    const {t} = useTranslation();
 
     return <Paper className={classes.wrapperFooter} elevation={3}>
         <List className={classes.listContacts}>
@@ -88,7 +89,7 @@ const Footer = () => {
                 </Link>
             </ListItem>
         </List>
-        <Typography className={classes.currentDate}>{i18next.t('date', {date: new Date})}</Typography>
+        <Typography className={classes.currentDate}>{t('date', {date: new Date})}</Typography>
     </Paper>
 }
 

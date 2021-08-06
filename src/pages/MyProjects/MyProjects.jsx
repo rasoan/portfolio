@@ -1,9 +1,12 @@
 import React from "react";
 import i18next from "i18next";
+import {useTranslation} from "react-i18next";
 
 const MyProjects = () => {
+    const {t} = useTranslation();
+
     return <>
-    <span>{i18next.t('navigation.projects')}</span>
+    <span>{t('navigation.projects')}</span>
     </>
 }
 
