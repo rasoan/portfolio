@@ -12,7 +12,7 @@ i18next.use(LanguageDetector)
     .use(initReactI18next)
     .init({
         debug: true,
-        fallbackLng: languages["be-BE"].value,
+        supportedLngs: Object.keys(languages),
         interpolation: {
             alwaysFormat: true,
             escapeValue: false,
