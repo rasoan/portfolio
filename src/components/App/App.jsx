@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
     toolbar: theme.mixins.toolbar,
 }));
 
-const App = observer(() => {
+const App = () => {
     const classes = useStyles();
 
     return (<>
@@ -60,6 +60,6 @@ const App = observer(() => {
                 <Footer/>
             </Container>
     </>);
-});
+};
 
 export default withTranslation()(App);

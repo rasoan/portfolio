@@ -19,9 +19,11 @@ class storeApp {
     toggle = (flag) => {
         if (typeof flag !== "undefined") {
             this.navBar = flag;
+            console.log(this.navBar)
         }
         else {
             this.navBar = !this.navBar;
+            console.log(this.navBar)
         }
     }
 
@@ -30,7 +32,6 @@ class storeApp {
     }
 
     changeLanguage = (language) => {
-
         i18next.changeLanguage(language.value, (err) => {
             if (err) return console.log("Ошибка");
             this.language = language;

@@ -61,12 +61,13 @@ const DrawerContent = ({storeApp}) => {
 }
 
 
-const Navigation = (props) => {
+const Navigation = observer((props) => {
     const { window } = props;
     const classes = useStyles();
     const theme = useTheme();
 
     const container = window !== undefined ? () => window().document.body : undefined;
+    console.log(storeApp.navBar, ' это навбар');
     return (<>
         <nav className={classes.drawer}
              aria-label="mailbox folders">
@@ -96,14 +97,12 @@ const Navigation = (props) => {
                     variant="permanent"
                     open
                 >
-
                     <DrawerContent storeApp={storeApp} />
-
                 </Drawer>
             </Hidden>
         </nav>
     </>)
-};
+});
 
 Navigation.propTypes = {
     /**
