@@ -1,7 +1,7 @@
 import React from "react";
 import MyAvatar from "../../components/MyAvatar";
+import EssentialInformationAboutMe from "../../components/InformationAboutMe/EssentialInformationAboutMe";
 import BriefInformationAboutMe from "../../components/InformationAboutMe/BriefInformationAboutMe";
-import FullInformationAboutMe from "../../components/InformationAboutMe/FullInformationAboutMe";
 
 const Profile = () => {
 
@@ -10,7 +10,7 @@ const Profile = () => {
             <MyAvatar/>
             <BriefInformationAboutMe/>
         </div>
-        <FullInformationAboutMe />
+        <BriefInformationAboutMe />
     </div>;
 }
 
