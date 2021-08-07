@@ -1,14 +1,14 @@
 import React from "react";
 import PATH from '../../constants/path';
 import {Route, Switch} from 'react-router-dom';
-import AboutMe from "../../pages/AboutMe";
-import MyProjects from "../../pages/MyProjects";
+import Profile from "../../pages/Profile";
+import Projects from "../../pages/Projects";
 
 const AppWithRoutes = (props) => {
     return (<>
         <Switch>
-            <Route path={PATH.PROFILE} component={() => <AboutMe/>}/>
-            <Route path={PATH.PROJECTS} component={MyProjects}/>
+            <Route path={PATH.PROFILE} component={() => <Profile/>}/>
+            <Route path={PATH.PROJECTS} component={Projects}/>
             <Route path={PATH.ALL} render={() => <div>всё!</div>}/>
         </Switch>
     </>);
