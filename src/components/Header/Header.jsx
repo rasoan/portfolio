@@ -137,7 +137,7 @@ function Header() {
         storeApp.changeLanguage(language);
         setShowMenuLanguage(null);
     }
-console.log(storeApp.language, 'это я шапка');
+
     return (
         <div className={classes.root}>
             <CssBaseline/>

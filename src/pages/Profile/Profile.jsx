@@ -2,16 +2,20 @@ import React from "react";
 import MyAvatar from "../../components/MyAvatar";
 import EssentialInformationAboutMe from "../../components/InformationAboutMe/EssentialInformationAboutMe";
 import BriefInformationAboutMe from "../../components/InformationAboutMe/BriefInformationAboutMe";
+import style from "./style.module.scss";
+import {Box} from "@material-ui/core";
 
 const Profile = () => {
 
-    return <div>
-        <div>
-            <MyAvatar/>
+    return <>
+        <Box display={"flex"}>
             <BriefInformationAboutMe/>
-        </div>
-        <BriefInformationAboutMe />
-    </div>;
+            <MyAvatar/>
+        </Box>
+        <Box>
+            <EssentialInformationAboutMe/>
+        </Box>
+    </>;
 }
 
 export default Profile;

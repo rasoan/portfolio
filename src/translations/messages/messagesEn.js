@@ -13,10 +13,10 @@ const messagesEn = {
     instagram: "instagram",
     telegram: "telegram",
   },
-  essentialInformationAboutMe: [
+  briefInformationAboutMe: [
     {
-      header: "ФИО:",
-      description: "Расоян Араик Джасмович"
+      header: "Full name:",
+      description: "Rasoyan Araik Jasmovich"
     },
     {
       header: "Пол:",
@@ -35,7 +35,7 @@ const messagesEn = {
       description: "+375 25 664 60 70",
     },
   ],
-  briefInformationAboutMe: [
+  essentialInformationAboutMe: [
     {
       header: "Владею следующими языками:",
       description: ["Русский"],
