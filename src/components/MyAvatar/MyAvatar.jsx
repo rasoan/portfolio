@@ -4,6 +4,7 @@ import style from "./style.module.scss";
 import {FaInstagram, FaTelegramPlane, FaVk} from "react-icons/fa";
 import {makeStyles} from "@material-ui/core/styles";
 import clsx from 'clsx';
+import {useTranslation} from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
     listContacts: {
@@ -54,25 +55,31 @@ const useStyles = makeStyles((theme) => ({
 
 const MyAvatar = () => {
     const classes = useStyles();
+    const {t} = useTranslation();
+
     return <>
         <div className={style.profilePictureContainer}>
             <img className={style.image}
                  width="300"
                  height="300"
                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB8Fhh8lPlDa1kRNe55ZPODUarBM1vasbBa-VunJvG7RIuhzIVG2sXcSPLdpnz4eKXOxs&usqp=CAU"
-                 alt=""/>
+                 alt="avatar"/>
             <List className={style.uploadFileButton}>
                 <ListItem className={classes.listItemContacts}>
                     <Link target="_blank" className={classes.listLinkContacts} href="https://vk.com/araiikk">
                         <FaVk className={classes.listIconContacts}/>
-                        <Typography className={classes.listTextContacts}>Вконтакте</Typography>
+                        <Typography className={classes.listTextContacts}>
+                            {t('socialMedia.vkontakte')}
+                        </Typography>
                     </Link>
                 </ListItem>
                 <ListItem className={classes.listItemContacts}>
                     <Link target="_blank" className={classes.listLinkContacts}
                           href="https://www.instagram.com/araiikk">
                         <FaInstagram className={classes.listIconContacts}/>
-                        <Typography className={classes.listTextContacts}>Инстаграм</Typography>
+                        <Typography className={classes.listTextContacts}>
+                            {t('socialMedia.instagram')}
+                        </Typography>
                     </Link>
                 </ListItem>
                 <ListItem className={classes.listItemContacts}>

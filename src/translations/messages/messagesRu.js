@@ -8,6 +8,11 @@ const messagesRu = {
   },
   date: '{{date}}',
   projects: projectsRu,
+  socialMedia: {
+    vkontakte: "вконтакте",
+    instagram: "instagram",
+    telegram: "telegram",
+  }
 }
 
 export default messagesRu;
