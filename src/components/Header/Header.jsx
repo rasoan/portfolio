@@ -149,7 +149,7 @@ console.log(storeApp.language, 'это я шапка');
                         color="inherit"
                         aria-label="open drawer"
                         edge="start"
-                        onClick={() => storeApp.toggle(true)}
+                        onClick={() => storeApp.toggleNavbar(true)}
                         className={classes.buttonToggleNavigationPanel}
                     >
                         <MenuIcon/>
