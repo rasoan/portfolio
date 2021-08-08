@@ -87,7 +87,7 @@ const messagesEn = {
       description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "Jquery",],
     },
     {
-      header: "Графические редакторы",
+      header: "Graphic editor",
       description: ["Adobe Photoshop", "Figma"],
     }
   ],

@@ -87,7 +87,7 @@ const messagesRu = {
       description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "Jquery",],
     },
     {
-      header: "Графические редакторы",
+      header: "Графічныя рэдактары",
       description: ["Adobe Photoshop", "Figma"],
     }
   ],
