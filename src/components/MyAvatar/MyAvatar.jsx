@@ -5,6 +5,7 @@ import {FaInstagram, FaTelegramPlane, FaVk} from "react-icons/fa";
 import {makeStyles} from "@material-ui/core/styles";
 import clsx from 'clsx';
 import {useTranslation} from "react-i18next";
+import imgAvatar from "../../images/araik.jpg";
 
 const useStyles = makeStyles((theme) => ({
     listContacts: {
@@ -62,7 +63,7 @@ const MyAvatar = () => {
             <img className={style.image}
                  width="300"
                  height="300"
-                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB8Fhh8lPlDa1kRNe55ZPODUarBM1vasbBa-VunJvG7RIuhzIVG2sXcSPLdpnz4eKXOxs&usqp=CAU"
+                 src={imgAvatar}
                  alt="avatar"/>
             <List className={style.uploadFileButton}>
                 <ListItem className={classes.listItemContacts}>

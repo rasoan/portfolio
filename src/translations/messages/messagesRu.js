@@ -80,7 +80,7 @@ const messagesRu = {
         },
         {
             header: "Библиотеки и фреймворки:",
-            description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "Jquery",],
+            description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "React-hook-form", "Yup", "Jquery",],
         },
         {
             header: "Графические редакторы",
