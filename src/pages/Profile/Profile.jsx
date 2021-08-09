@@ -8,9 +8,9 @@ import {Box} from "@material-ui/core";
 const Profile = () => {
 
     return <>
-        <Box display={"flex"}>
-            <BriefInformationAboutMe/>
-            <MyAvatar/>
+        <Box display={"flex"} alignItems="center" justifyContent="center">
+            <BriefInformationAboutMe />
+            <MyAvatar />
         </Box>
         <Box>
             <EssentialInformationAboutMe/>

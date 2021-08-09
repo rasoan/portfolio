@@ -45,10 +45,6 @@ const messagesRu = {
             description: "Беларусь",
         },
         {
-            header: "Гражданство:",
-            description: "Беларусь",
-        },
-        {
             header: "Разрешение на работу:",
             description: " Беларусь",
         },
@@ -63,7 +59,7 @@ const messagesRu = {
             header: "Опыт работы:",
             description: [
                 "любительский спорт (бокс) - 5 лет",
-                "Менеджер по туризму - BriefInformationAboutMe год",
+                "Менеджер по туризму - 1 год",
                 "учитель физкультуры - 3 года",
                 `системный администратор в институте - ${((new Date()).getFullYear() - 2019)} лет, ${(new Date()).getMonth() + 1} месяцев`,
             ],

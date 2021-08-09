@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, List, ListItem, Typography} from "@material-ui/core";
+import {Box, Link, List, ListItem, Paper, Typography} from "@material-ui/core";
 import style from "./style.module.scss";
 import {FaInstagram, FaTelegramPlane, FaVk} from "react-icons/fa";
 import {makeStyles} from "@material-ui/core/styles";
@@ -58,7 +58,7 @@ const MyAvatar = () => {
     const {t} = useTranslation();
 
     return <>
-        <div className={style.profilePictureContainer}>
+        <Paper className={style.profilePictureContainer}>
             <img className={style.image}
                  width="300"
                  height="300"
@@ -90,7 +90,7 @@ const MyAvatar = () => {
                     </Link>
                 </ListItem>
             </List>
-        </div>
+        </Paper>
     </>
 }
 
