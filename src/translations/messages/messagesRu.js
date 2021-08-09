@@ -28,7 +28,7 @@ const messagesRu = {
         },
         {
             header: "Возраст:",
-            description: `${((new Date()).getFullYear() - 1993)} лет, ${(new Date()).getMonth() + 1} месяцев`,
+            description: `${((new Date()).getFullYear() - 1993)} лет, ${(new Date()).getMonth() - 2} месяцев`,
         },
         {
             header: "Телефон:",
@@ -61,7 +61,7 @@ const messagesRu = {
                 "любительский спорт (бокс) - 5 лет",
                 "Менеджер по туризму - 1 год",
                 "учитель физкультуры - 3 года",
-                `системный администратор в институте - ${((new Date()).getFullYear() - 2019)} лет, ${(new Date()).getMonth() + 1} месяцев`,
+                `системный администратор в институте - ${((new Date()).getFullYear() - 2019)} лет, ${(new Date()).getMonth() - 9} месяцев`,
             ],
         },
         {
