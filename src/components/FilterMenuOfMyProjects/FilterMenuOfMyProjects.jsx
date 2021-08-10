@@ -1,7 +1,9 @@
 import React from "react";
 
 const FilterMenuOfMyProjects = () => {
-    return <></>
+    return <div>
+    фильтр
+    </div>
 }
 
 export default FilterMenuOfMyProjects;

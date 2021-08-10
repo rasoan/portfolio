@@ -1,10 +1,48 @@
 [
   {
-    "name": "Сiнголо",
-    "href": "https://google.com"
+    "title": "Singolo",
+    "description": "Одностраничник, выполнен был в рамках курса 'Rolling-scopes-school'",
+    "releaseDate": "08.03.2020",
+    "technologiesUsed": ["HTML", "CSS", "JavaScript"],
+    "demoLink": "https://rasoan.github.io/singolo/index.html",
+    "projectLink": "https://github.com/Rasoan/singolo",
+    "screenshots": []
+
   },
   {
-    "name": "Слайдер",
-    "href": "https://google.com"
+    "title": "Английский для детей",
+    "description": "Детский тренажёр для изучения английского языка, выполнен был в рамках курса 'Rolling-scopes-school'",
+    "releaseDate": "22.04.2020",
+    "technologiesUsed": ["HTML", "CSS", "JavaScript"],
+    "demoLink": "https://rasoan.github.io/English-for-kids/index.html",
+    "projectLink": "https://github.com/Rasoan/English-for-kids",
+    "screenshots": []
+  },
+  {
+    "title": "Поисковик фильмов",
+    "description": "Многофункциональный слайдер, выполнен был в рамках курса 'Rolling-scopes-school'",
+    "releaseDate": "08.05.2020",
+    "technologiesUsed": ["HTML", "CSS", "JavaScript", "Swiper-api"],
+    "demoLink": "https://rasoan.github.io/MovieSearch/index.html",
+    "projectLink": "https://github.com/Rasoan/MovieSearch",
+    "screenshots": []
+  },
+  {
+    "title": "Студия Борового",
+    "description": "Тестовый проект выполненный для трудоустройства в IT компанию 'Студия Борового'",
+    "releaseDate": "25.07.2021",
+    "technologiesUsed": ["HTML", "SCSS", "JavaScript", "Bootstrap"],
+    "demoLink": "https://rasoan.github.io/studioBorovogo",
+    "projectLink": "https://github.com/Rasoan/studioBorovogo",
+    "screenshots": []
+  },
+  {
+    "title": "Социальная сеть",
+    "description": "Проект связанный с прохождением youtube курса 'Путь самурая' от 'It-kamasutra'",
+    "releaseDate": false,
+    "technologiesUsed": ["HTML", "SCSS", "JavaScript", "React", "React-hook-form", "Yup", "Material-ui"],
+    "demoLink": "https://rasoan.github.io/my-app",
+    "projectLink": "https://github.com/Rasoan/my-app",
+    "screenshots": []
   }
 ]
