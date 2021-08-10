@@ -13,31 +13,42 @@ const messagesRu = {
         instagram: "instagram",
         telegram: "telegram",
     },
-    briefInformationAboutMe: [
-        {
-            header: "ФИО:",
-            description: "Расоян Араик Джасмович"
-        },
+    briefInformationAboutMe: {
+        fullName: "Расоян Араик Джасмович",
+        years: "28 лет",
+    },
+    essentialInformationAboutMe: [
         {
             header: "Пол:",
-            description: "мужчина",
+            description: "мужской",
         },
         {
-            header: "Дата рождеия:",
-            description: "21.03.1992",
-        },
-        {
-            header: "Возраст:",
-            description: `${((new Date()).getFullYear() - 1993)} лет, ${(new Date()).getMonth() - 2} месяцев`,
+            header: "Дата рождения:",
+            description: "21.03.1993",
         },
         {
             header: "Телефон:",
             description: "+375 25 664 60 70",
         },
-    ],
-    essentialInformationAboutMe: [
+        {
+            header: "Адрес проживания",
+            description: "г Минск, ул Плеханова 52",
+        },
+        {
+            header: "Отношение к курению:",
+            description: "нейтральное (не курю)",
+        },
+        {
+            header: "Готов приступить к работе:",
+            description: "Желательно начать с удалённого варианта, так как боюсь потерять эту работу если вас не устроят мои умения и навыки",
+        },
+        {
+            header: "Желаемый уровень з.п.:",
+            description: "Можно начать с 300$",
+        },
         {
             header: "Владею следующими языками:",
+            columnDirection: false,
             description: ["Русский"],
         },
         {
@@ -56,12 +67,22 @@ const messagesRu = {
                 "но рассмотрю все варианнты.",
         },
         {
-            header: "Опыт работы:",
+            header: "Образование:",
+            columnDirectionList: true,
             description: [
-                "любительский спорт (бокс) - 5 лет",
-                "Менеджер по туризму - 1 год",
-                "учитель физкультуры - 3 года",
-                `системный администратор в институте - ${((new Date()).getFullYear() - 2019)} лет, ${(new Date()).getMonth() - 9} месяцев`,
+                'БГУФК (заочно) - специальность "Менеджмент в туризме" c 2011 по 2016',
+                `БНТУ (заочно) - специальность - "Программное обеспечение информационных технологий" c 2018 по 2023`,
+                'Rolling-scopes-school - "Frontend разработчик" с 01.02.2019 по 01.08.2019',
+            ],
+        },
+        {
+            header: "Опыт работы:",
+            columnDirectionList: true,
+            description: [
+                "Любительский спорт (бокс) с 2009 по 2015",
+                "менеджер по туризму с 2015 по 2016",
+                "учитель физкультуры с 2016 по 2019",
+                `системный администратор в институте с 2019 по ${new Date().getFullYear()}`,
             ],
         },
         {
@@ -80,7 +101,7 @@ const messagesRu = {
         },
         {
             header: "Библиотеки и фреймворки:",
-            description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "React-hook-form", "Yup", "Jquery",],
+            description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "React-hook-form", "Yup", "Jquery"],
         },
         {
             header: "Графические редакторы",

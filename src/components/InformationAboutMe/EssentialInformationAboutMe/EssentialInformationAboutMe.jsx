@@ -50,20 +50,19 @@ const useStyles = makeStyles(theme => ({
     notHonest: {
         backgroundColor: theme.palette.grey[200],
     },
-    columnDirectionList: {
-    },
+    columnDirectionList: {},
     rowDirectionList: {
         display: "flex",
         flexWrap: "wrap",
         flexDirection: "row",
     },
     columnOrRowDirectionListItem: {
-      width: "max-content",
+        padding: 0,
     },
     columnDirectionListItem: {},
     rowDirectionListItem: {
-       marginRight: 5,
-       padding: 0
+        width: "max-content",
+        marginRight: 5,
     },
 }))
 
@@ -85,13 +84,17 @@ const EssentialInformationAboutMe = () => {
                 <Divider orientation="vertical" flexItem/>
                 <Grid item xs={9}>
                     {!Array.isArray(object.description) ? <Typography>{object.description}</Typography> :
-                        <List className={clsx({[classes.columnDirectionList]: object.columnDirectionList}, {[classes.rowDirectionList]: !object.columnDirectionList})}>
+                        <List
+                            className={clsx({[classes.columnDirectionList]: object.columnDirectionList}, {[classes.rowDirectionList]: !object.columnDirectionList})}>
                             {object.description.map((element, index, array) => {
                                 return <>
-                                    <ListItem className={clsx(classes.columnOrRowDirectionListItem, {[classes.columnDirectionListItem]: object.columnDirectionList, [classes.rowDirectionListItem]: !object.columnDirectionList,})}>
+                                    <ListItem className={clsx(classes.columnOrRowDirectionListItem, {
+                                        [classes.columnDirectionListItem]: object.columnDirectionList,
+                                        [classes.rowDirectionListItem]: !object.columnDirectionList,
+                                    })}>
                                         <Typography>
                                             {element}
-                                            {array.length > 1 && ((index === array.length-1) ? ".": object.columnDirectionList ? ";": ",")}
+                                            {array.length > 1 && ((index === array.length - 1) ? "." : object.columnDirectionList ? ";" : ",")}
                                         </Typography>
                                     </ListItem>
                                 </>
