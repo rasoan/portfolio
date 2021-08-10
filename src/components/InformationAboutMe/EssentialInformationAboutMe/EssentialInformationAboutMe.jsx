@@ -50,12 +50,21 @@ const useStyles = makeStyles(theme => ({
     notHonest: {
         backgroundColor: theme.palette.grey[200],
     },
-    columnList: {
-        padding: 0,
+    columnDirectionList: {
     },
-    columnListItem: {
-        padding: 0,
-    }
+    rowDirectionList: {
+        display: "flex",
+        flexWrap: "wrap",
+        flexDirection: "row",
+    },
+    columnOrRowDirectionListItem: {
+      width: "max-content",
+    },
+    columnDirectionListItem: {},
+    rowDirectionListItem: {
+       marginRight: 5,
+       padding: 0
+    },
 }))
 
 const EssentialInformationAboutMe = () => {
@@ -76,12 +85,13 @@ const EssentialInformationAboutMe = () => {
                 <Divider orientation="vertical" flexItem/>
                 <Grid item xs={9}>
                     {!Array.isArray(object.description) ? <Typography>{object.description}</Typography> :
-                        <List classes={{root: classes.columnList}}>
-                            {object.description.map(element => {
+                        <List className={clsx({[classes.columnDirectionList]: object.columnDirectionList}, {[classes.rowDirectionList]: !object.columnDirectionList})}>
+                            {object.description.map((element, index, array) => {
                                 return <>
-                                    <ListItem classes={{root: classes.columnListItem}}>
+                                    <ListItem className={clsx(classes.columnOrRowDirectionListItem, {[classes.columnDirectionListItem]: object.columnDirectionList, [classes.rowDirectionListItem]: !object.columnDirectionList,})}>
                                         <Typography>
                                             {element}
+                                            {array.length > 1 && ((index === array.length-1) ? ".": object.columnDirectionList ? ";": ",")}
                                         </Typography>
                                     </ListItem>
                                 </>

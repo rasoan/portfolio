@@ -1,28 +1,5 @@
-.profilePictureContainer {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: min-content;
-
-  &:hover .uploadFileButton {
-    bottom: 0;
-    text-decoration: none;
-  }
-}
-
 .image {
   object-fit: cover;
   border-radius: 5px;
 }
 
-.uploadFileButton {
-  width: 100%;
-  background-color: #000000db !important;
-  padding: 2px 0 !important;
-  color: #ffffffad !important;
-  position: absolute !important;
-  bottom: -70px;
-  transition: bottom .3s linear;
-}

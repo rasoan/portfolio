@@ -1,0 +1,35 @@
+.fullName {
+  font-size: 45px !important;
+}
+
+.years {
+  font-size: 30px !important;
+}
+
+.listContacts {
+  width: min-content;
+  padding: 0;
+}
+.listItemContacts {
+  width: max-content !important;
+}
+
+.linkContacts {
+  display: flex;
+  align-items: center;
+
+  &:hover .iconContacts {
+    opacity: 0.9;
+  }
+}
+
+.iconContacts {
+  margin-right: 6px;
+  font-size: 30px !important;
+}
+
+.textContacts {
+  height: min-content;
+  line-height: 1;
+  font-size: 20px !important;
+}

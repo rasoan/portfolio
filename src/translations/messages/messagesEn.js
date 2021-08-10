@@ -13,11 +13,11 @@ const messagesEn = {
     instagram: "instagram",
     telegram: "telegram",
   },
-  briefInformationAboutMe: [
-    {
-      header: "Full name:",
-      description: "Rasoyan Araik Jasmovich"
-    },
+  briefInformationAboutMe: {
+    fullName: "Расоян Араик Джасмович",
+    years: "28 лет",
+  },
+  essentialInformationAboutMe: [
     {
       header: "Пол:",
       description: "мужчина",
@@ -27,17 +27,12 @@ const messagesEn = {
       description: "21.03.1992",
     },
     {
-      header: "Возраст:",
-      description: `${((new Date()).getFullYear() - 1993)} лет, ${(new Date()).getMonth() + 1} месяцев`,
-    },
-    {
       header: "Телефон:",
       description: "+375 25 664 60 70",
     },
-  ],
-  essentialInformationAboutMe: [
     {
       header: "Владею следующими языками:",
+      columnDirection: false,
       description: ["Русский"],
     },
     {
@@ -57,9 +52,10 @@ const messagesEn = {
     },
     {
       header: "Опыт работы:",
+      columnDirectionList: true,
       description: [
-        "любительский спорт (бокс) - 5 лет",
-        "Менеджер по туризму - 1 год",
+        "Любительский спорт (бокс) - 5 лет",
+        "менеджер по туризму - 1 год",
         "учитель физкультуры - 3 года",
         `системный администратор в институте - ${((new Date()).getFullYear() - 2019)} лет, ${(new Date()).getMonth() + 1} месяцев`,
       ],
@@ -80,7 +76,7 @@ const messagesEn = {
     },
     {
       header: "Библиотеки и фреймворки:",
-      description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "React-hook-form", "Yup", "Jquery",],
+      description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "React-hook-form", "Yup", "Jquery"],
     },
     {
       header: "Graphic editor",
