@@ -44,5 +44,14 @@
     "demoLink": "https://rasoan.github.io/my-app",
     "projectLink": "https://github.com/Rasoan/my-app",
     "screenshots": []
+  },
+  {
+    "title": "Portfolio",
+    "description": "Portfolio in which I share detailed information about myself and completed projects.",
+    "releaseDate": false,
+    "technologiesUsed": ["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript"],
+    "demoLink": "https://rasoan.github.io/portfolio",
+    "projectLink": "https://github.com/Rasoan/portfolio",
+    "screenshots": []
   }
 ]

@@ -1,4 +1,4 @@
-import projectsBE from "./projects/projectsRu.json";
+import projectsBe from "../messages/projects/projectsBe.json";
 
 const messagesRu = {
     header: "Партфоліо",
@@ -7,7 +7,7 @@ const messagesRu = {
         projects: "Праекты"
     },
     date: '{{date}}',
-    projects: projectsBE,
+    projects: projectsBe,
     socialMedia: {
         vkontakte: "вконтакте",
         instagram: "instagram",
@@ -101,7 +101,10 @@ const messagesRu = {
         },
         {
             header: "Бібліятэкі і фреймворка:",
-            description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "React-hook-form", "Yup", "Jquery"],
+            description: ["Material ui", "Bootstrap", "Redux",
+                "Mobx", "Clsx", "Classes",
+                "React-hook-form", "Yup", "Jquery",
+                "i18next", "TypeScript"],
         },
         {
             header: "Графічныя рэдактары",

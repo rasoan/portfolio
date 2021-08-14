@@ -101,7 +101,10 @@ const messagesEn = {
         },
         {
             header: "Libraries and frameworks:",
-            description: ["Material ui", "Bootstrap", "Redux", "Mobx", "Clsx", "Classes", "React-hook-form", "Yup", "Jquery"],
+            description: ["Material ui", "Bootstrap", "Redux",
+                "Mobx", "Clsx", "Classes",
+                "React-hook-form", "Yup", "Jquery",
+                "i18next", "TypeScript"],
         },
         {
             header: "Graphic editor",

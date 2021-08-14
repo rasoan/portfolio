@@ -48,5 +48,14 @@
     "projectLink": "https://github.com/Rasoan/my-app",
     "rating": 5,
     "screenshots": []
+  },
+  {
+    "title": "Портфолио",
+    "description": "Портфолио в котором я рассказываю подробную информацию о себе и выполненных проектах.",
+    "releaseDate": false,
+    "technologiesUsed": ["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript"],
+    "demoLink": "https://rasoan.github.io/portfolio",
+    "projectLink": "https://github.com/Rasoan/portfolio",
+    "screenshots": []
   }
 ]
