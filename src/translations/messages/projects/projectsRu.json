@@ -16,7 +16,7 @@
     "technologiesUsed": ["HTML", "CSS", "JavaScript"],
     "demoLink": "https://rasoan.github.io/English-for-kids/index.html",
     "projectLink": "https://github.com/Rasoan/English-for-kids",
-    "rating": 5,
+    "rating": 2,
     "screenshots": []
   },
   {
@@ -26,7 +26,7 @@
     "technologiesUsed": ["HTML", "CSS", "JavaScript", "Swiper-api"],
     "demoLink": "https://rasoan.github.io/MovieSearch/index.html",
     "projectLink": "https://github.com/Rasoan/MovieSearch",
-    "rating": 5,
+    "rating": 3,
     "screenshots": []
   },
   {
@@ -36,7 +36,7 @@
     "technologiesUsed": ["HTML", "SCSS", "JavaScript", "Bootstrap"],
     "demoLink": "https://rasoan.github.io/studioBorovogo",
     "projectLink": "https://github.com/Rasoan/studioBorovogo",
-    "rating": 5,
+    "rating": 6,
     "screenshots": []
   },
   {
@@ -46,7 +46,7 @@
     "technologiesUsed": ["HTML", "SCSS", "JavaScript", "React", "React-hook-form", "Yup", "Material-ui"],
     "demoLink": "https://rasoan.github.io/my-app",
     "projectLink": "https://github.com/Rasoan/my-app",
-    "rating": 5,
+    "rating": 8,
     "screenshots": []
   },
   {
@@ -56,6 +56,7 @@
     "technologiesUsed": ["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript"],
     "demoLink": "https://rasoan.github.io/portfolio",
     "projectLink": "https://github.com/Rasoan/portfolio",
+    "rating": 10,
     "screenshots": []
   }
 ]

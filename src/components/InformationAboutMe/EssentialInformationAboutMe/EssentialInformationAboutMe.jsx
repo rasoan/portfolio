@@ -73,9 +73,9 @@ const EssentialInformationAboutMe = () => {
     essentialInformationAboutMe = essentialInformationAboutMe.map((object, index, array) => {
         return <>
             <Grid container
-                  xs={12}
                   spacing={2}
                   className={clsx(classes.listEssentialInformationAboutMeRow, {[classes.notHonest]: (index % 2 !== 0)}, {[classes.honest]: (index % 2 == 0)})}
+                  key={`gridItem-${index}`}
             >
                 <Grid item xs={3} className={classes.listEssentialInformationAboutMeContainerHeader}>
                     <Typography
@@ -91,7 +91,9 @@ const EssentialInformationAboutMe = () => {
                                     <ListItem className={clsx(classes.columnOrRowDirectionListItem, {
                                         [classes.columnDirectionListItem]: object.columnDirectionList,
                                         [classes.rowDirectionListItem]: !object.columnDirectionList,
-                                    })}>
+                                    })}
+                                              key={`listItem-${index}`}
+                                    >
                                         <Typography>
                                             {element}
                                             {array.length > 1 && ((index === array.length - 1) ? "." : object.columnDirectionList ? ";" : ",")}
@@ -108,8 +110,11 @@ const EssentialInformationAboutMe = () => {
     let keySkills = t('keySkills', {returnObjects: true});
     keySkills = keySkills.map((object, index, array) => {
         return <>
-            <Grid container xs={12} spacing={2}
-                  className={clsx(classes.listEssentialInformationAboutMeRow, {[classes.notHonest]: (index % 2 !== 0)}, {[classes.honest]: (index % 2 == 0)})}>
+            <Grid container
+                  spacing={2}
+                  className={clsx(classes.listEssentialInformationAboutMeRow, {[classes.notHonest]: (index % 2 !== 0)}, {[classes.honest]: (index % 2 == 0)})}
+                  key={`skillsItem-${index}`}
+            >
                 <Grid item xs={3} className={classes.listEssentialInformationAboutMeContainerHeader}>
                     <Typography
                         classes={{root: classes.listEssentialInformationAboutMeHeader}}>{object.header} </Typography>
@@ -117,8 +122,10 @@ const EssentialInformationAboutMe = () => {
                 <Divider orientation="vertical" flexItem/>
                 <Grid item xs={9}>
                     <List classes={{root: classes.listOfKeySkills}}>
-                        {object.description.map(object => {
-                            return <ListItem className={classes.listOfKeySkillsItem}>
+                        {object.description.map((object, index) => {
+                            return <ListItem className={classes.listOfKeySkillsItem}
+                                             key={`description-${index}`}
+                            >
                                 <Typography className={classes.listOfKeySkillsItemText}>{object}</Typography>
                             </ListItem>
                         })}

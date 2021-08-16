@@ -1,57 +1,62 @@
 [
   {
     "title": "Singolo",
-    "description": "Одностраничник, выполнен был в рамках курса 'Rolling-scopes-school'",
-    "releaseDate": "08.03.2020",
+    "description": "One page, completed as part of the 'Rolling-scopes-school' course",
+    "releaseDate": "03.08.2020",
     "technologiesUsed": ["HTML", "CSS", "JavaScript"],
     "demoLink": "https://rasoan.github.io/singolo/index.html",
     "projectLink": "https://github.com/Rasoan/singolo",
+    "rating": 5,
     "screenshots": []
-
   },
   {
-    "title": "Английский для детей",
-    "description": "Детский тренажёр для изучения английского языка, выполнен был в рамках курса 'Rolling-scopes-school'",
+    "title": "English for Children",
+    "description": "Children's simulator for learning English, made as part of the 'Rolling-scopes-school' course",
     "releaseDate": "22.04.2020",
     "technologiesUsed": ["HTML", "CSS", "JavaScript"],
     "demoLink": "https://rasoan.github.io/English-for-kids/index.html",
     "projectLink": "https://github.com/Rasoan/English-for-kids",
+    "rating": 2,
     "screenshots": []
   },
   {
-    "title": "Поисковик фильмов",
-    "description": "Многофункциональный слайдер, выполнен был в рамках курса 'Rolling-scopes-school'",
-    "releaseDate": "08.05.2020",
+    "title": "Movie search engine",
+    "description": "Multifunctional slider, made as part of the 'Rolling-scopes-school' course",
+    "releaseDate": "05.08.2020",
     "technologiesUsed": ["HTML", "CSS", "JavaScript", "Swiper-api"],
     "demoLink": "https://rasoan.github.io/MovieSearch/index.html",
     "projectLink": "https://github.com/Rasoan/MovieSearch",
+    "rating": 3,
     "screenshots": []
   },
   {
-    "title": "Студия Борового",
-    "description": "Тестовый проект выполненный для трудоустройства в IT компанию 'Студия Борового'",
+    "title": "Borovoy Studio",
+    "description": "Test project carried out for employment in the IT company 'Borovoy Studio'",
     "releaseDate": "25.07.2021",
     "technologiesUsed": ["HTML", "SCSS", "JavaScript", "Bootstrap"],
     "demoLink": "https://rasoan.github.io/studioBorovogo",
     "projectLink": "https://github.com/Rasoan/studioBorovogo",
+    "rating": 6,
     "screenshots": []
   },
   {
-    "title": "Социальная сеть",
-    "description": "Проект связанный с прохождением youtube курса 'Путь самурая' от 'It-kamasutra'",
+    "title": "Social network",
+    "description": "Project related to the youtube course 'The Way of the Samurai' from 'It-kamasutra'",
     "releaseDate": false,
     "technologiesUsed": ["HTML", "SCSS", "JavaScript", "React", "React-hook-form", "Yup", "Material-ui"],
     "demoLink": "https://rasoan.github.io/my-app",
     "projectLink": "https://github.com/Rasoan/my-app",
+    "rating": 8,
     "screenshots": []
   },
   {
     "title": "Portfolio",
-    "description": "Portfolio in which I share detailed information about myself and completed projects.",
+    "description": "A portfolio in which I share detailed information about myself and completed projects.",
     "releaseDate": false,
     "technologiesUsed": ["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript"],
     "demoLink": "https://rasoan.github.io/portfolio",
     "projectLink": "https://github.com/Rasoan/portfolio",
+    "rating": 10,
     "screenshots": []
   }
 ]

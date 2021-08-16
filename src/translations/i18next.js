@@ -11,7 +11,7 @@ import messagesBe from "./messages/messagesBe";
 i18next.use(LanguageDetector)
     .use(initReactI18next)
     .init({
-        debug: true,
+        debug: false,
         supportedLngs: Object.keys(languages),
         interpolation: {
             alwaysFormat: true,
