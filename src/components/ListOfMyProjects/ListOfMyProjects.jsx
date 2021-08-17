@@ -65,17 +65,17 @@ const ListOfMyProjects = () => {
     projects = filterProjects(projects, storeFilterProjects.showProjectsWithTechnologies)
     projects = sortProjects(projects, storeFilterProjects.sorting)
 
-    // console.log("--------------------------------------")
-    // console.log("--------------------------------------")
-    // console.log("--------------------------------------")
+    console.log("--------------------------------------")
+    console.log("--------------------------------------")
+    console.log("--------------------------------------")
     projects = projects.map((project, index) => {
-        // console.log("Дата выпуска ", project.releaseDate, ", рейтинг ", project.rating)
+        console.log("Дата выпуска ", project.releaseDate, ", рейтинг ", project.rating)
         return <React.Fragment key={`project-${index}`}>
             <Box m={10} className={style.projectWrapper}>
                 <Paper>
                     <Typography>{project.title}</Typography>
                     <Typography>{project.description}</Typography>
-                    <Typography>{project.releaseDate}</Typography>
+                    <Typography variant={"h5"}>{project.releaseDate || "приложение в разработке"}</Typography>
                     <List>
                         {project.technologiesUsed.map((technology, index) => {
                             return <React.Fragment key={`${technology}-${index}`}>
@@ -102,7 +102,7 @@ const ListOfMyProjects = () => {
                             </React.Fragment>
                         })}
                     </List>
-                    <Typography>{project.rating}</Typography>
+                    <Typography variant={"h5"}>{project.rating}</Typography>
                 </Paper>
             </Box>
         </React.Fragment>
