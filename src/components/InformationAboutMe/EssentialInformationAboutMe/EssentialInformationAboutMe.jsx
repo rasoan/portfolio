@@ -71,11 +71,11 @@ const EssentialInformationAboutMe = () => {
     const {t} = useTranslation();
     let essentialInformationAboutMe = t('essentialInformationAboutMe', {returnObjects: true});
     essentialInformationAboutMe = essentialInformationAboutMe.map((object, index, array) => {
-        return <>
+        return <React.Fragment key={`gridItem-${index}`}>
             <Grid container
                   spacing={2}
                   className={clsx(classes.listEssentialInformationAboutMeRow, {[classes.notHonest]: (index % 2 !== 0)}, {[classes.honest]: (index % 2 == 0)})}
-                  key={`gridItem-${index}`}
+
             >
                 <Grid item xs={3} className={classes.listEssentialInformationAboutMeContainerHeader}>
                     <Typography
@@ -87,33 +87,31 @@ const EssentialInformationAboutMe = () => {
                         <List
                             className={clsx({[classes.columnDirectionList]: object.columnDirectionList}, {[classes.rowDirectionList]: !object.columnDirectionList})}>
                             {object.description.map((element, index, array) => {
-                                return <>
+                                return <React.Fragment key={`listItem-${index}`}>
                                     <ListItem className={clsx(classes.columnOrRowDirectionListItem, {
                                         [classes.columnDirectionListItem]: object.columnDirectionList,
                                         [classes.rowDirectionListItem]: !object.columnDirectionList,
                                     })}
-                                              key={`listItem-${index}`}
                                     >
                                         <Typography>
                                             {element}
                                             {array.length > 1 && ((index === array.length - 1) ? "." : object.columnDirectionList ? ";" : ",")}
                                         </Typography>
                                     </ListItem>
-                                </>
+                                </React.Fragment>
                             })}
                         </List>}
                 </Grid>
             </Grid>
-        </>
+        </React.Fragment>
     });
 
     let keySkills = t('keySkills', {returnObjects: true});
     keySkills = keySkills.map((object, index, array) => {
-        return <>
+        return <React.Fragment key={`skillsItem-${index}`}>
             <Grid container
                   spacing={2}
                   className={clsx(classes.listEssentialInformationAboutMeRow, {[classes.notHonest]: (index % 2 !== 0)}, {[classes.honest]: (index % 2 == 0)})}
-                  key={`skillsItem-${index}`}
             >
                 <Grid item xs={3} className={classes.listEssentialInformationAboutMeContainerHeader}>
                     <Typography
@@ -123,16 +121,16 @@ const EssentialInformationAboutMe = () => {
                 <Grid item xs={9}>
                     <List classes={{root: classes.listOfKeySkills}}>
                         {object.description.map((object, index) => {
-                            return <ListItem className={classes.listOfKeySkillsItem}
-                                             key={`description-${index}`}
-                            >
-                                <Typography className={classes.listOfKeySkillsItemText}>{object}</Typography>
-                            </ListItem>
+                            return <React.Fragment key={`description-${index}`}>
+                                <ListItem className={classes.listOfKeySkillsItem}>
+                                    <Typography className={classes.listOfKeySkillsItemText}>{object}</Typography>
+                                </ListItem>
+                            </React.Fragment>
                         })}
                     </List>
                 </Grid>
             </Grid>
-        </>
+        </React.Fragment>
     });
 
     return <>

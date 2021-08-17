@@ -3,8 +3,7 @@ import PATH from '../../constants/path';
 import {Route, Switch} from 'react-router-dom';
 import Profile from "../../pages/Profile";
 import Projects from "../../pages/Projects";
-import {createBrowserHistory} from "history";
-import {RouterStore, syncHistoryWithStore} from "mobx-react-router";
+
 
 // const browserHistory = createBrowserHistory();
 // const routingStore = new RouterStore();

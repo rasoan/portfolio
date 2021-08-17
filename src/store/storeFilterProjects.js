@@ -15,7 +15,7 @@ class storeFilterProjects {
             ascending: false,
         },
     ]
-    showProjectsWithTechnologies = []
+    showProjectsWithTechnologies = ["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript", "Bootstrap"]
 
     selectSorting = (name, ascending) => {
         this.sorting = this.sorting.map(element => {
@@ -35,8 +35,12 @@ class storeFilterProjects {
         })
     }
 
-    manageShowProjectsWithTechnologies = (showProjectsWithTechnologies = []) => {
-      this.showProjectsWithTechnologies = showProjectsWithTechnologies
+    manageShowProjectsWithTechnologies = (showProjectsWithTechnologies) => {
+        if (typeof showProjectsWithTechnologies === "string") {
+            this.showProjectsWithTechnologies = showProjectsWithTechnologies.split(",")
+        } else {
+            this.showProjectsWithTechnologies = showProjectsWithTechnologies || []
+        }
     }
 
     constructor() {

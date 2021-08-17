@@ -1,13 +1,13 @@
-import React, {createContext} from "react";
+import React from "react";
 import AppWithRoutes from "./appWithRoutes";
 import {Container, makeStyles} from "@material-ui/core";
 import Navigation from "../Navigation";
 import Header from "../Header";
 import Footer from "../Footer";
-import { withTranslation, getI18n } from 'react-i18next';
-import {observer} from "mobx-react";
+import { withTranslation } from 'react-i18next';
 
-const MyContext = createContext({});
+
+
 
 
 
