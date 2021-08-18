@@ -134,7 +134,7 @@ const FilterByTechnology = () => {
                     className={classes.buttonMenuSort}
                     onClick={selectTechnologies}>
                 <DoneAll className={classes.filterListIcon}/>
-                <Typography color={"textPrimary"} className={classes.textButtonFilter}>Отфильтровать</Typography>
+                <Typography color={"textPrimary"} className={classes.textButtonFilter}>Отобразить</Typography>
             </Button>
         </Menu>
 
