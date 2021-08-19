@@ -3,60 +3,104 @@
     "title": "Singolo",
     "description": "Одностраничник, выполнен был в рамках курса 'Rolling-scopes-school'",
     "releaseDate": "08.03.2020",
-    "technologiesUsed": ["HTML", "CSS", "JavaScript"],
+    "technologiesUsed": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "demoLink": "https://rasoan.github.io/singolo/index.html",
     "projectLink": "https://github.com/Rasoan/singolo",
     "rating": 5,
+    "benefits": ["проект свёрстан по 'perfect pixel'", "нативный код без фреймворков и доплнительных библиотек"],
+    "limitations": ["весь контент на одной странице", "код - мягко говоря ужасен"],
     "screenshots": []
   },
   {
     "title": "Английский для детей",
     "description": "Детский тренажёр для изучения английского языка, выполнен был в рамках курса 'Rolling-scopes-school'",
     "releaseDate": "22.04.2020",
-    "technologiesUsed": ["HTML", "CSS", "JavaScript"],
+    "technologiesUsed": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "demoLink": "https://rasoan.github.io/English-for-kids/index.html",
     "projectLink": "https://github.com/Rasoan/English-for-kids",
     "rating": 2,
+    "benefits": ["динамическое приложение", "много спецефектов", "реализуемо в реальной жизни"],
+    "limitations": ["код ужасен", "20% от тз не успел доделать, так как был дедлайн"],
     "screenshots": []
   },
   {
     "title": "Поисковик фильмов",
     "description": "Многофункциональный слайдер, выполнен был в рамках курса 'Rolling-scopes-school'",
     "releaseDate": "08.05.2020",
-    "technologiesUsed": ["HTML", "CSS", "JavaScript", "Swiper-api"],
+    "technologiesUsed": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Swiper-api"
+    ],
     "demoLink": "https://rasoan.github.io/MovieSearch/index.html",
     "projectLink": "https://github.com/Rasoan/MovieSearch",
     "rating": 3,
+    "benefits": ["данные приходят с сервера", "Использованны дополнительные библиотеки"],
+    "limitations": ["плохой код", "не самый красивый дизайн"],
     "screenshots": []
   },
   {
     "title": "Студия Борового",
     "description": "Тестовый проект выполненный для трудоустройства в IT компанию 'Студия Борового'",
     "releaseDate": "25.07.2021",
-    "technologiesUsed": ["HTML", "SCSS", "JavaScript", "Bootstrap"],
+    "technologiesUsed": [
+      "HTML",
+      "SCSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
     "demoLink": "https://rasoan.github.io/studioBorovogo",
     "projectLink": "https://github.com/Rasoan/studioBorovogo",
     "rating": 6,
+    "benefits": ["адаптив + резиновая вёрстка", "красивый дизайн"],
+    "limitations": ["слишком простой проект", "реализованна только одна страничка"],
     "screenshots": []
   },
   {
     "title": "Социальная сеть",
     "description": "Проект связанный с прохождением youtube курса 'Путь самурая' от 'It-kamasutra'",
     "releaseDate": false,
-    "technologiesUsed": ["SCSS", "JavaScript", "React", "React-hook-form", "Yup", "Material-ui"],
+    "technologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "React",
+      "React-hook-form",
+      "Yup",
+      "Material-ui"
+    ],
     "demoLink": "https://rasoan.github.io/my-app",
     "projectLink": "https://github.com/Rasoan/my-app",
     "rating": 8,
+    "benefits": ["большое приложение с многочисленными возможностями", "используются передовые технологии"],
+    "limitations": ["очень сырой код", "при тестировании могут возникнуть проблемы с сервером"],
     "screenshots": []
   },
   {
     "title": "Портфолио",
     "description": "Портфолио в котором я рассказываю подробную информацию о себе и выполненных проектах.",
     "releaseDate": false,
-    "technologiesUsed": ["SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript"],
+    "technologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "React",
+      "Material-ui",
+      "i18next",
+      "TypeScript"
+    ],
     "demoLink": "https://rasoan.github.io/portfolio",
     "projectLink": "https://github.com/Rasoan/portfolio",
     "rating": 10,
+    "benefits": ["интернациональное приложение", "Фильтры записываются в url адрес"],
+    "limitations": ["сырой код", "грязная история коммитов"],
     "screenshots": []
   }
 ]

@@ -20,11 +20,25 @@ const useStyles = makeStyles(theme => ({
     listOfMyProjectsItem: {
         position: "relative",
         overflow: "visible",
-        maxWidth: 330,
-        height: 400,
+        maxWidth: 408,
         marginBottom: theme.spacing(4),
         "&:hover": {
             zIndex: 1,
+        },
+        [theme.breakpoints.down('xs')]: {
+            height: 400,
+        },
+        [theme.breakpoints.up('sm')]: {
+            height: 410,
+        },
+        [theme.breakpoints.up('md')]: {
+            height: 420,
+        },
+        [theme.breakpoints.up('lg')]: {
+            height: 430,
+        },
+        [theme.breakpoints.up('xl')]: {
+            height: 448,
         },
     }
 }))
@@ -83,7 +97,6 @@ const ListOfMyProjects = () => {
               container
               xs={12}
               spacing={2}
-              justifyContent={"space-between"}
         >
             {projects.map((project, index) => {
                 return <React.Fragment key={`project-${index}`}>

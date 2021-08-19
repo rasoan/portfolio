@@ -2,61 +2,105 @@
   {
     "title": "Singolo",
     "description": "One page, completed as part of the 'Rolling-scopes-school' course",
-    "releaseDate": "03.08.2020",
-    "technologiesUsed": ["HTML", "CSS", "JavaScript"],
+    "releaseDate": "03/08/2020",
+    "technologiesUsed": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "demoLink": "https://rasoan.github.io/singolo/index.html",
     "projectLink": "https://github.com/Rasoan/singolo",
     "rating": 5,
+    "benefits": ["The project is laid out according to the 'perfect pixel'", "native code without frameworks and additional libraries"],
+    "limitations": ["All content on one page", "the code is terrible to say the least, since this is one of my first projects"],
     "screenshots": []
   },
   {
     "title": "English for Children",
     "description": "Children's simulator for learning English, made as part of the 'Rolling-scopes-school' course",
-    "releaseDate": "22.04.2020",
-    "technologiesUsed": ["HTML", "CSS", "JavaScript"],
+    "releaseDate": "04/22/2020",
+    "technologiesUsed": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "demoLink": "https://rasoan.github.io/English-for-kids/index.html",
     "projectLink": "https://github.com/Rasoan/English-for-kids",
     "rating": 2,
+    "benefits": ["A dynamic application with various specialties", "realizable"],
+    "limitations": ["The code is awful, because the project is one of the first projects", "I didn't manage to finish 20% of the draft because there was a deadline"],
     "screenshots": []
   },
   {
     "title": "Movie search engine",
     "description": "Multifunctional slider, made as part of the 'Rolling-scopes-school' course",
-    "releaseDate": "05.08.2020",
-    "technologiesUsed": ["HTML", "CSS", "JavaScript", "Swiper-api"],
+    "releaseDate": "05/08/2020",
+    "technologiesUsed": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Swiper-api"
+    ],
     "demoLink": "https://rasoan.github.io/MovieSearch/index.html",
     "projectLink": "https://github.com/Rasoan/MovieSearch",
     "rating": 3,
+    "benefits": ["There is a connection with the server and the data will be received dynamically", "Additional libraries used"],
+    "limitations": ["bad code", "not the most beautiful design"],
     "screenshots": []
   },
   {
     "title": "Borovoy Studio",
     "description": "Test project carried out for employment in the IT company 'Borovoy Studio'",
-    "releaseDate": "25.07.2021",
-    "technologiesUsed": ["HTML", "SCSS", "JavaScript", "Bootstrap"],
+    "releaseDate": "07.25.2021",
+    "technologiesUsed": [
+      "HTML",
+      "SCSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
     "demoLink": "https://rasoan.github.io/studioBorovogo",
     "projectLink": "https://github.com/Rasoan/studioBorovogo",
     "rating": 6,
+    "benefits": ["adaptive + fluid layout", "beautiful design"],
+    "limitations": ["too simple project", "only one page implemented"],
     "screenshots": []
   },
   {
     "title": "Social network",
     "description": "Project related to the youtube course 'The Way of the Samurai' from 'It-kamasutra'",
     "releaseDate": false,
-    "technologiesUsed": ["SCSS", "JavaScript", "React", "React-hook-form", "Yup", "Material-ui"],
+    "technologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "React",
+      "React-hook-form",
+      "Yup",
+      "Material-ui"
+    ],
     "demoLink": "https://rasoan.github.io/my-app",
     "projectLink": "https://github.com/Rasoan/my-app",
     "rating": 8,
+    "benefits": ["A large application with many functions and capabilities", "the advanced technology is used at the time of the application creation"],
+    "limitations": ["Very crude code, as there is no experience in commercial development", "problems with the server may arise during testing, as there are keys for requests that may not work for you during testing, but I can demonstrate on my computer (the backend is not mine, mine is the front) "],
     "screenshots": []
   },
   {
     "title": "Portfolio",
     "description": "A portfolio in which I share detailed information about myself and completed projects.",
     "releaseDate": false,
-    "technologiesUsed": ["SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript"],
+    "technologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "React",
+      "Material-ui",
+      "i18next",
+      "TypeScript"
+    ],
     "demoLink": "https://rasoan.github.io/portfolio",
     "projectLink": "https://github.com/Rasoan/portfolio",
     "rating": 10,
+    "benefits": ["International application", "Filters are written in the url, which makes it possible to share a link with pre-filtered projects"],
+    "limitations": ["Raw code, since I have no experience in commercial development", "dirty commit history"],
     "screenshots": []
   }
 ]
