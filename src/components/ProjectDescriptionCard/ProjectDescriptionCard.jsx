@@ -178,7 +178,7 @@ const ProjectDescriptionCard = (props) => {
                 {/*    })}*/}
                 {/*</List>*/}
                 <Box classes={{root: classes.projectDescription}}>
-                    <Typography>Описание тестирую тут</Typography>
+                    <Typography>Описание тестирую или тут</Typography>
                     <Typography>{project.description}</Typography>
                 </Box>
                 <Box>
