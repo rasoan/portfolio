@@ -169,7 +169,6 @@ const ProjectDescriptionCard = (props) => {
                         {project.technologiesUsed.join(", ")}
                     </Typography>
                 </Box>
-
                 {/*<List>*/}
                 {/*    {project.screenshots.map((srcImg, index) => {*/}
                 {/*        return <React.Fragment key={`srcImg-${index}`}>*/}
@@ -178,7 +177,7 @@ const ProjectDescriptionCard = (props) => {
                 {/*    })}*/}
                 {/*</List>*/}
                 <Box classes={{root: classes.projectDescription}}>
-                    <Typography>Описание тестирую или тут</Typography>
+                    <Typography>Описание проекта</Typography>
                     <Typography>{project.description}</Typography>
                 </Box>
                 <Box>
