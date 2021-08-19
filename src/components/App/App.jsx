@@ -5,7 +5,8 @@ import Navigation from "../Navigation";
 import Header from "../Header";
 import Footer from "../Footer";
 import { withTranslation } from 'react-i18next';
-
+import theme from "../../Theme/Theme";
+import {ThemeProvider} from '@material-ui/core/styles';
 
 
 
@@ -46,6 +47,7 @@ const App = () => {
     const classes = useStyles();
 
     return (<>
+        <ThemeProvider theme={theme}>
             <Container
                 className={classes.wrapper}
                 maxWidth={"xl"}
@@ -59,6 +61,7 @@ const App = () => {
                 </div>
                 <Footer/>
             </Container>
+        </ThemeProvider>
     </>);
 };
 

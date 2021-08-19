@@ -1,7 +1,14 @@
 import {createTheme} from "@material-ui/core/styles";
 
 const theme = createTheme({
-    backgroundColors: {
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 520,
+            md: 760,
+            lg: 960,
+            xl: 1280,
+        },
     },
 });
 

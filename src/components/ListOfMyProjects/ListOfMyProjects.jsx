@@ -20,25 +20,24 @@ const useStyles = makeStyles(theme => ({
     listOfMyProjectsItem: {
         position: "relative",
         overflow: "visible",
-        maxWidth: 408,
         marginBottom: theme.spacing(4),
         "&:hover": {
             zIndex: 1,
         },
         [theme.breakpoints.down('xs')]: {
-            height: 400,
+            height: 460,
         },
         [theme.breakpoints.up('sm')]: {
-            height: 410,
+            height: 460,
         },
         [theme.breakpoints.up('md')]: {
-            height: 420,
+            height: 380,
         },
         [theme.breakpoints.up('lg')]: {
-            height: 430,
+            height: 380,
         },
         [theme.breakpoints.up('xl')]: {
-            height: 448,
+            height: 400,
         },
     }
 }))
@@ -100,7 +99,14 @@ const ListOfMyProjects = () => {
         >
             {projects.map((project, index) => {
                 return <React.Fragment key={`project-${index}`}>
-                    <Grid classes={{root: classes.listOfMyProjectsItem}} item xs={4}>
+                    <Grid classes={{root: classes.listOfMyProjectsItem}}
+                          item
+                          xs={12}
+                          sm={12}
+                          md={6}
+                          lg={4}
+                          xl={4}
+                    >
                         <ProjectDescriptionCard project={project}/>
                     </Grid>
                 </React.Fragment>
