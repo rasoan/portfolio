@@ -12,7 +12,7 @@ import {makeStyles} from "@material-ui/core/styles";
 const useStyles = makeStyles(theme => ({
     listOfMyProjects: {
         margin: 0,
-        padding: theme.spacing(3, 0, 25, 0),
+        padding: theme.spacing(3, 0, 50, 0),
         "& $Item": {
             maxWidth: 330,
         },

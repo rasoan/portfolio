@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
 const SortingElements = () => {
     const classes = useStyles()
     const history = useHistory()
-    const [textButtonModal, setTextButtonModal] = useState({text: "Включить сортировку", icon: Sort})
+    const [textButtonModal, setTextButtonModal] = useState({text: "Сортировка", icon: Sort})
 
     const selectSorting = (sortByReleaseDate, sortByRating, content) => {
         setTextButtonModal(content)
@@ -94,7 +94,7 @@ const SortingElements = () => {
                     <ExpandLessIcon className={classes.sortIcon}/> Рейтинг
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={() => selectSorting(null, null, {text: "Включить сортировку", icon: Sort})}>
+                <MenuItem onClick={() => selectSorting(null, null, {text: "Сортировка", icon: Sort})}>
                     <ClearIcon className={classes.sortIcon}/> Выключить сортировку
                 </MenuItem>
             </Menu>
