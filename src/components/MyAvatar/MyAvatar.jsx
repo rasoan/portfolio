@@ -7,18 +7,37 @@ import clsx from 'clsx';
 import {useTranslation} from "react-i18next";
 import imgAvatar from "../../images/araik.png";
 
+const useStyles = makeStyles(theme => ({
+    objectFit: "cover",
+    imageWrapper: {
+    },
+    image: {
+        [theme.breakpoints.down('md')]: {
+            width: 200,
+            height: 400,
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: 75,
+            height: 150,
+        },
+        [theme.breakpoints.down('xs')]: {
+            // width: 240,
+            // height: 500,
+        },
+    }
+}))
 
 const MyAvatar = () => {
-    const {t} = useTranslation();
+    const classes = useStyles()
 
     return <>
-<Box ml="auto" mr={2}>
-            <img className={style.image}
+        <Box ml="auto" mr={2}>
+            <img className={classes.image}
                  width="240"
                  height="500"
                  src={imgAvatar}
                  alt="avatar"/>
-</Box>
+        </Box>
 
     </>
 }

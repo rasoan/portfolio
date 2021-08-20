@@ -43,6 +43,9 @@ const useStyles = makeStyles(theme => ({
         flexWrap: "nowrap",
         padding: "15px 0",
         margin: 0,
+        [theme.breakpoints.down('sm')]: {
+            flexDirection: "column",
+        }
     },
     honest: {
         backgroundColor: theme.palette.grey[50],
@@ -75,14 +78,16 @@ const EssentialInformationAboutMe = () => {
             <Grid container
                   spacing={2}
                   className={clsx(classes.listEssentialInformationAboutMeRow, {[classes.notHonest]: (index % 2 !== 0)}, {[classes.honest]: (index % 2 == 0)})}
-
             >
-                <Grid item xs={3} className={classes.listEssentialInformationAboutMeContainerHeader}>
+                <Grid item md={3} xs={12} className={classes.listEssentialInformationAboutMeContainerHeader}>
                     <Typography
-                        classes={{root: classes.listEssentialInformationAboutMeHeader}}>{object.header} </Typography>
+                        classes={{root: classes.listEssentialInformationAboutMeHeader}}
+                    >
+                        {object.header}
+                    </Typography>
                 </Grid>
                 <Divider orientation="vertical" flexItem/>
-                <Grid item xs={9}>
+                <Grid item md={9} xs={12}>
                     {!Array.isArray(object.description) ? <Typography>{object.description}</Typography> :
                         <List
                             className={clsx({[classes.columnDirectionList]: object.columnDirectionList}, {[classes.rowDirectionList]: !object.columnDirectionList})}>
