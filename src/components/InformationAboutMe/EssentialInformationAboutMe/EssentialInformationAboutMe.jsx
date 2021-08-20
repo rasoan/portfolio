@@ -27,9 +27,6 @@ const useStyles = makeStyles(theme => ({
         color: "white",
         marginRight: theme.spacing(1),
     },
-    listOfKeySkillsItemText: {
-        width: "max-content",
-    },
     listEssentialInformationAboutMeContainerHeader: {
         display: "flex",
         justifyContent: "center",
@@ -38,8 +35,55 @@ const useStyles = makeStyles(theme => ({
     listEssentialInformationAboutMeHeader: {
         fontWeight: "bold",
         textAlign: "center",
+
+        fontSize: 20,
+        [theme.breakpoints.down('lg')]: {
+            fontSize: 18,
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: 16,
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 14,
+        },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 16,
+        },
+
+    },
+    listEssentialInformationAboutMeDescription: {
+        fontSize: 20,
+        [theme.breakpoints.down('lg')]: {
+            fontSize: 18,
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: 16,
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 14,
+        },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 16,
+        },
+    },
+    listOfKeySkillsItemText: {
+        width: "max-content",
+        fontSize: 20,
+        [theme.breakpoints.down('lg')]: {
+            fontSize: 18,
+        },
+        [theme.breakpoints.down('md')]: {
+            fontSize: 16,
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 14,
+        },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 16,
+        },
     },
     listEssentialInformationAboutMeRow: {
+        width: "100%",
         flexWrap: "nowrap",
         padding: "15px 0",
         margin: 0,
@@ -79,7 +123,7 @@ const EssentialInformationAboutMe = () => {
                   spacing={2}
                   className={clsx(classes.listEssentialInformationAboutMeRow, {[classes.notHonest]: (index % 2 !== 0)}, {[classes.honest]: (index % 2 == 0)})}
             >
-                <Grid item md={3} xs={12} className={classes.listEssentialInformationAboutMeContainerHeader}>
+                <Grid item  xs={12} md={4} lg={3} className={classes.listEssentialInformationAboutMeContainerHeader}>
                     <Typography
                         classes={{root: classes.listEssentialInformationAboutMeHeader}}
                     >
@@ -87,8 +131,11 @@ const EssentialInformationAboutMe = () => {
                     </Typography>
                 </Grid>
                 <Divider orientation="vertical" flexItem/>
-                <Grid item md={9} xs={12}>
-                    {!Array.isArray(object.description) ? <Typography>{object.description}</Typography> :
+                <Grid item  xs={12} md={8} lg={9}>
+                    {!Array.isArray(object.description) ?
+                        <Typography classes={{root: classes.listEssentialInformationAboutMeDescription}}>
+                            {object.description}
+                        </Typography> :
                         <List
                             className={clsx({[classes.columnDirectionList]: object.columnDirectionList}, {[classes.rowDirectionList]: !object.columnDirectionList})}>
                             {object.description.map((element, index, array) => {
@@ -98,7 +145,8 @@ const EssentialInformationAboutMe = () => {
                                         [classes.rowDirectionListItem]: !object.columnDirectionList,
                                     })}
                                     >
-                                        <Typography>
+                                        <Typography
+                                            classes={{root: classes.listEssentialInformationAboutMeDescription}}>
                                             {element}
                                             {array.length > 1 && ((index === array.length - 1) ? "." : object.columnDirectionList ? ";" : ",")}
                                         </Typography>
@@ -118,12 +166,12 @@ const EssentialInformationAboutMe = () => {
                   spacing={2}
                   className={clsx(classes.listEssentialInformationAboutMeRow, {[classes.notHonest]: (index % 2 !== 0)}, {[classes.honest]: (index % 2 == 0)})}
             >
-                <Grid item xs={3} className={classes.listEssentialInformationAboutMeContainerHeader}>
+                <Grid item xs={12} md={4} lg={3} className={classes.listEssentialInformationAboutMeContainerHeader}>
                     <Typography
                         classes={{root: classes.listEssentialInformationAboutMeHeader}}>{object.header} </Typography>
                 </Grid>
                 <Divider orientation="vertical" flexItem/>
-                <Grid item xs={9}>
+                <Grid item xs={12} md={8} lg={9}>
                     <List classes={{root: classes.listOfKeySkills}}>
                         {object.description.map((object, index) => {
                             return <React.Fragment key={`description-${index}`}>
