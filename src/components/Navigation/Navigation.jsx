@@ -19,13 +19,12 @@ const drawerWidth = 240;
 const useStyles = makeStyles(theme => ({
     drawer: {
         [theme.breakpoints.up('sm')]: {
-            width: drawerWidth,
+            // maxWidth: drawerWidth,
             flexShrink: 0,
         },
     },
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
-        width: drawerWidth,
         position: "relative",
     },
     wrapperNavigationPanelDesktop: {
@@ -34,8 +33,19 @@ const useStyles = makeStyles(theme => ({
     navigationPanelDesktop: {
         height: "100%",
     },
-    myDrawerPaperDesctop: {
+    myDrawerPaperDesktop: {
         position: "static",
+        width: 200,
+        [theme.breakpoints.down('lg')]: {
+            width: 180,
+        },
+        [theme.breakpoints.down('md')]: {
+            width: 164,
+        },
+
+    },
+    myDrawerPaperMobile: {
+        width: 180,
     }
 }));
 
@@ -71,7 +81,7 @@ const Navigation = () => {
                     open={storeApp.navBar}
                     onClose={() => storeApp.toggleNavbar(false)}
                     classes={{
-                        paper: classes.drawerPaper,
+                        paper: `${classes.drawerPaper} ${classes.myDrawerPaperMobile}`,
                     }}
                     ModalProps={{
                         keepMounted: true, // Better open performance on mobile.
@@ -84,7 +94,7 @@ const Navigation = () => {
                 <Drawer
                     className={classes.navigationPanelDesktop}
                     classes={{
-                        paper: `${classes.drawerPaper} ${classes.myDrawerPaperDesctop}`,
+                        paper: `${classes.drawerPaper} ${classes.myDrawerPaperDesktop}`,
                     }}
                     variant="permanent"
                     open
