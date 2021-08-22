@@ -193,13 +193,17 @@ const FullProjectDescriptionProjectDescription = (props) => {
                 [classes.cardContentWrapperModal]: isCardInModal
             })}>
                 <Box classes={{root: classes.projectLinks}}>
-                    <Link classes={{root: classes.projectLink}}>
+                    <Link classes={{root: classes.projectLink}}
+                          href={project.demoLink} target={"_blank"}
+                    >
                         <IoEyeOutline className={classes.projectLinkIcon}/>
-                        <Typography href={project.demoLink} target={"_blank"}>демо</Typography>
+                        <Typography>демо</Typography>
                     </Link>
-                    <Link classes={{root: classes.projectLink}}>
+                    <Link classes={{root: classes.projectLink}}
+                          href={project.projectLink} target={"_blank"}
+                    >
                         <FiSettings className={classes.projectLinkIcon}/>
-                        <Typography href={project.projectLink} target={"_blank"}>код</Typography>
+                        <Typography>код</Typography>
                     </Link>
                 </Box>
                 <Box borderColor="transparent">
@@ -278,7 +282,7 @@ const ProjectDescriptionCard = (props) => {
         <Button fullWidth
                 color={"primary"}
                 onClick={showModal}
-                startIcon={<SiFurrynetwork />}
+                startIcon={<SiFurrynetwork/>}
         >
             Подробнее
         </Button>
