@@ -4,7 +4,7 @@ const messagesEn = {
     header: "Portfolio",
     navigation: {
         profile: "Profile",
-        projects: "Projects"
+        projects: "projects"
     },
     date: '{{date}}',
     projects: projectsEn,

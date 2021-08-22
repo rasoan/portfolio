@@ -14,7 +14,7 @@ const AppWithRoutes = () => {
     return (<>
         <Switch>
             <Route path={PATH.PROFILE} component={() => <Profile/>}/>
-            {/*<Route path={PATH.PROJECTS} history={history} component={Projects}/>*/}
+            {/*<Route path={PATH.PROJECTS} history={history} component={projects}/>*/}
             <Route path={PATH.PROJECTS} component={Projects}/>
             <Route path={PATH.ALL} render={() => <div>всё!</div>}/>
         </Switch>

@@ -185,7 +185,7 @@ const FullProjectDescriptionProjectDescription = (props) => {
             />
             <CardMedia
                 className={classes.media}
-                image="https://www.accenture.com/t00010101T000000Z__w__/de-de/_acnmedia/Accenture/Redesign-Assets/DotCom/Images/Global/Hero/9/Accenture-Industry-Best-in-Class-Project-Marquee.jpeg"
+                image={"%PUBLIC_URL%/images/projects/Singolo.jpg"}
                 title="тест"
             />
             <Box className={clsx({
