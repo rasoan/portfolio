@@ -185,7 +185,7 @@ const FullProjectDescriptionProjectDescription = (props) => {
             />
             <CardMedia
                 className={classes.media}
-                image={"%PUBLIC_URL%/images/projects/Singolo.jpg"}
+                image={`https://github.com/Rasoan/portfolio/blob/main/src/images/projects/${project.screenshots[0]}?raw=true`}
                 title="тест"
             />
             <Box className={clsx({
