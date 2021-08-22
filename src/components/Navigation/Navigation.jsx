@@ -42,6 +42,9 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('md')]: {
             width: 164,
         },
+        [theme.breakpoints.down('sm')]: {
+            display: "none",
+        },
 
     },
     myDrawerPaperMobile: {

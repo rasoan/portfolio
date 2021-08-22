@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {
     Avatar,
-    Box,
+    Box, Button,
     Card, CardActions,
     CardContent,
     CardHeader,
@@ -20,6 +20,7 @@ import IconButton from "@material-ui/core/IconButton";
 import clsx from "clsx";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {
+    BiAtom,
     BsDot,
     BsInfoCircle,
     FiSettings,
@@ -27,10 +28,21 @@ import {
     GiCheckMark,
     GiTimeTrap,
     IoEyeOutline,
-    MdErrorOutline, TiInputCheckedOutline
+    MdErrorOutline, SiFurrynetwork, TiDocumentText, TiInputCheckedOutline
 } from "react-icons/all";
+import MyModal from "../MyModal";
+import storeModalWindow from "../../store/storeModalWindow";
 
 const useStyles = makeStyles(theme => ({
+    tittleCardWrapper: {
+        fontSize: 30,
+        overflow: "hidden",
+        whiteSpace: "nowrap",
+    },
+    tittleCardHeader: {
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+    },
     projectLinks: {
         display: "flex",
         justifyContent: "space-between",
@@ -46,29 +58,37 @@ const useStyles = makeStyles(theme => ({
         marginRight: 6,
     },
     card: {
-        zIndex: -1,
-        overflow: "hidden",
-        maxHeight: "100%",
-        transition: theme.transitions.create('max-height', {
-            duration: theme.transitions.duration.standard,
-        }),
         "&:hover": {
-            maxHeight: 800,
             cursor: "pointer",
-            zIndex: 2,
+        }
+    },
+    cardModal: {
+        overflowY: "scroll",
+        width: 450,
+        maxHeight: 550,
+        // xs: 0,
+        // sm: 400,
+        // md: 600,
+        // lg: 760,
+        // xl: 1280,
+        // [theme.breakpoints.down('lg')]: {
+        //     width: 400,
+        //     height: 500,
+        // },
+        [theme.breakpoints.down('md')]: {
+            width: 400,
+            height: 550,
         },
-        "&:hover $visibleAndHiddenBlock": {
-            visibility: "visible",
+        [theme.breakpoints.down('sm')]: {
+            width: 360,
+            height: 500,
+        },
+        [theme.breakpoints.down('xs')]: {
+            width: 280,
+            height: 400,
         },
     },
-    visibleAndHiddenBlock: {
-        visibility: "hidden",
-        transition: "visibility 100ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
-        transitionDelay: "150ms",
-    },
-    projectTechnlologiesWrapper: {
-        marginBottom: 10,
-    },
+    visibleAndHiddenBlock: {},
     media: {
         height: 0,
         paddingTop: '56.25%', // 16:9
@@ -88,9 +108,6 @@ const useStyles = makeStyles(theme => ({
     },
     unfinishedProjectAvatar: {
         backgroundColor: red[500],
-    },
-    greedyCardContent: {
-        minHeight: 200,
     },
     projectDescriptionWrapper: {},
     characteristicsHeaderIcon: {
@@ -115,19 +132,46 @@ const useStyles = makeStyles(theme => ({
     },
 
     characteristicsItemText: {},
+    technologiesUsed: {
+        marginBottom: 20,
+        overflow: "hidden",
+        textOverflow: "ellipsis",
+        whiteSpace: "nowrap",
+        [theme.breakpoints.down('md')]: {
+            maxWidth: 225,
+        },
+        [theme.breakpoints.down('sm')]: {
+            maxWidth: 304,
+        },
+        [theme.breakpoints.down('xs')]: {
+            maxWidth: 225,
+        },
+    },
+    cardContentWrapper: {
+        padding: theme.spacing(2, 2, 1, 2)
+    },
+    cardContentWrapperModal: {
+        padding: theme.spacing(2)
+    },
 }))
 
 
-const ProjectDescriptionCard = (props) => {
+const FullProjectDescriptionProjectDescription = (props) => {
+    const {
+        buttonShowMoreInfo = null,
+        isCardInModal = false
+    } = props
     const classes = useStyles()
     const {project} = props
 
-
     return <>
-        <Card className={classes.card}
-
+        <Card className={clsx({[classes.cardModal]: isCardInModal})}
         >
             <CardHeader
+                classes={{
+                    content: classes.tittleCardWrapper,
+                    title: classes.tittleCardHeader
+                }}
                 avatar={
                     <Avatar
                         aria-label="recipe"
@@ -142,9 +186,12 @@ const ProjectDescriptionCard = (props) => {
             <CardMedia
                 className={classes.media}
                 image="https://www.accenture.com/t00010101T000000Z__w__/de-de/_acnmedia/Accenture/Redesign-Assets/DotCom/Images/Global/Hero/9/Accenture-Industry-Best-in-Class-Project-Marquee.jpeg"
-                title="Paella dish"
+                title="тест"
             />
-            <CardContent classes={{root: classes.greedyCardContent}}>
+            <Box className={clsx({
+                [classes.cardContentWrapper]: !isCardInModal,
+                [classes.cardContentWrapperModal]: isCardInModal
+            })}>
                 <Box classes={{root: classes.projectLinks}}>
                     <Link classes={{root: classes.projectLink}}>
                         <IoEyeOutline className={classes.projectLinkIcon}/>
@@ -158,55 +205,91 @@ const ProjectDescriptionCard = (props) => {
                 <Box borderColor="transparent">
                     <Rating name="read-only" value={project.rating} readOnly/>
                 </Box>
-                <Box classes={{root: classes.projectTechnlologiesWrapper}}>
-                    <Typography>
-                        {project.technologiesUsed.join(", ")}
-                    </Typography>
-                </Box>
-                <Box className={classes.visibleAndHiddenBlock}>
-                    <Box classes={{root: classes.projectDescriptionWrapper}}>
-                        <Box display={"flex"} alignItems={"center"}>
-                            <BsInfoCircle className={classes.projectDescriptionTitleIcon}/>
-                            <Typography className={classes.projectDescriptionTitle}>Описание проекта</Typography>
+                <Typography className={clsx({[classes.technologiesUsed]: !isCardInModal})}>
+                    {project.technologiesUsed.join(", ")}
+                </Typography>
+                {isCardInModal && <>
+                    <Box className={classes.visibleAndHiddenBlock}>
+                        <Box classes={{root: classes.projectDescriptionWrapper}}>
+                            <Box display={"flex"} alignItems={"center"}>
+                                <BsInfoCircle className={classes.projectDescriptionTitleIcon}/>
+                                <Typography className={classes.projectDescriptionTitle}>Описание проекта</Typography>
+                            </Box>
+                            <Typography className={classes.projectDescription}>{project.description}</Typography>
                         </Box>
-                        <Typography className={classes.projectDescription}>{project.description}</Typography>
+                        <Box>
+                            <Box display={"flex"} alignItems={"center"}>
+                                <GiAchievement className={classes.characteristicsHeaderIcon}/>
+                                <Typography
+                                    classes={{root: classes.characteristicsHeaderText}}>Преимущества</Typography>
+                            </Box>
+                            <ul className={classes.characteristicsList}
+                            >
+                                {project.benefits.map((advantage, index) => {
+                                    return <React.Fragment key={`advantage-${index}`}>
+                                        <li classes={{root: classes.characteristicsItem}}>
+                                            <Typography
+                                                classes={{root: classes.characteristicsItemText}}>{advantage}</Typography>
+                                        </li>
+                                    </React.Fragment>
+                                })}
+                            </ul>
+                            <Box display={"flex"} alignItems={"center"}>
+                                <MdErrorOutline className={classes.characteristicsHeaderIcon}/>
+                                <Typography classes={{root: classes.characteristicsHeaderText}}>Недостатки</Typography>
+                            </Box>
+                        </Box>
                     </Box>
-                    <Box>
-                        <Box display={"flex"} alignItems={"center"}>
-                            <GiAchievement className={classes.characteristicsHeaderIcon}/>
-                            <Typography classes={{root: classes.characteristicsHeaderText}}>Преимущества</Typography>
-                        </Box>
-                        <ul className={classes.characteristicsList}
-                        >
-                            {project.benefits.map((advantage, index) => {
-                                return <React.Fragment key={`advantage-${index}`}>
-                                    <li classes={{root: classes.characteristicsItem}}>
-                                        <Typography
-                                            classes={{root: classes.characteristicsItemText}}>{advantage}</Typography>
-                                    </li>
-                                </React.Fragment>
-                            })}
-                        </ul>
-                        <Box display={"flex"} alignItems={"center"}>
-                            <MdErrorOutline className={classes.characteristicsHeaderIcon}/>
-                            <Typography classes={{root: classes.characteristicsHeaderText}}>Недостатки</Typography>
-                        </Box>
-                        <ul className={classes.characteristicsList}
-                        >
-                            {project.limitations.map((flaw, index) => {
-                                return <React.Fragment key={`flaw-${index}`}>
-                                    <li classes={{root: classes.characteristicsItem}}>
-                                        <Typography
-                                            classes={{root: classes.characteristicsItemText}}>{flaw}</Typography>
-                                    </li>
-                                </React.Fragment>
-                            })}
-                        </ul>
-                    </Box>
-                </Box>
-            </CardContent>
-
+                    <ul className={classes.characteristicsList}
+                    >
+                        {project.limitations.map((flaw, index) => {
+                            return <React.Fragment key={`flaw-${index}`}>
+                                <li className={{root: classes.characteristicsItem}}>
+                                    <Typography
+                                        classes={{root: classes.characteristicsItemText}}>{flaw}</Typography>
+                                </li>
+                            </React.Fragment>
+                        })}
+                    </ul>
+                </>}
+                {buttonShowMoreInfo}
+            </Box>
         </Card>
+    </>
+}
+
+
+const ProjectDescriptionCard = (props) => {
+    const {project} = props
+
+    const showModal = () => {
+        storeModalWindow.setContent(
+            <>
+                <FullProjectDescriptionProjectDescription
+                    project={project}
+                    isCardInModal={true}
+                />
+            </>
+        )
+        storeModalWindow.toggle(true)
+    }
+
+    const buttonShowMoreInfo = <>
+        <Button fullWidth
+                color={"primary"}
+                onClick={showModal}
+                startIcon={<SiFurrynetwork />}
+        >
+            Подробнее
+        </Button>
+    </>
+
+
+    return <>
+        <FullProjectDescriptionProjectDescription
+            project={project}
+            buttonShowMoreInfo={buttonShowMoreInfo}
+        />
     </>
 }
 
