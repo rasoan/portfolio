@@ -38,7 +38,9 @@ const SortingElements = () => {
 
     const selectSorting = (sortByReleaseDate, sortByRating, content) => {
         setTextButtonModal(content)
-        const showProjectsWithTechnologiesUrl = storeFilterProjects.showProjectsWithTechnologies.length > 0 ? `&showProjectsWithTechnologies=${storeFilterProjects.showProjectsWithTechnologies}` : ""
+        const showProjectsWithTechnologiesUrl = storeFilterProjects.showProjectsWithTechnologies.length > 0 &&
+            storeFilterProjects.showProjectsWithTechnologies.length !== storeFilterProjects.allProjectsWithTechnologies.length ?
+            `&showProjectsWithTechnologies=${storeFilterProjects.showProjectsWithTechnologies}` : ""
         if (sortByReleaseDate) {
             history.push(`?sortByReleaseDate=${sortByReleaseDate}${showProjectsWithTechnologiesUrl}`)
             storeFilterProjects.selectSorting("sortByReleaseDate", sortByReleaseDate)

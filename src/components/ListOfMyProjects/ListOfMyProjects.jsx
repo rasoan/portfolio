@@ -54,8 +54,9 @@ const sortProjects = (projects, sorting) => {
     return projects
 }
 
-const filterProjects = (projects, showProjectsWithTechnologies) => {
+const filterProjects = (projects, showProjectsWithTechnologies, allProjectsWithTechnologies) => {
     let result = []
+    if (showProjectsWithTechnologies.length === allProjectsWithTechnologies.length) return projects
     result = projects.filter(project => {
         let flag = false
         showProjectsWithTechnologies.forEach(technology => {
@@ -72,7 +73,7 @@ const ListOfMyProjects = () => {
     const classes = useStyles();
     const {t} = useTranslation();
     let projects = t('projects', {returnObjects: true});
-    projects = filterProjects(projects, storeFilterProjects.showProjectsWithTechnologies)
+    projects = filterProjects(projects, storeFilterProjects.showProjectsWithTechnologies, storeFilterProjects.allProjectsWithTechnologies)
     projects = sortProjects(projects, storeFilterProjects.sorting)
 
     return <>

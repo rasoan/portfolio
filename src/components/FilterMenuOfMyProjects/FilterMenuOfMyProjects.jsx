@@ -40,7 +40,6 @@ const FilterMenuOfMyProjects = () => {
         const sortByReleaseDate = query.get("sortByReleaseDate")
         const sortByRating = query.get("sortByRating")
         const showProjectsWithTechnologies = query.get("showProjectsWithTechnologies")
-        const defaultShowProjectsWithTechnologies = ["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript", "Bootstrap"].join()
 
         if (sortByReleaseDate) {
             storeFilterProjects.selectSorting("sortByReleaseDate", sortByReleaseDate)
@@ -53,16 +52,15 @@ const FilterMenuOfMyProjects = () => {
         if (showProjectsWithTechnologies) {
             storeFilterProjects.manageShowProjectsWithTechnologies(showProjectsWithTechnologies)
         } else {
-            storeFilterProjects.manageShowProjectsWithTechnologies(defaultShowProjectsWithTechnologies)
+            storeFilterProjects.resetFilterProjectsWithTechnologies()
         }
     }, [])
+
 
     return <>
         <Paper classes={{root: classes.filtersContainer}}>
             <Typography>Панель управления</Typography>
-            <List classes={{root: classes.filtersAndSortingList}}
-            >
-
+            <List classes={{root: classes.filtersAndSortingList}}>
                 <ListItem
                     classes={{root: classes.filtersAndSortingListItem}}
                 >

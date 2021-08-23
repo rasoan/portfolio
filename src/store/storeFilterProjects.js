@@ -1,6 +1,6 @@
 import React from "react"
 import {action, makeObservable, observable} from "mobx"
-
+import projects from "../translations/messages/projects/projectsRu.json"
 
 class storeFilterProjects {
     sorting = [
@@ -15,7 +15,12 @@ class storeFilterProjects {
             ascending: false,
         },
     ]
-    showProjectsWithTechnologies = ["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript", "Bootstrap"]
+
+    allProjectsWithTechnologies = Array.from(new Set(projects.map(project => project.technologiesUsed).reduce((prev, next) => {
+      return [...prev, ...next]
+    }, [])))
+
+    showProjectsWithTechnologies = this.allProjectsWithTechnologies
 
     selectSorting = (name, ascending) => {
         this.sorting = this.sorting.map(element => {
@@ -43,12 +48,26 @@ class storeFilterProjects {
         }
     }
 
+    resetFilterProjectsWithTechnologies = () => {
+        this.showProjectsWithTechnologies = this.allProjectsWithTechnologies
+    }
+
+    clearFilterProjectsWithTechnologies = () => {
+        this.showProjectsWithTechnologies.length = 0
+    }
+
+
+
+
     constructor() {
         makeObservable(this, {
+            allProjectsWithTechnologies: observable,
             sorting: observable,
             showProjectsWithTechnologies: observable,
             selectSorting: action,
             manageShowProjectsWithTechnologies: action,
+            resetFilterProjectsWithTechnologies: action,
+            clearFilterProjectsWithTechnologies: action,
         })
     }
 }

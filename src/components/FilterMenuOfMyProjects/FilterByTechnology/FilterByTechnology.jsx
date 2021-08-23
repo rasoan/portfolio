@@ -110,8 +110,12 @@ const FilterByTechnology = () => {
     }
 
     const addTechnologies = (technologies) => {
+        // if (technologies.length === 0) {
+        //     storeFilterProjects.resetFilterProjectsWithTechnologies()
+        // }
         storeFilterProjects.manageShowProjectsWithTechnologies(technologies)
-        const showProjectsWithTechnologiesUrl = storeFilterProjects.showProjectsWithTechnologies.length > 0 ?
+        const showProjectsWithTechnologiesUrl = storeFilterProjects.showProjectsWithTechnologies.length > 0 &&
+        storeFilterProjects.showProjectsWithTechnologies.length !== storeFilterProjects.allProjectsWithTechnologies.length ?
             `&showProjectsWithTechnologies=${storeFilterProjects.showProjectsWithTechnologies}` : ""
 
         const sorting = storeFilterProjects.sorting.find(project => project.switched)
@@ -145,7 +149,7 @@ const FilterByTechnology = () => {
             <FormControl component="fieldset" className={classes.formControl}>
                 <FormLabel component="legend">Используемые технологии</FormLabel>
                 <FormGroup>
-                    {["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript", "Bootstrap"].map((technology, index) => {
+                    {storeFilterProjects.allProjectsWithTechnologies.map((technology, index) => {
                         return <FormControlLabel
                             key={`${technology}-${index}`}
                             checked={(new Set(storeFilterProjects.showProjectsWithTechnologies)).has(technology)}
@@ -159,7 +163,7 @@ const FilterByTechnology = () => {
                     Сброс
                 </Button>
                 <Button color="primary"
-                        onClick={() => addTechnologies(["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript", "Bootstrap"])}>
+                        onClick={() => addTechnologies(storeFilterProjects.allProjectsWithTechnologies)}>
                     Выбрать всё
                 </Button>
             </FormControl>
