@@ -51,44 +51,78 @@ const useStyles = makeStyles((theme) => ({
 
 const FilterByTechnology = () => {
     const classes = useStyles();
-    const [listTechnologies, setListTechnologies] = React.useState(new Set(storeFilterProjects.showProjectsWithTechnologies));
+    // const [listTechnologies, setListTechnologies] = React.useState(new Set(storeFilterProjects.showProjectsWithTechnologies));
     const [anchorEl, setAnchorEl] = React.useState(null);
     const history = useHistory()
 
-    useEffect(() => {
-        setListTechnologies(new Set(storeFilterProjects.showProjectsWithTechnologies))
-    }, [storeFilterProjects.showProjectsWithTechnologies])
+    // useEffect(() => {
+    //     setListTechnologies(new Set(storeFilterProjects.showProjectsWithTechnologies))
+    // }, [storeFilterProjects.showProjectsWithTechnologies])
 
-    const handleChange = (event) => {
+    // const handleChange = (event) => { // выбрал чекбокс
+    //     if (event.target.checked) {
+    //         setListTechnologies(prevState => {
+    //             const newState = new Set(prevState)
+    //             newState.add(event.target.name)
+    //             return newState
+    //         });
+    //     }
+    //
+    //     if (!event.target.checked) {
+    //         setListTechnologies(prevState => {
+    //             const newState = new Set(prevState)
+    //             newState.delete(event.target.name)
+    //             return newState
+    //         });
+    //     }
+    // };
+
+    // const selectTechnologies = () => {// клик по кнопке
+    //     storeFilterProjects.manageShowProjectsWithTechnologies(Array.from(listTechnologies))
+    //     const showProjectsWithTechnologiesUrl = storeFilterProjects.showProjectsWithTechnologies.length > 0 ?
+    //         `&showProjectsWithTechnologies=${storeFilterProjects.showProjectsWithTechnologies}` : ""
+    //     const sorting = storeFilterProjects.sorting.find(project => project.switched)
+    //     if (sorting) {
+    //         history.push(`?${sorting.name}=${sorting.ascending}${showProjectsWithTechnologiesUrl}`)
+    //     } else {
+    //         history.push(`?${showProjectsWithTechnologiesUrl}`)
+    //     }
+    //
+    //     setAnchorEl(null)
+    // }
+
+    const selectTechnologiesTest = (event) => {
+        const newSet = new Set(storeFilterProjects.showProjectsWithTechnologies)
+
         if (event.target.checked) {
-            setListTechnologies(prevState => {
-                const newState = new Set(prevState)
-                newState.add(event.target.name)
-                return newState
-            });
+            newSet.add(event.target.name)
+        } else {
+            newSet.delete(event.target.name)
         }
 
-        if (!event.target.checked) {
-            setListTechnologies(prevState => {
-                const newState = new Set(prevState)
-                newState.delete(event.target.name)
-                return newState
-            });
-        }
-    };
+        addTechnologies(Array.from(newSet))
 
-    const selectTechnologies = () => {
-        storeFilterProjects.manageShowProjectsWithTechnologies(Array.from(listTechnologies))
+
+        // storeFilterProjects.showProjectsWithTechnologies
+        // storeFilterProjects.manageShowProjectsWithTechnologies(Array.from())
+        // event.target.checked
+        // event.target.name
+    }
+
+    const addTechnologies = (technologies) => {
+        storeFilterProjects.manageShowProjectsWithTechnologies(technologies)
         const showProjectsWithTechnologiesUrl = storeFilterProjects.showProjectsWithTechnologies.length > 0 ?
             `&showProjectsWithTechnologies=${storeFilterProjects.showProjectsWithTechnologies}` : ""
+
         const sorting = storeFilterProjects.sorting.find(project => project.switched)
+
         if (sorting) {
             history.push(`?${sorting.name}=${sorting.ascending}${showProjectsWithTechnologiesUrl}`)
         } else {
             history.push(`?${showProjectsWithTechnologiesUrl}`)
         }
 
-        setAnchorEl(null)
+
     }
 
     return <>
@@ -114,28 +148,21 @@ const FilterByTechnology = () => {
                     {["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript", "Bootstrap"].map((technology, index) => {
                         return <FormControlLabel
                             key={`${technology}-${index}`}
-                            checked={listTechnologies.has(technology)}
+                            checked={(new Set(storeFilterProjects.showProjectsWithTechnologies)).has(technology)}
                             control={<Checkbox color="default" classes={{root: classes.checkBox}}
-                                               onChange={handleChange} name={technology}/>}
+                                               onChange={selectTechnologiesTest} name={technology}/>}
                             label={technology}
                         />
                     })}
                 </FormGroup>
-                <Button color="secondary" onClick={() => setListTechnologies(new Set())}>
+                <Button color="secondary" onClick={() => addTechnologies([])}>
                     Сброс
                 </Button>
                 <Button color="primary"
-                        onClick={() => setListTechnologies(new Set(["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript", "Bootstrap"]))}>
+                        onClick={() => addTechnologies(["HTML", "SCSS", "JavaScript", "React", "Material-ui", "i18next", "TypeScript", "Bootstrap"])}>
                     Выбрать всё
                 </Button>
             </FormControl>
-            <Button variant="outlined"
-                    color="primary"
-                    className={classes.buttonMenuSort}
-                    onClick={selectTechnologies}>
-                <DoneAll className={classes.filterListIcon}/>
-                <Typography color={"textPrimary"} className={classes.textButtonFilter}>Отобразить</Typography>
-            </Button>
         </Menu>
 
     </>
