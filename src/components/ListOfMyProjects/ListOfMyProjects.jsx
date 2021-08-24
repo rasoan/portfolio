@@ -1,15 +1,12 @@
 import React from "react";
-import style from "./style.module.scss"
 import {useTranslation} from "react-i18next";
-import {Box, Button, Grid, Link, ListItem, Paper, Typography} from "@material-ui/core";
-import List from "@material-ui/core/List";
+import {Grid} from "@material-ui/core";
 import storeFilterProjects from "../../store/storeFilterProjects";
 import {observer} from "mobx-react";
 import {convertStringToDate} from "../../additionalFunctions/additionalFunctions"
 import ProjectDescriptionCard from "../ProjectDescriptionCard";
 import {makeStyles} from "@material-ui/core/styles";
 import MyModal from "../MyModal";
-import storeModalWindow from "../../store/storeModalWindow";
 
 const useStyles = makeStyles(theme => ({
     listOfMyProjects: {
@@ -80,8 +77,7 @@ const ListOfMyProjects = () => {
         <MyModal/>
         <Grid
             container
-            xs={12}
-        >
+            xs={12}>
             {projects.map((project, index) => {
                 return <React.Fragment key={`project-${index}`}>
                     <Grid
