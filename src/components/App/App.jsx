@@ -39,6 +39,18 @@ const useStyles = makeStyles(theme => ({
     mainContainerContent: {
         flexGrow: 1,
         padding: theme.spacing(3),
+        [theme.breakpoints.down('lg')]: {
+            padding: theme.spacing(2),
+        },
+        [theme.breakpoints.down('md')]: {
+            padding: theme.spacing(1),
+        },
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 12,
+        },
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 8,
+        },
     },
     toolbar: theme.mixins.toolbar,
 }));

@@ -188,13 +188,13 @@ function Header() {
                                     {languages["ru-RU"].name}
                                 </MenuItem>
                             </Menu>
-                            <Switch
-                                className={classes.themeBlackAndWhiteFormControl}
-                                checked={theme}
-                                onChange={event => setTheme(event.target.checked)}
-                                color="primary"
-                                name="checkedA"
-                            />
+                            {/*<Switch*/}
+                            {/*    className={classes.themeBlackAndWhiteFormControl}*/}
+                            {/*    checked={theme}*/}
+                            {/*    onChange={event => setTheme(event.target.checked)}*/}
+                            {/*    color="primary"*/}
+                            {/*    name="checkedA"*/}
+                            {/*/>*/}
                         </Box>
                     </Box>
                 </Toolbar>

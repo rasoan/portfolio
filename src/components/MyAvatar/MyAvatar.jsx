@@ -12,17 +12,22 @@ const useStyles = makeStyles(theme => ({
     imageWrapper: {
     },
     image: {
+        objectFit: "contain",
+        [theme.breakpoints.down('lg')]: {
+            width: 150,
+            height: 300,
+        },
         [theme.breakpoints.down('md')]: {
-            width: 200,
-            height: 400,
+            width: 150,
+            height: 250,
         },
         [theme.breakpoints.down('sm')]: {
-            width: 75,
-            height: 150,
+            width: 128,
+            height: 290,
         },
         [theme.breakpoints.down('xs')]: {
-            // width: 240,
-            // height: 500,
+            width: 100,
+            height: 190,
         },
     }
 }))
