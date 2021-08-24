@@ -53,10 +53,8 @@ const useStyles = makeStyles(theme => ({
 const SortingElements = () => {
     const classes = useStyles()
     const history = useHistory()
-    const [textButtonModal, setTextButtonModal] = useState({text: "Сортировка", icon: Sort})
 
-    const selectSorting = (sortByReleaseDate, sortByRating, content) => {
-        setTextButtonModal(content)
+    const selectSorting = (sortByReleaseDate, sortByRating) => {
         const showProjectsWithTechnologiesUrl = storeFilterProjects.showProjectsWithTechnologies.length > 0 &&
             storeFilterProjects.showProjectsWithTechnologies.length !== storeFilterProjects.allProjectsWithTechnologies.length ?
             `&showProjectsWithTechnologies=${storeFilterProjects.showProjectsWithTechnologies}` : ""
@@ -78,7 +76,7 @@ const SortingElements = () => {
     const open = Boolean(anchorEl);
 
     return <>
-            <Button startIcon={<textButtonModal.icon className={classes.buttonShowModalIcon} />}
+            <Button startIcon={<Sort className={classes.buttonShowModalIcon} />}
                 className={classes.buttonShowModal}
                     aria-controls="fade-menu"
                     aria-haspopup="true"
@@ -89,7 +87,7 @@ const SortingElements = () => {
 
                 <Typography color={"textPrimary"}
                             className={classes.buttonShowModalText}>
-                    {textButtonModal.text}
+                    Сортировка
                 </Typography>
             </Button>
             <Menu
@@ -101,31 +99,31 @@ const SortingElements = () => {
                 TransitionComponent={Fade}
             >
                 <MenuItem className={classes.menuSortItem}
-                    onClick={() => selectSorting("true", null, {text: "Дата", icon: ExpandMoreIcon})}>
+                    onClick={() => selectSorting("true", null)}>
                     <ExpandMoreIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>Дата</Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
-                          onClick={() => selectSorting("false", null, {text: "Дата", icon: ExpandLessIcon})}>
+                          onClick={() => selectSorting("false", null)}>
                     <ExpandLessIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>Дата</Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
-                          onClick={() => selectSorting(null, "true", {text: "Рейтинг", icon: ExpandMoreIcon})}>
+                          onClick={() => selectSorting(null, "true")}>
                     <ExpandMoreIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>Рейтинг</Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
-                    onClick={() => selectSorting(null, "false", {text: "Рейтинг", icon: ExpandLessIcon})}>
+                    onClick={() => selectSorting(null, "false")}>
                     <ExpandLessIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>Рейтинг</Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
-                    onClick={() => selectSorting(null, null, {text: "Сортировка", icon: Sort})}>
+                    onClick={() => selectSorting(null, null)}>
                     <ClearIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>Выключить сортировку</Typography>
                 </MenuItem>
