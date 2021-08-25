@@ -102,7 +102,7 @@ const SortingElements = () => {
             >
                 <MenuItem className={classes.menuSortItem}
                     onClick={() => selectSorting("true", null)}>
-                    <ExpandMoreIcon className={classes.sortIcon}/>
+                    <ExpandLessIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.date')}
                     </Typography>
@@ -110,7 +110,7 @@ const SortingElements = () => {
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                           onClick={() => selectSorting("false", null)}>
-                    <ExpandLessIcon className={classes.sortIcon}/>
+                    <ExpandMoreIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.date')}
                     </Typography>
@@ -118,7 +118,7 @@ const SortingElements = () => {
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                           onClick={() => selectSorting(null, "true")}>
-                    <ExpandMoreIcon className={classes.sortIcon}/>
+                    <ExpandLessIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.rating')}
                     </Typography>
@@ -126,7 +126,7 @@ const SortingElements = () => {
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                     onClick={() => selectSorting(null, "false")}>
-                    <ExpandLessIcon className={classes.sortIcon}/>
+                    <ExpandMoreIcon className={classes.sortIcon}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.rating')}
                     </Typography>
