@@ -14,15 +14,15 @@ const useStyles = makeStyles(theme => ({
     itemContacts: {},
     itemContactsLinkSocial: {},
     informationWrapper: {
-        marginLeft: 20,
+        // marginLeft: 20,
         [theme.breakpoints.down('md')]: {
-            marginLeft: 16,
+            // marginLeft: 16,
         },
         [theme.breakpoints.down('sm')]: {
-            marginLeft: 10,
+            // marginLeft: 10,
         },
         [theme.breakpoints.down('xs')]: {
-            marginLeft: 4,
+            // marginLeft: 4,
         },
     },
     listItemFullName: {
@@ -114,7 +114,7 @@ const BriefInformationAboutMe = () => {
     const {t} = useTranslation();
 
 
-    return <Box classes={{root: classes.informationWrapper}}>
+    return <Box mx={"auto"} classes={{root: classes.informationWrapper}}>
         <List className={classes.list}>
             <ListItem className={clsx(classes.listItem, classes.listItemFullName)}>
                 <Typography component={"h4"} classes={{root: classes.fullName}}>

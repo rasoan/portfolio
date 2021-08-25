@@ -9,10 +9,6 @@ import theme from "../../Theme/Theme";
 import {ThemeProvider} from '@material-ui/core/styles';
 
 
-
-
-
-
 const useStyles = makeStyles(theme => ({
     wrapper: {
         height: "100%",
@@ -20,36 +16,15 @@ const useStyles = makeStyles(theme => ({
         display: "flex",
         flexDirection: "column",
         padding: 0,
-        // [theme.breakpoints.up('xs')]: {
-        //     maxWidth: 576,
-        // },
-        // [theme.breakpoints.up('sm')]: {
-        //     maxWidth: 768,
-        // },
-        // [theme.breakpoints.up('md')]: {
-        //     maxWidth: 1192,
-        // },
-        // [theme.breakpoints.up('lg')]: {
-        //     maxWidth: 1400,
-        // },
-        // [theme.breakpoints.up('xl')]: {
-        //     maxWidth: 1600,
-        // },
     },
     mainContainerContent: {
         flexGrow: 1,
-        padding: theme.spacing(3),
+        padding: theme.spacing(4),
         [theme.breakpoints.down('lg')]: {
-            padding: theme.spacing(2),
+            padding: theme.spacing(3),
         },
         [theme.breakpoints.down('md')]: {
-            padding: theme.spacing(1),
-        },
-        [theme.breakpoints.down('sm')]: {
-            fontSize: 12,
-        },
-        [theme.breakpoints.down('xs')]: {
-            fontSize: 8,
+            padding: theme.spacing(2),
         },
     },
     toolbar: theme.mixins.toolbar,

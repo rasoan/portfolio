@@ -7,8 +7,7 @@ import clsx from "clsx";
 
 const useStyles = makeStyles(theme => ({
     listEssentialInformationAboutMeContainer: {
-        margin: theme.spacing(4),
-        padding: 0,
+        margin: theme.spacing(2, 0),
         overflow: "hidden",
     },
     listOfKeySkills: {

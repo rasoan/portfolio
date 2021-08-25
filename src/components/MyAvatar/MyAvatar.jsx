@@ -36,7 +36,7 @@ const MyAvatar = () => {
     const classes = useStyles()
 
     return <>
-        <Box ml="auto" mr={2}>
+        <Box mx="auto">
             <img className={classes.image}
                  width="240"
                  height="500"
