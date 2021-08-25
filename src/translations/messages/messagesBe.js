@@ -25,7 +25,7 @@ const messagesBe = {
             },
             {
                 header: "Дата нараджэння:",
-                description: "1993/03/21",
+                description: "21.03.1993",
             },
             {
                 header: "Тэлефон:",

@@ -25,7 +25,7 @@ const messagesEn = {
             },
             {
                 header: "Date of birth:",
-                description: "03/21/1993",
+                description: "21.03.1993",
             },
             {
                 header: "Phone:",
