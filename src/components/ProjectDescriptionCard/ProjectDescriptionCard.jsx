@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from "react";
 import {
     Avatar,
     Box, Button,
-    Card, CardActions,
+    Card, CardActionArea, CardActions,
     CardContent,
     CardHeader,
     CardMedia, Collapse,
@@ -160,35 +160,38 @@ const useStyles = makeStyles(theme => ({
 const FullProjectDescriptionProjectDescription = (props) => {
     const {
         buttonShowMoreInfo = null,
-        isCardInModal = false
+        isCardInModal = false,
+        showModal = () => {}
     } = props
     const classes = useStyles()
     const {project} = props
 
     return <>
-
         <Card className={clsx({[classes.cardModal]: isCardInModal})}>
-            <CardHeader
-                classes={{
-                    content: classes.tittleCardWrapper,
-                    title: classes.tittleCardHeader,
-                }}
-                avatar={
-                    <Avatar
-                        aria-label="recipe"
-                        className={clsx({[classes.completedProjectAvatar]: !!project.releaseDate.done},
-                            {[classes.unfinishedProjectAvatar]: !project.releaseDate.done})}>
-                        {!!project.releaseDate.done ? <GiCheckMark /> : <GiTimeTrap />}
-                    </Avatar>
-                }
-                title={project.title}
-                subheader={project.releaseDate.date}
-            />
-            <CardMedia
-                className={classes.media}
-                image={require(`../../images/projects/${project.screenshots[0]}`).default}
-                title="тест"
-            />
+            <CardActionArea disabled={isCardInModal ? true: false}
+                            onClick={!isCardInModal ? showModal: () => {}}>
+                <CardHeader
+                    classes={{
+                        content: classes.tittleCardWrapper,
+                        title: classes.tittleCardHeader,
+                    }}
+                    avatar={
+                        <Avatar
+                            aria-label="recipe"
+                            className={clsx({[classes.completedProjectAvatar]: !!project.releaseDate.done},
+                                {[classes.unfinishedProjectAvatar]: !project.releaseDate.done})}>
+                            {!!project.releaseDate.done ? <GiCheckMark/> : <GiTimeTrap/>}
+                        </Avatar>
+                    }
+                    title={project.title}
+                    subheader={project.releaseDate.date}
+                />
+                <CardMedia
+                    className={classes.media}
+                    image={require(`../../images/projects/${project.screenshots[0]}`).default}
+                    title={project.title}
+                />
+            </CardActionArea>
             <Box className={clsx({
                 [classes.cardContentWrapper]: !isCardInModal,
                 [classes.cardContentWrapperModal]: isCardInModal
@@ -212,7 +215,7 @@ const FullProjectDescriptionProjectDescription = (props) => {
                     </Link>
                 </Box>
                 <Box borderColor="transparent">
-                    <Rating name="read-only" value={project.rating} readOnly />
+                    <Rating name="read-only" value={project.rating} readOnly/>
                 </Box>
                 <Typography className={clsx({[classes.technologiesUsed]: !isCardInModal})}>
                     {project.technologiesUsed.join(", ")}
@@ -222,9 +225,11 @@ const FullProjectDescriptionProjectDescription = (props) => {
                         <Box classes={{root: classes.projectDescriptionWrapper}}>
                             <Box display={"flex"} alignItems={"center"}>
                                 <BsInfoCircle className={classes.projectDescriptionTitleIcon}/>
-                                <Typography className={classes.projectDescriptionTitle}>{project.description.header}</Typography>
+                                <Typography
+                                    className={classes.projectDescriptionTitle}>{project.description.header}</Typography>
                             </Box>
-                            <Typography className={classes.projectDescription}>{project.description.description}</Typography>
+                            <Typography
+                                className={classes.projectDescription}>{project.description.description}</Typography>
                         </Box>
                         <Box>
                             <Box display={"flex"} alignItems={"center"}>
@@ -245,7 +250,8 @@ const FullProjectDescriptionProjectDescription = (props) => {
                             </ul>
                             <Box display={"flex"} alignItems={"center"}>
                                 <MdErrorOutline className={classes.characteristicsHeaderIcon}/>
-                                <Typography classes={{root: classes.characteristicsHeaderText}}>{project.limitations.header}</Typography>
+                                <Typography
+                                    classes={{root: classes.characteristicsHeaderText}}>{project.limitations.header}</Typography>
                             </Box>
                         </Box>
                     </Box>
@@ -298,6 +304,7 @@ const ProjectDescriptionCard = (props) => {
         <FullProjectDescriptionProjectDescription
             project={project}
             buttonShowMoreInfo={buttonShowMoreInfo}
+            showModal={showModal}
         />
     </>
 }
