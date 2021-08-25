@@ -1,74 +1,185 @@
 [
   {
     "title": "Singolo",
-    "description": "Одностраничник, выполнен был в рамках курса 'Rolling-scopes-school'",
-    "releaseDate": "08.03.2020",
+    "description": {
+      "header": "Описание проекта",
+      "description": "Одностраничник, выполнен был в рамках курса 'Rolling-scopes-school'"
+    },
+    "releaseDate": {
+      "date": "08.03.2020",
+      "done": true
+    },
     "technologiesUsed": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    "demoLink": "https://rasoan.github.io/singolo/index.html",
-    "projectLink": "https://github.com/Rasoan/singolo",
-    "rating": 5,
-    "benefits": ["проект свёрстан по 'perfect pixel'", "нативный код без фреймворков и доплнительных библиотек"],
-    "limitations": ["весь контент на одной странице", "код - мягко говоря ужасен"],
-    "screenshots": ["Singolo.jpg"]
+    "demoLink": {
+      "link": "https://rasoan.github.io/singolo/index.html",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/singolo",
+      "text": "Код"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "проект свёрстан по \"perfect pixel\"",
+        "нативный код без фреймворков и доплнительных библиотек"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "весь контент на одной странице",
+        "не красивый код"
+      ]
+    },
+    "screenshots": [
+      "Singolo.jpg"
+    ]
   },
   {
     "title": "Английский для детей",
-    "description": "Детский тренажёр для изучения английского языка, выполнен был в рамках курса 'Rolling-scopes-school'",
-    "releaseDate": "22.04.2020",
+    "description": {
+      "header": "Описание проекта",
+      "description": "Детский тренажёр для изучения английского языка, выполнен был в рамках курса \",Rolling-scopes-school\""
+    },
+    "releaseDate": {
+      "date": "22.04.2020",
+      "done": true
+    },
     "technologiesUsed": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    "demoLink": "https://rasoan.github.io/English-for-kids/index.html",
-    "projectLink": "https://github.com/Rasoan/English-for-kids",
-    "rating": 2,
-    "benefits": ["динамическое приложение", "много спецефектов", "реализуемо в реальной жизни"],
-    "limitations": ["код ужасен", "20% от тз не успел доделать, так как был дедлайн"],
-    "screenshots": ["EnglishForKids.jpg"]
+    "demoLink": {
+      "link": "https://rasoan.github.io/English-for-kids/index.html",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/English-for-kids",
+      "text": "Код"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "динамическое приложение",
+        "много спецефектов",
+        "реализуемо в реальной жизни"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "не красивый код",
+        "20% от тз не успел доделать, так как был \"deadline\""
+      ]
+    },
+    "screenshots": [
+      "EnglishForKids.jpg"
+    ]
   },
   {
     "title": "Поисковик фильмов",
-    "description": "Многофункциональный слайдер, выполнен был в рамках курса 'Rolling-scopes-school'",
-    "releaseDate": "08.05.2020",
+    "description": {
+      "header": "Описание проекта",
+      "description": "Многофункциональный слайдер, выполнен был в рамках курса \"Rolling-scopes-school\""
+    },
+    "releaseDate": {
+      "date": "08.05.2020",
+      "done": true
+    },
     "technologiesUsed": [
       "HTML",
       "CSS",
       "JavaScript",
       "Swiper-api"
     ],
-    "demoLink": "https://rasoan.github.io/MovieSearch/index.html",
-    "projectLink": "https://github.com/Rasoan/MovieSearch",
+    "demoLink": {
+      "link": "https://rasoan.github.io/MovieSearch/index.html",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/MovieSearch",
+      "text": "Код"
+    },
     "rating": 3,
-    "benefits": ["данные приходят с сервера", "Использованны дополнительные библиотеки"],
-    "limitations": ["плохой код", "не самый красивый дизайн"],
-    "screenshots": ["MovieSearch.jpg"]
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "данные приходят с сервера",
+        "Использованны дополнительные библиотеки"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "не красивый код",
+        "примитивный дизайн"
+      ]
+    },
+    "screenshots": [
+      "MovieSearch.jpg"
+    ]
   },
   {
     "title": "Студия Борового",
-    "description": "Тестовый проект выполненный для трудоустройства в IT компанию 'Студия Борового'",
-    "releaseDate": "25.07.2021",
+    "description": {
+      "header": "Описание проекта",
+      "description": "Тестовый проект выполненный для трудоустройства в IT компанию \"Студия Борового\""
+    },
+    "releaseDate": {
+      "date": "25.07.2021",
+      "done": true
+    },
     "technologiesUsed": [
       "HTML",
       "SCSS",
       "JavaScript",
       "Bootstrap"
     ],
-    "demoLink": "https://rasoan.github.io/studioBorovogo",
-    "projectLink": "https://github.com/Rasoan/studioBorovogo",
-    "rating": 6,
-    "benefits": ["адаптив + резиновая вёрстка", "красивый дизайн"],
-    "limitations": ["слишком простой проект", "реализованна только одна страничка"],
-    "screenshots": ["StudioBorovogo.jpg"]
+    "demoLink": {
+      "link": "https://rasoan.github.io/studioBorovogo",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/studioBorovogo",
+      "text": "Код"
+    },
+    "rating": 4,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "\"адаптив\" + \"резиновая вёрстка\"",
+        "красивый дизайн"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "слишком простой проект",
+        "реализованна только одна страничка из пристутствующих в меню приложении"
+      ]
+    },
+    "screenshots": [
+      "StudioBorovogo.jpg"
+    ]
   },
   {
     "title": "Социальная сеть",
-    "description": "Проект связанный с прохождением youtube курса 'Путь самурая' от 'It-kamasutra'",
-    "releaseDate": false,
+    "description": {
+      "header": "Описание проекта",
+      "description": "Проект связанный с прохождением youtube курса \"Путь самурая\" от \"It-kamasutra\""
+    },
+    "releaseDate": {
+      "date": "в разработке",
+      "done": false
+    },
     "technologiesUsed": [
       "SCSS",
       "JavaScript",
@@ -77,17 +188,43 @@
       "Yup",
       "Material-ui"
     ],
-    "demoLink": "https://rasoan.github.io/my-app",
-    "projectLink": "https://github.com/Rasoan/my-app",
-    "rating": 8,
-    "benefits": ["большое приложение с многочисленными возможностями", "используются передовые технологии"],
-    "limitations": ["очень сырой код", "при тестировании могут возникнуть проблемы с сервером"],
-    "screenshots": ["SocialNetwork.jpg"]
+    "demoLink": {
+      "link": "https://rasoan.github.io/my-app",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/my-app",
+      "text": "Код"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "большое приложение с многочисленными возможностями",
+        "используются передовые технологии"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "при тестировании могут возникнуть проблемы с сервером",
+        "эту социальную сеть уже написала огромная армия \"junior\" разработчиков)))"
+      ]
+    },
+    "screenshots": [
+      "SocialNetwork.jpg"
+    ]
   },
   {
     "title": "Портфолио",
-    "description": "Портфолио в котором я рассказываю подробную информацию о себе и выполненных проектах.",
-    "releaseDate": false,
+    "description": {
+      "header": "Описание проекта",
+      "description": "Портфолио в котором я рассказываю подробную информацию о себе и выполненных проектах."
+    },
+    "releaseDate": {
+      "date": "в разработке",
+      "done": false
+    },
     "technologiesUsed": [
       "SCSS",
       "JavaScript",
@@ -96,11 +233,30 @@
       "i18next",
       "TypeScript"
     ],
-    "demoLink": "https://rasoan.github.io/portfolio",
-    "projectLink": "https://github.com/Rasoan/portfolio",
-    "rating": 10,
-    "benefits": ["интернациональное приложение", "Фильтры записываются в url адрес"],
-    "limitations": ["сырой код", "грязная история коммитов"],
-    "screenshots": ["Portfolio.jpg"]
+    "demoLink": {
+      "link": "https://rasoan.github.io/portfolio",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/portfolio",
+      "text": "Код"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "интернациональное приложение",
+        "Фильтры записываются в url адрес"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "не красивая история коммитов"
+      ]
+    },
+    "screenshots": [
+      "Portfolio.jpg"
+    ]
   }
 ]

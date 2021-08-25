@@ -1,74 +1,185 @@
 [
   {
     "title": "Singolo",
-    "description": "One page, completed as part of the 'Rolling-scopes-school' course",
-    "releaseDate": "03/08/2020",
+    "description": {
+      "header": "Project Description",
+      "description": "One page, completed as part of the 'Rolling-scopes-school' course"
+    },
+    "releaseDate": {
+      "date": "03.08.2020",
+      "done": true
+    },
     "technologiesUsed": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    "demoLink": "https://rasoan.github.io/singolo/index.html",
-    "projectLink": "https://github.com/Rasoan/singolo",
-    "rating": 5,
-    "benefits": ["The project is laid out according to the 'perfect pixel'", "native code without frameworks and additional libraries"],
-    "limitations": ["All content on one page", "the code is terrible to say the least, since this is one of my first projects"],
-    "screenshots": []
+    "demoLink": {
+      "link": "https://rasoan.github.io/singolo/index.html",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/singolo",
+      "text": "Code"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "the project was created using \"perfect pixel\"",
+        "native code without frameworks and additional libraries"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "all content on one page",
+        "not pretty code"
+      ]
+    },
+    "screenshots": [
+      "Singolo.jpg"
+    ]
   },
   {
     "title": "English for Children",
-    "description": "Children's simulator for learning English, made as part of the 'Rolling-scopes-school' course",
-    "releaseDate": "04/22/2020",
+    "description": {
+      "header": "Project Description",
+      "description": "Children's simulator for learning English, made as part of the course \"Rolling-scopes-school\""
+    },
+    "releaseDate": {
+      "date": "04.22.2020",
+      "done": true
+    },
     "technologiesUsed": [
       "HTML",
       "CSS",
       "JavaScript"
     ],
-    "demoLink": "https://rasoan.github.io/English-for-kids/index.html",
-    "projectLink": "https://github.com/Rasoan/English-for-kids",
-    "rating": 2,
-    "benefits": ["A dynamic application with various specialties", "realizable"],
-    "limitations": ["The code is awful, because the project is one of the first projects", "I didn't manage to finish 20% of the draft because there was a deadline"],
-    "screenshots": []
+    "demoLink": {
+      "link": "https://rasoan.github.io/English-for-kids/index.html",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/English-for-kids",
+      "text": "Code"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "dynamic application",
+        "many specialties",
+        "realizable in real life"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "not pretty code",
+        "I didn't have time to finish 20% of the TZ, because it was \"deadline\""
+      ]
+    },
+    "screenshots": [
+      "EnglishForKids.jpg"
+    ]
   },
   {
     "title": "Movie search engine",
-    "description": "Multifunctional slider, made as part of the 'Rolling-scopes-school' course",
-    "releaseDate": "05/08/2020",
+    "description": {
+      "header": "Project Description",
+      "description": "Multifunctional slider, made as part of the course \"Rolling-scopes-school\""
+    },
+    "releaseDate": {
+      "date": "05.08.2020",
+      "done": true
+    },
     "technologiesUsed": [
       "HTML",
       "CSS",
       "JavaScript",
       "Swiper-api"
     ],
-    "demoLink": "https://rasoan.github.io/MovieSearch/index.html",
-    "projectLink": "https://github.com/Rasoan/MovieSearch",
+    "demoLink": {
+      "link": "https://rasoan.github.io/MovieSearch/index.html",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/MovieSearch",
+      "text": "Code"
+    },
     "rating": 3,
-    "benefits": ["There is a connection with the server and the data will be received dynamically", "Additional libraries used"],
-    "limitations": ["bad code", "not the most beautiful design"],
-    "screenshots": []
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "data comes from the server",
+        "Used additional libraries"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "not pretty code",
+        "primitive design"
+      ]
+    },
+    "screenshots": [
+      "MovieSearch.jpg"
+    ]
   },
   {
     "title": "Borovoy Studio",
-    "description": "Test project carried out for employment in the IT company 'Borovoy Studio'",
-    "releaseDate": "07.25.2021",
+    "description": {
+      "header": "Project Description",
+      "description": "Test project for employment in IT company \"Borovoy Studio\""
+    },
+    "releaseDate": {
+      "date": "07.25.2021",
+      "done": true
+    },
     "technologiesUsed": [
       "HTML",
       "SCSS",
       "JavaScript",
       "Bootstrap"
     ],
-    "demoLink": "https://rasoan.github.io/studioBorovogo",
-    "projectLink": "https://github.com/Rasoan/studioBorovogo",
-    "rating": 6,
-    "benefits": ["adaptive + fluid layout", "beautiful design"],
-    "limitations": ["too simple project", "only one page implemented"],
-    "screenshots": []
+    "demoLink": {
+      "link": "https://rasoan.github.io/studioBorovogo",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/studioBorovogo",
+      "text": "Code"
+    },
+    "rating": 4,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "\"adaptive\" + \"rubber layout\"",
+        "Beautiful design"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "too simple project",
+        "implemented only one page from those present in the application menu"
+      ]
+    },
+    "screenshots": [
+      "StudioBorovogo.jpg"
+    ]
   },
   {
     "title": "Social network",
-    "description": "Project related to the youtube course 'The Way of the Samurai' from 'It-kamasutra'",
-    "releaseDate": false,
+    "description": {
+      "header": "Project Description",
+      "description": "Project related to the youtube course \"The Way of the Samurai\" from \"It-kamasutra\""
+    },
+    "releaseDate": {
+      "date": "in developing",
+      "done": false
+    },
     "technologiesUsed": [
       "SCSS",
       "JavaScript",
@@ -77,17 +188,43 @@
       "Yup",
       "Material-ui"
     ],
-    "demoLink": "https://rasoan.github.io/my-app",
-    "projectLink": "https://github.com/Rasoan/my-app",
-    "rating": 8,
-    "benefits": ["A large application with many functions and capabilities", "the advanced technology is used at the time of the application creation"],
-    "limitations": ["Very crude code, as there is no experience in commercial development", "problems with the server may arise during testing, as there are keys for requests that may not work for you during testing, but I can demonstrate on my computer (the backend is not mine, mine is the front) "],
-    "screenshots": []
+    "demoLink": {
+      "link": "https://rasoan.github.io/my-app",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/my-app",
+      "text": "Code"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "a great application with many possibilities",
+        "advanced technologies are used"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "there may be problems with the server during testing",
+        "this social network has already been written by a huge army of \"junior\" developers)))"
+      ]
+    },
+    "screenshots": [
+      "SocialNetwork.jpg"
+    ]
   },
   {
     "title": "Portfolio",
-    "description": "A portfolio in which I share detailed information about myself and completed projects.",
-    "releaseDate": false,
+    "description": {
+      "header": "Project Description",
+      "description": "A portfolio in which I share detailed information about myself and completed projects."
+    },
+    "releaseDate": {
+      "date": "in developing",
+      "done": false
+    },
     "technologiesUsed": [
       "SCSS",
       "JavaScript",
@@ -96,11 +233,30 @@
       "i18next",
       "TypeScript"
     ],
-    "demoLink": "https://rasoan.github.io/portfolio",
-    "projectLink": "https://github.com/Rasoan/portfolio",
-    "rating": 10,
-    "benefits": ["International application", "Filters are written in the url, which makes it possible to share a link with pre-filtered projects"],
-    "limitations": ["Raw code, since I have no experience in commercial development", "dirty commit history"],
-    "screenshots": []
+    "demoLink": {
+      "link": "https://rasoan.github.io/portfolio",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/portfolio",
+      "text": "Code"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "international application",
+        "Filters are written to the url address"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "not a pretty commit history"
+      ]
+    },
+    "screenshots": [
+      "Portfolio.jpg"
+    ]
   }
 ]

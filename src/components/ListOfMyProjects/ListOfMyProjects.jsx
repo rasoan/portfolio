@@ -32,9 +32,11 @@ const sortProjects = (projects, sorting) => {
         case 'sortByReleaseDate':
             result = projects.sort((previousProject, nextProject) => {
                 if (parameters.ascending) {
-                    return convertStringToDate(previousProject.releaseDate) - convertStringToDate(nextProject.releaseDate)
+                    if (!previousProject.releaseDate.done) return 1;
+                    return convertStringToDate(previousProject.releaseDate.date) - convertStringToDate(nextProject.releaseDate.date)
                 } else {
-                    return convertStringToDate(nextProject.releaseDate) - convertStringToDate(previousProject.releaseDate)
+                    if (!nextProject.releaseDate.done) return 1;
+                    return convertStringToDate(nextProject.releaseDate.date) - convertStringToDate(previousProject.releaseDate.date)
                 }
             })
             return result

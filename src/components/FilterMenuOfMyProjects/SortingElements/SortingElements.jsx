@@ -13,6 +13,7 @@ import {Sort} from "@material-ui/icons";
 import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
+import {useTranslation} from "react-i18next";
 
 const useStyles = makeStyles(theme => ({
     sortIcon: {
@@ -51,6 +52,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const SortingElements = () => {
+    const {t} = useTranslation()
     const classes = useStyles()
     const history = useHistory()
 
@@ -87,7 +89,7 @@ const SortingElements = () => {
 
                 <Typography color={"textPrimary"}
                             className={classes.buttonShowModalText}>
-                    Сортировка
+                    {t('projectsPage.controlPanel.sort.buttonShowModal')}
                 </Typography>
             </Button>
             <Menu
@@ -101,31 +103,41 @@ const SortingElements = () => {
                 <MenuItem className={classes.menuSortItem}
                     onClick={() => selectSorting("true", null)}>
                     <ExpandMoreIcon className={classes.sortIcon}/>
-                    <Typography className={classes.menuSortItemText}>Дата</Typography>
+                    <Typography className={classes.menuSortItemText}>
+                        {t('projectsPage.controlPanel.sort.sortingCategories.date')}
+                    </Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                           onClick={() => selectSorting("false", null)}>
                     <ExpandLessIcon className={classes.sortIcon}/>
-                    <Typography className={classes.menuSortItemText}>Дата</Typography>
+                    <Typography className={classes.menuSortItemText}>
+                        {t('projectsPage.controlPanel.sort.sortingCategories.date')}
+                    </Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                           onClick={() => selectSorting(null, "true")}>
                     <ExpandMoreIcon className={classes.sortIcon}/>
-                    <Typography className={classes.menuSortItemText}>Рейтинг</Typography>
+                    <Typography className={classes.menuSortItemText}>
+                        {t('projectsPage.controlPanel.sort.sortingCategories.rating')}
+                    </Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                     onClick={() => selectSorting(null, "false")}>
                     <ExpandLessIcon className={classes.sortIcon}/>
-                    <Typography className={classes.menuSortItemText}>Рейтинг</Typography>
+                    <Typography className={classes.menuSortItemText}>
+                        {t('projectsPage.controlPanel.sort.sortingCategories.rating')}
+                    </Typography>
                 </MenuItem>
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                     onClick={() => selectSorting(null, null)}>
                     <ClearIcon className={classes.sortIcon}/>
-                    <Typography className={classes.menuSortItemText}>Выключить сортировку</Typography>
+                    <Typography className={classes.menuSortItemText}>
+                        {t('projectsPage.controlPanel.sort.sortingCategories.reset')}
+                    </Typography>
                 </MenuItem>
             </Menu>
     </>

@@ -115,7 +115,7 @@ const useStyles = makeStyles(theme => ({
 const EssentialInformationAboutMe = () => {
     const classes = useStyles();
     const {t} = useTranslation();
-    let essentialInformationAboutMe = t('essentialInformationAboutMe', {returnObjects: true});
+    let essentialInformationAboutMe = t('profilePage.essentialInformationAboutMe', {returnObjects: true});
     essentialInformationAboutMe = essentialInformationAboutMe.map((object, index, array) => {
         return <React.Fragment key={`gridItem-${index}`}>
             <Grid container
@@ -158,7 +158,7 @@ const EssentialInformationAboutMe = () => {
         </React.Fragment>
     });
 
-    let keySkills = t('keySkills', {returnObjects: true});
+    let keySkills = t('profilePage.keySkills', {returnObjects: true});
     keySkills = keySkills.map((object, index, array) => {
         return <React.Fragment key={`skillsItem-${index}`}>
             <Grid container

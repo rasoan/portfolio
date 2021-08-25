@@ -118,12 +118,12 @@ const BriefInformationAboutMe = () => {
         <List className={classes.list}>
             <ListItem className={clsx(classes.listItem, classes.listItemFullName)}>
                 <Typography component={"h4"} classes={{root: classes.fullName}}>
-                    {t('briefInformationAboutMe.fullName')}
+                    {t('profilePage.briefInformationAboutMe.fullName')}
                 </Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Typography variant="h4" classes={{root: classes.years}}>
-                    {t('briefInformationAboutMe.years')}
+                    {t('profilePage.briefInformationAboutMe.years')}
                 </Typography>
             </ListItem>
             <ListItem className={classes.listItem}>

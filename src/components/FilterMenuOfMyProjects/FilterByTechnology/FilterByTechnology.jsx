@@ -18,6 +18,7 @@ import Typography from "@material-ui/core/Typography";
 import {FilterList} from "@material-ui/icons";
 import clsx from "clsx";
 import {BiReset, BsCheckAll} from "react-icons/all";
+import {useTranslation} from "react-i18next";
 
 const useStyles = makeStyles((theme) => ({
     menuTechnologiesPaper: {
@@ -117,6 +118,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const FilterByTechnology = () => {
+    const {t} = useTranslation()
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const history = useHistory()
@@ -154,7 +156,9 @@ const FilterByTechnology = () => {
                 color="primary"
                 className={classes.filterByTechnologyButtonShowModal}
                 onClick={(event) => setAnchorEl(event.currentTarget)}>
-            <Typography color={"textPrimary"} className={classes.filterByTechnologyButtonShowModalText}>Фильтр</Typography>
+            <Typography color={"textPrimary"} className={classes.filterByTechnologyButtonShowModalText}>
+                {t('projectsPage.controlPanel.filter.buttonShowModal')}
+            </Typography>
         </Button>
         <Menu
             classes={{
@@ -172,14 +176,14 @@ const FilterByTechnology = () => {
                         fullWidth
                         startIcon={<BiReset/>}
                         color="secondary" onClick={() => addTechnologies([])}>
-                    Сбросить всё
+                    {t('projectsPage.controlPanel.filter.buttonReset')}
                 </Button>
                 <Button className={classes.menuTechnologiesItemButton}
                         fullWidth
                         startIcon={<BsCheckAll/>}
                         color="primary"
                         onClick={() => addTechnologies(storeFilterProjects.allProjectsWithTechnologies)}>
-                    Выбрать всё
+                    {t('projectsPage.controlPanel.filter.buttonSelectAll')}
                 </Button>
 
             </ListItem>

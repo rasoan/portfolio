@@ -32,6 +32,7 @@ import {
 } from "react-icons/all";
 import MyModal from "../MyModal";
 import storeModalWindow from "../../store/storeModalWindow";
+import {useTranslation} from "react-i18next";
 
 const useStyles = makeStyles(theme => ({
     tittleCardWrapper: {
@@ -165,27 +166,27 @@ const FullProjectDescriptionProjectDescription = (props) => {
     const {project} = props
 
     return <>
-        <Card className={clsx({[classes.cardModal]: isCardInModal})}
-        >
+
+        <Card className={clsx({[classes.cardModal]: isCardInModal})}>
             <CardHeader
                 classes={{
                     content: classes.tittleCardWrapper,
-                    title: classes.tittleCardHeader
+                    title: classes.tittleCardHeader,
                 }}
                 avatar={
                     <Avatar
                         aria-label="recipe"
-                        className={clsx({[classes.completedProjectAvatar]: !!project.releaseDate},
-                            {[classes.unfinishedProjectAvatar]: !project.releaseDate})}>
-                        {!!project.releaseDate ? <GiCheckMark/> : <GiTimeTrap/>}
+                        className={clsx({[classes.completedProjectAvatar]: !!project.releaseDate.done},
+                            {[classes.unfinishedProjectAvatar]: !project.releaseDate.done})}>
+                        {!!project.releaseDate.done ? <GiCheckMark /> : <GiTimeTrap />}
                     </Avatar>
                 }
                 title={project.title}
-                subheader={project.releaseDate || 'В разработке'}
+                subheader={project.releaseDate.date}
             />
             <CardMedia
                 className={classes.media}
-                image={`https://github.com/Rasoan/portfolio/blob/main/src/images/projects/${project.screenshots[0]}?raw=true`}
+                image={require(`../../images/projects/${project.screenshots[0]}`).default}
                 title="тест"
             />
             <Box className={clsx({
@@ -194,20 +195,24 @@ const FullProjectDescriptionProjectDescription = (props) => {
             })}>
                 <Box classes={{root: classes.projectLinks}}>
                     <Link classes={{root: classes.projectLink}}
-                          href={project.demoLink} target={"_blank"}
+                          href={project.demoLink.link} target={"_blank"}
                     >
                         <IoEyeOutline className={classes.projectLinkIcon}/>
-                        <Typography>демо</Typography>
+                        <Typography>
+                            {project.demoLink.text}
+                        </Typography>
                     </Link>
                     <Link classes={{root: classes.projectLink}}
-                          href={project.projectLink} target={"_blank"}
+                          href={project.projectLink.link} target={"_blank"}
                     >
                         <FiSettings className={classes.projectLinkIcon}/>
-                        <Typography>код</Typography>
+                        <Typography>
+                            {project.projectLink.text}
+                        </Typography>
                     </Link>
                 </Box>
                 <Box borderColor="transparent">
-                    <Rating name="read-only" value={project.rating} readOnly/>
+                    <Rating name="read-only" value={project.rating} readOnly />
                 </Box>
                 <Typography className={clsx({[classes.technologiesUsed]: !isCardInModal})}>
                     {project.technologiesUsed.join(", ")}
@@ -217,19 +222,19 @@ const FullProjectDescriptionProjectDescription = (props) => {
                         <Box classes={{root: classes.projectDescriptionWrapper}}>
                             <Box display={"flex"} alignItems={"center"}>
                                 <BsInfoCircle className={classes.projectDescriptionTitleIcon}/>
-                                <Typography className={classes.projectDescriptionTitle}>Описание проекта</Typography>
+                                <Typography className={classes.projectDescriptionTitle}>{project.description.header}</Typography>
                             </Box>
-                            <Typography className={classes.projectDescription}>{project.description}</Typography>
+                            <Typography className={classes.projectDescription}>{project.description.description}</Typography>
                         </Box>
                         <Box>
                             <Box display={"flex"} alignItems={"center"}>
                                 <GiAchievement className={classes.characteristicsHeaderIcon}/>
                                 <Typography
-                                    classes={{root: classes.characteristicsHeaderText}}>Преимущества</Typography>
+                                    classes={{root: classes.characteristicsHeaderText}}>{project.benefits.header}</Typography>
                             </Box>
                             <ul className={classes.characteristicsList}
                             >
-                                {project.benefits.map((advantage, index) => {
+                                {project.benefits.description.map((advantage, index) => {
                                     return <React.Fragment key={`advantage-${index}`}>
                                         <li classes={{root: classes.characteristicsItem}}>
                                             <Typography
@@ -240,13 +245,13 @@ const FullProjectDescriptionProjectDescription = (props) => {
                             </ul>
                             <Box display={"flex"} alignItems={"center"}>
                                 <MdErrorOutline className={classes.characteristicsHeaderIcon}/>
-                                <Typography classes={{root: classes.characteristicsHeaderText}}>Недостатки</Typography>
+                                <Typography classes={{root: classes.characteristicsHeaderText}}>{project.limitations.header}</Typography>
                             </Box>
                         </Box>
                     </Box>
                     <ul className={classes.characteristicsList}
                     >
-                        {project.limitations.map((flaw, index) => {
+                        {project.limitations.description.map((flaw, index) => {
                             return <React.Fragment key={`flaw-${index}`}>
                                 <li className={{root: classes.characteristicsItem}}>
                                     <Typography
