@@ -41,7 +41,7 @@ const messagesEn = {
             },
             {
                 header: "Ready to get started:",
-                description: "I'm ready right away, it is advisable to start with the remote version, as I am afraid of losing this job if you are not satisfied with my skills and abilities, but I will consider all the options",
+                description: "I'm ready right away, it is advisable to start with the remote option, but I will consider all the options",
             },
             {
                 header: "Desired salary level:",
