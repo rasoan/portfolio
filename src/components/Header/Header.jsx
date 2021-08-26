@@ -18,7 +18,8 @@ import {MenuItem} from "@material-ui/core";
 import {Switch} from "@material-ui/core";
 import languages from "../../translations/languages/languages";
 import i18next from "../../translations/i18next";
-import { useTranslation } from 'react-i18next';
+import {useTranslation} from 'react-i18next';
+import {observer} from "mobx-react";
 
 const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
@@ -26,9 +27,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     wrapperAppBar: {
-
-
-        //
+        backgroundColor: theme.palette.background.paper,
         height: "max-content",
     },
     buttonToggleNavigationPanel: {
@@ -142,8 +141,7 @@ function Header() {
         <div className={classes.root}>
             <CssBaseline/>
             <AppBar position={"relative"}
-                    className={classes.wrapperAppBar}
-                    color={"default"}>
+                    className={classes.wrapperAppBar}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -188,13 +186,13 @@ function Header() {
                                     {languages["ru-RU"].name}
                                 </MenuItem>
                             </Menu>
-                            {/*<Switch*/}
-                            {/*    className={classes.themeBlackAndWhiteFormControl}*/}
-                            {/*    checked={theme}*/}
-                            {/*    onChange={event => setTheme(event.target.checked)}*/}
-                            {/*    color="primary"*/}
-                            {/*    name="checkedA"*/}
-                            {/*/>*/}
+                            <Switch
+                                className={classes.themeBlackAndWhiteFormControl}
+                                checked={storeApp.darkMode}
+                                onChange={() => storeApp.toggleDarkMode()}
+                                color="primary"
+                                name="Theme"
+                            />
                         </Box>
                     </Box>
                 </Toolbar>
@@ -203,4 +201,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default observer(Header);

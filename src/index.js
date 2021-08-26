@@ -8,9 +8,7 @@ import theme from "./Theme/Theme";
 
 ReactDOM.render(
     <HashRouter>
-        <ThemeProvider theme={theme}>
-                <App/>
-        </ThemeProvider>
+        <App/>
     </HashRouter>
     ,
     document.getElementById('root')

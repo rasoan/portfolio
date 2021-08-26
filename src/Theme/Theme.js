@@ -1,6 +1,6 @@
 import {createTheme} from "@material-ui/core/styles";
 
-const theme = createTheme({
+export const themeDefault = createTheme({
     breakpoints: {
         values: {
             xs: 0,
@@ -9,20 +9,24 @@ const theme = createTheme({
             lg: 760,
             xl: 1280,
         },
-    },
+    }
 });
 
-theme.overrides = {
-    MuiInputBase: {
-        root: {
+// themeDefault.overrides = {
+//     MuiInputBase: {
+//         root: {
+//
+//         }
+//     }
+// }
 
-        }
+// themeDefault.props = {
+//     MuiButton: {
+//     }
+// }
+
+export const themeDarkMode = createTheme({
+    palette: {
+        type: "dark",
     }
-}
-
-theme.props = {
-    MuiButton: {
-    }
-}
-
-export default theme;
+})

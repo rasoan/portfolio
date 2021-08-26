@@ -4,6 +4,8 @@ import {useTranslation} from "react-i18next";
 import {Grid, List, ListItem, makeStyles, Paper, Typography} from "@material-ui/core";
 import Divider from "@material-ui/core/Divider";
 import clsx from "clsx";
+import {observer} from "mobx-react";
+import storeApp from "../../../store/storeApp";
 
 const useStyles = makeStyles(theme => ({
     listEssentialInformationAboutMeContainer: {
@@ -91,10 +93,10 @@ const useStyles = makeStyles(theme => ({
         }
     },
     honest: {
-        backgroundColor: theme.palette.grey[50],
+        backgroundColor: props => props.darkMode ? theme.palette.grey[800]: theme.palette.grey[50],
     },
     notHonest: {
-        backgroundColor: theme.palette.grey[200],
+        backgroundColor: props => props.darkMode ? theme.palette.grey[900]: theme.palette.grey[200],
     },
     columnDirectionList: {},
     rowDirectionList: {
@@ -113,7 +115,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const EssentialInformationAboutMe = () => {
-    const classes = useStyles();
+    const classes = useStyles({darkMode: storeApp.darkMode});
     const {t} = useTranslation();
     let essentialInformationAboutMe = t('profilePage.essentialInformationAboutMe', {returnObjects: true});
     essentialInformationAboutMe = essentialInformationAboutMe.map((object, index, array) => {
@@ -195,4 +197,4 @@ const EssentialInformationAboutMe = () => {
     </>
 }
 
-export default EssentialInformationAboutMe;
+export default observer(EssentialInformationAboutMe);

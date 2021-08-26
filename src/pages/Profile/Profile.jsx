@@ -3,7 +3,8 @@ import MyAvatar from "../../components/MyAvatar";
 import EssentialInformationAboutMe from "../../components/InformationAboutMe/EssentialInformationAboutMe";
 import BriefInformationAboutMe from "../../components/InformationAboutMe/BriefInformationAboutMe";
 import style from "./style.module.scss";
-import {Box} from "@material-ui/core";
+import {Box, makeStyles} from "@material-ui/core";
+
 
 const Profile = () => {
 

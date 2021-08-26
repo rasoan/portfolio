@@ -4,9 +4,11 @@ import {Container, makeStyles} from "@material-ui/core";
 import Navigation from "../Navigation";
 import Header from "../Header";
 import Footer from "../Footer";
-import { withTranslation } from 'react-i18next';
-import theme from "../../Theme/Theme";
-import {ThemeProvider} from '@material-ui/core/styles';
+import {withTranslation} from 'react-i18next';
+import {themeDarkMode, themeDefault} from "../../Theme/Theme";
+import {createTheme, ThemeProvider} from '@material-ui/core/styles';
+import storeApp from "../../store/storeApp";
+import {observer} from "mobx-react";
 
 
 const useStyles = makeStyles(theme => ({
@@ -18,6 +20,7 @@ const useStyles = makeStyles(theme => ({
         padding: 0,
     },
     mainContainerContent: {
+        backgroundColor: props => props.palette.background.default,
         flexGrow: 1,
         padding: theme.spacing(4),
         [theme.breakpoints.down('lg')]: {
@@ -31,7 +34,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const App = () => {
-    const classes = useStyles();
+    const theme =  createTheme(storeApp.darkMode ? {...themeDefault, palette: themeDarkMode.palette}: {...themeDefault})
+    const classes = useStyles(theme);
 
     return (<>
         <ThemeProvider theme={theme}>
@@ -52,4 +56,4 @@ const App = () => {
     </>);
 };
 
-export default withTranslation()(App);
+export default withTranslation()(observer(App));

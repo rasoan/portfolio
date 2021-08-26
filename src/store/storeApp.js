@@ -3,15 +3,18 @@ import {action, makeAutoObservable, makeObservable, observable} from "mobx"
 import i18next from "../translations/i18next";
 
 class storeApp {
-    navBar = false;
-    language = i18next.language;
+    navBar = false
+    language = i18next.language
+    darkMode = false
 
     constructor() {
         makeObservable(this, {
             navBar: observable,
             language: observable,
+            darkMode: observable,
             toggleNavbar: action,
             changeLanguage: action,
+            toggleDarkMode: action,
         })
     }
 
@@ -29,6 +32,11 @@ class storeApp {
             if (err) return console.log("Ошибка, язык не переведён!");
             this.language = language;
         });
+    }
+
+    toggleDarkMode = () => {
+        this.darkMode = !this.darkMode
+        console.log(this.darkMode)
     }
 }
 
