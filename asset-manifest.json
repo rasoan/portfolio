@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.18d3a73a.chunk.css",
-    "main.js": "/portfolio/static/js/main.a5643cde.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.a5643cde.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.a693c0cb.chunk.css",
+    "main.js": "/portfolio/static/js/main.d80b5755.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.d80b5755.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.bcd5af5a.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.bcd5af5a.js.map",
     "static/js/2.6fc896a9.chunk.js": "/portfolio/static/js/2.6fc896a9.chunk.js",
     "static/js/2.6fc896a9.chunk.js.map": "/portfolio/static/js/2.6fc896a9.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.18d3a73a.chunk.css.map": "/portfolio/static/css/main.18d3a73a.chunk.css.map",
+    "static/css/main.a693c0cb.chunk.css.map": "/portfolio/static/css/main.a693c0cb.chunk.css.map",
     "static/js/2.6fc896a9.chunk.js.LICENSE.txt": "/portfolio/static/js/2.6fc896a9.chunk.js.LICENSE.txt",
     "static/media/EnglishForKids.jpg": "/portfolio/static/media/EnglishForKids.977af99c.jpg",
     "static/media/MovieSearch.jpg": "/portfolio/static/media/MovieSearch.ecf3b097.jpg",
@@ -16,12 +16,12 @@
     "static/media/Singolo.jpg": "/portfolio/static/media/Singolo.e892fc38.jpg",
     "static/media/SocialNetwork.jpg": "/portfolio/static/media/SocialNetwork.1a6e3e94.jpg",
     "static/media/StudioBorovogo.jpg": "/portfolio/static/media/StudioBorovogo.b233295d.jpg",
-    "static/media/araik.057896c5.png": "/portfolio/static/media/araik.057896c5.png"
+    "static/media/araik.c50d7dd4.png": "/portfolio/static/media/araik.c50d7dd4.png"
   },
   "entrypoints": [
     "static/js/runtime-main.bcd5af5a.js",
     "static/js/2.6fc896a9.chunk.js",
-    "static/css/main.18d3a73a.chunk.css",
-    "static/js/main.a5643cde.chunk.js"
+    "static/css/main.a693c0cb.chunk.css",
+    "static/js/main.d80b5755.chunk.js"
   ]
 }
