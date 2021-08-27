@@ -20,11 +20,18 @@ import languages from "../../translations/languages/languages";
 import i18next from "../../translations/i18next";
 import {useTranslation} from 'react-i18next';
 import {observer} from "mobx-react";
+import clsx from "clsx";
 
-const drawerWidth = 240;
+
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+    },
+    icons: {
+        color: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main,
+    },
+    switchTrack: {
+        backgroundColor: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main
     },
     wrapperAppBar: {
         backgroundColor: theme.palette.background.paper,
@@ -43,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     header: {
         height: "min-content",
         margin: "auto 0",
+        color: theme.palette.text.primary,
         [theme.breakpoints.down("sm")]: {
             fontSize: "1rem",
         },
@@ -128,10 +136,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Header() {
-    const classes = useStyles();
+    const classes = useStyles({darkMode: storeApp.darkMode});
     const {t} = useTranslation();
     const [showMenuLanguage, setShowMenuLanguage] = useState(null);
-    const [theme, setTheme] = useState(false);
+
     const changeLanguage = (language) => {
         storeApp.changeLanguage(language);
         setShowMenuLanguage(null);
@@ -148,23 +156,27 @@ function Header() {
                         aria-label="open drawer"
                         edge="start"
                         onClick={() => storeApp.toggleNavbar(true)}
-                        className={classes.buttonToggleNavigationPanel}
+                        className={clsx(classes.buttonToggleNavigationPanel, classes.icons)}
                     >
-                        <MenuIcon/>
+                        <MenuIcon />
                     </IconButton>
                     <Box display="flex" alignItems="flex-center" width={"100%"}>
-                        <WorkOutline className={classes.logoImage} color="primary"/>
-                        <Typography className={classes.header} component={"h1"}
-                                    variant={"h6"}>{t('header')}</Typography>
+                        <WorkOutline className={clsx(classes.logoImage, classes.icons)} />
+                        <Typography className={classes.header}
+                                    component={"h1"}
+                                    variant={"h6"}>
+                            {t('header')}
+                        </Typography>
                         <Box className={classes.controlElementsContainer}>
-                            <Button className={classes.changeLanguageButton}
+                            <Button startIcon={<Translate className={clsx(classes.imgChangeLanguageButton, classes.icons)} />}
+                                    endIcon={<KeyboardArrowDownIcon className={clsx(classes.arrowChangeLanguageButton, classes.icons)} />}
+                                    className={classes.changeLanguageButton}
                                     aria-controls="simple-menu"
                                     aria-haspopup="true"
                                     onClick={event => setShowMenuLanguage(event.currentTarget)}>
-                                <Translate className={classes.imgChangeLanguageButton} color={"primary"}/>
                                 <Typography
                                     className={classes.textChangeLanguageButton}>{languages[i18next.language].name}</Typography>
-                                <KeyboardArrowDownIcon className={classes.arrowChangeLanguageButton} color={"primary"}/>
+
                             </Button>
                             <Menu
                                 id="simple-menu"
@@ -188,9 +200,12 @@ function Header() {
                             </Menu>
                             <Switch
                                 className={classes.themeBlackAndWhiteFormControl}
+                                classes={{
+                                    thumb: classes.icons,
+                                    track: classes.switchTrack
+                                }}
                                 checked={storeApp.darkMode}
                                 onChange={() => storeApp.toggleDarkMode()}
-                                color="primary"
                                 name="Theme"
                             />
                         </Box>

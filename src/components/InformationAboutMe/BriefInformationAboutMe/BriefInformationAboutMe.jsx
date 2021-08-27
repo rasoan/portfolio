@@ -113,7 +113,6 @@ const BriefInformationAboutMe = () => {
     const classes = useStyles();
     const {t} = useTranslation();
 
-
     return <Box mx={"auto"} classes={{root: classes.informationWrapper}}>
         <List className={classes.list}>
             <ListItem className={clsx(classes.listItem, classes.listItemFullName)}>
