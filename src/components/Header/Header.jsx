@@ -1,3 +1,5 @@
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
 import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import WorkOutline from '@material-ui/icons/WorkOutline';
@@ -31,8 +33,16 @@ const useStyles = makeStyles((theme) => ({
         color: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main,
     },
     switchTrack: {
-        backgroundColor: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main
+        display: "none",
     },
+    switchBase: {
+
+        '&.Mui-checked': {
+            color: theme.palette.common.white,
+            transform: "none",
+        }
+    },
+
     wrapperAppBar: {
         backgroundColor: theme.palette.background.paper,
         height: "max-content",
@@ -199,9 +209,11 @@ function Header() {
                                 </MenuItem>
                             </Menu>
                             <Switch
+                                icon={<Brightness4Icon />}
+                                checkedIcon={<Brightness7Icon />}
                                 className={classes.themeBlackAndWhiteFormControl}
                                 classes={{
-                                    thumb: classes.icons,
+                                    switchBase: clsx(classes.icons, classes.switchBase),
                                     track: classes.switchTrack
                                 }}
                                 checked={storeApp.darkMode}
