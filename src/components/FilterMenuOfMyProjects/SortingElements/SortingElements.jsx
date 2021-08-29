@@ -14,11 +14,15 @@ import {makeStyles} from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import {useTranslation} from "react-i18next";
+import clsx from "clsx";
+import storeApp from "../../../store/storeApp";
 
 const useStyles = makeStyles(theme => ({
     sortIcon: {
         margin: theme.spacing(0, 1),
-        color: theme.palette.primary.main
+    },
+    icon: {
+        color: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main
     },
     buttonShowModal: {
         minWidth: 100,
@@ -53,7 +57,7 @@ const useStyles = makeStyles(theme => ({
 
 const SortingElements = () => {
     const {t} = useTranslation()
-    const classes = useStyles()
+    const classes = useStyles({darkMode: storeApp.darkMode})
     const history = useHistory()
 
     const selectSorting = (sortByReleaseDate, sortByRating) => {
@@ -79,18 +83,18 @@ const SortingElements = () => {
 
     return <>
             <Button startIcon={<Sort className={classes.buttonShowModalIcon} />}
-                className={classes.buttonShowModal}
+                classes={{
+                    root: classes.buttonShowModal,
+                    label: clsx(classes.buttonShowModalText, classes.icon),
+                    startIcon: classes.icon,
+                }}
                     aria-controls="fade-menu"
                     aria-haspopup="true"
                     variant="outlined"
                     color="primary"
                     onClick={(event) => setAnchorEl(event.currentTarget)}
             >
-
-                <Typography color={"textPrimary"}
-                            className={classes.buttonShowModalText}>
                     {t('projectsPage.controlPanel.sort.buttonShowModal')}
-                </Typography>
             </Button>
             <Menu
                 id="fade-menu"
@@ -102,7 +106,7 @@ const SortingElements = () => {
             >
                 <MenuItem className={classes.menuSortItem}
                     onClick={() => selectSorting("true", null)}>
-                    <ExpandLessIcon className={classes.sortIcon}/>
+                    <ExpandLessIcon className={clsx(classes.sortIcon, classes.icon)}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.date')}
                     </Typography>
@@ -110,7 +114,7 @@ const SortingElements = () => {
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                           onClick={() => selectSorting("false", null)}>
-                    <ExpandMoreIcon className={classes.sortIcon}/>
+                    <ExpandMoreIcon className={clsx(classes.sortIcon, classes.icon)}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.date')}
                     </Typography>
@@ -118,7 +122,7 @@ const SortingElements = () => {
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                           onClick={() => selectSorting(null, "true")}>
-                    <ExpandLessIcon className={classes.sortIcon}/>
+                    <ExpandLessIcon className={clsx(classes.sortIcon, classes.icon)}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.rating')}
                     </Typography>
@@ -126,7 +130,7 @@ const SortingElements = () => {
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                     onClick={() => selectSorting(null, "false")}>
-                    <ExpandMoreIcon className={classes.sortIcon}/>
+                    <ExpandMoreIcon className={clsx(classes.sortIcon, classes.icon)}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.rating')}
                     </Typography>
@@ -134,7 +138,7 @@ const SortingElements = () => {
                 <Divider />
                 <MenuItem className={classes.menuSortItem}
                     onClick={() => selectSorting(null, null)}>
-                    <ClearIcon className={classes.sortIcon}/>
+                    <ClearIcon className={clsx(classes.sortIcon, classes.icon)}/>
                     <Typography className={classes.menuSortItemText}>
                         {t('projectsPage.controlPanel.sort.sortingCategories.reset')}
                     </Typography>

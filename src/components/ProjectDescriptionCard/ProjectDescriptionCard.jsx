@@ -33,6 +33,8 @@ import {
 import MyModal from "../MyModal";
 import storeModalWindow from "../../store/storeModalWindow";
 import {useTranslation} from "react-i18next";
+import storeApp from "../../store/storeApp";
+import {observer} from "mobx-react";
 
 const useStyles = makeStyles(theme => ({
     tittleCardWrapper: {
@@ -50,6 +52,9 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         height: "100%",
     },
+    icon: {
+       color: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main
+    },
     projectLink: {
         width: "max-content",
         display: "flex",
@@ -57,6 +62,7 @@ const useStyles = makeStyles(theme => ({
     },
     projectLinkIcon: {
         marginRight: 6,
+
     },
     card: {
         "&:hover": {
@@ -65,8 +71,10 @@ const useStyles = makeStyles(theme => ({
     },
     cardModal: {
         overflowY: "scroll",
-        width: 450,
-        maxHeight: 550,
+        width: "50vw",
+        maxHeight: "90vh",
+        // width: 450,
+        // maxHeight: 550,
         // xs: 0,
         // sm: 400,
         // md: 600,
@@ -76,18 +84,18 @@ const useStyles = makeStyles(theme => ({
         //     width: 400,
         //     height: 500,
         // },
-        [theme.breakpoints.down('md')]: {
-            width: 400,
-            height: 550,
-        },
-        [theme.breakpoints.down('sm')]: {
-            width: 360,
-            height: 500,
-        },
-        [theme.breakpoints.down('xs')]: {
-            width: 280,
-            height: 400,
-        },
+        // [theme.breakpoints.down('md')]: {
+        //     width: 400,
+        //     height: 550,
+        // },
+        // [theme.breakpoints.down('sm')]: {
+        //     width: 360,
+        //     height: 500,
+        // },
+        // [theme.breakpoints.down('xs')]: {
+        //     width: 280,
+        //     height: 400,
+        // },
     },
     visibleAndHiddenBlock: {},
     media: {
@@ -157,18 +165,18 @@ const useStyles = makeStyles(theme => ({
 }))
 
 
-const FullProjectDescriptionProjectDescription = (props) => {
+const FullProjectDescriptionProjectDescription = observer((props) => {
     const {
         buttonShowMoreInfo = null,
         isCardInModal = false,
         showModal = () => {}
     } = props
-    const classes = useStyles()
+    const classes = useStyles({darkMode: storeApp.darkMode})
     const {project} = props
 
     return <>
         <Card className={clsx({[classes.cardModal]: isCardInModal})}>
-            <CardActionArea disabled={isCardInModal ? true: false}
+            <CardActionArea disabled={!!isCardInModal}
                             onClick={!isCardInModal ? showModal: () => {}}>
                 <CardHeader
                     classes={{
@@ -197,7 +205,7 @@ const FullProjectDescriptionProjectDescription = (props) => {
                 [classes.cardContentWrapperModal]: isCardInModal
             })}>
                 <Box classes={{root: classes.projectLinks}}>
-                    <Link classes={{root: classes.projectLink}}
+                    <Link classes={{root: clsx(classes.projectLink, classes.icon)}}
                           href={project.demoLink.link} target={"_blank"}
                     >
                         <IoEyeOutline className={classes.projectLinkIcon}/>
@@ -205,7 +213,7 @@ const FullProjectDescriptionProjectDescription = (props) => {
                             {project.demoLink.text}
                         </Typography>
                     </Link>
-                    <Link classes={{root: classes.projectLink}}
+                    <Link classes={{root: clsx(classes.projectLink, classes.icon)}}
                           href={project.projectLink.link} target={"_blank"}
                     >
                         <FiSettings className={classes.projectLinkIcon}/>
@@ -271,11 +279,12 @@ const FullProjectDescriptionProjectDescription = (props) => {
             </Box>
         </Card>
     </>
-}
+})
 
 
 const ProjectDescriptionCard = (props) => {
     const {project} = props
+    const classes = useStyles(storeApp.darkMode)
 
     const showModal = () => {
         storeModalWindow.setContent(
@@ -291,7 +300,7 @@ const ProjectDescriptionCard = (props) => {
 
     const buttonShowMoreInfo = <>
         <Button fullWidth
-                color={"primary"}
+                color={storeApp.darkMode ? "default": "primary"}
                 onClick={showModal}
                 startIcon={<SiFurrynetwork/>}
         >
@@ -310,4 +319,4 @@ const ProjectDescriptionCard = (props) => {
 }
 
 
-export default ProjectDescriptionCard;
+export default observer(ProjectDescriptionCard)

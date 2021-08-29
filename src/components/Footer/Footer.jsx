@@ -1,40 +1,20 @@
 import React from "react";
 import {Link, List, ListItem, Paper, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
-import {FaVk, FaInstagram, FaTelegramPlane, FaMailBulk} from "react-icons/fa";
 import {useTranslation} from "react-i18next";
 
-const getCurrentDate = () => {
-    const currentDate = new Date();
-    const months = [
-        'января',
-        'февраля',
-        'марта',
-        'апреля',
-        'мая',
-        'июнья',
-        'июлья',
-        'августа',
-        'сентябрья',
-        'октябрья',
-        'ноябрья',
-        'декабрья',
-    ];
-    return currentDate.getDate() + ' ' + months[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
-}
 
 const useStyles = makeStyles((theme) => ({
     wrapperFooter: {
-        padding: "20px 0",
+        padding: "32px 0",
         position: "relative",
-        backgroundColor: theme.palette.grey[100],
     },
     currentDate: {
         position: "absolute",
-        bottom: 10,
+        bottom: "calc(50% - 12px)",
         left: `calc(50% - 42px)`,
         width: "max-content",
-        fontSize: 12,
+        fontSize: 16,
         fontWeight: "bold",
     }
 }));

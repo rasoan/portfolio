@@ -6,11 +6,10 @@ import Fade from '@material-ui/core/Fade';
 import storeModalWindow from "../../store/storeModalWindow";
 import {observer} from "mobx-react";
 import {AiOutlineClose} from "react-icons/all";
-import {Box, Button} from "@material-ui/core";
+import {Box, Button, Paper} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        backgroundColor: "white",
         border: 0,
         borderRadius: 8,
     },
@@ -47,8 +46,7 @@ const MyModal = () => {
                 }}
             >
                 <Fade in={storeModalWindow.isOpen}>
-                    <div className={classes.root}>
-
+                    <Paper className={classes.root}>
                         <Button
                             classes={{root: classes.closeButton}}
                             onClick={() => storeModalWindow.toggle(false)}
@@ -56,7 +54,7 @@ const MyModal = () => {
                             <AiOutlineClose className={classes.closeButtonIcon}/>
                         </Button>
                         {storeModalWindow.content}
-                    </div>
+                    </Paper>
                 </Fade>
             </Modal>
         </div>

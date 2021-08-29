@@ -19,13 +19,17 @@ import {FilterList} from "@material-ui/icons";
 import clsx from "clsx";
 import {BiReset, BsCheckAll} from "react-icons/all";
 import {useTranslation} from "react-i18next";
+import storeApp from "../../../store/storeApp";
 
 const useStyles = makeStyles((theme) => ({
     menuTechnologiesPaper: {
         paddingBottom: 8,
-
-
-
+    },
+    icon: {
+        color: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main
+    },
+    iconReset: {
+        color: props => props.darkMode ? theme.palette.common.white: theme.palette.secondary.main
     },
     menuTechnologies: {
         maxWidth: 360,
@@ -82,7 +86,6 @@ const useStyles = makeStyles((theme) => ({
     },
     filterByTechnologyButtonShowModalIcon: {
         margin: theme.spacing(0, 1),
-        color: theme.palette.primary.main,
         [theme.breakpoints.down('xs')]: {
             fontSize: 12,
         },
@@ -119,7 +122,7 @@ const useStyles = makeStyles((theme) => ({
 
 const FilterByTechnology = () => {
     const {t} = useTranslation()
-    const classes = useStyles();
+    const classes = useStyles({darkMode: storeApp.darkMode});
     const [anchorEl, setAnchorEl] = React.useState(null);
     const history = useHistory()
 
@@ -151,14 +154,15 @@ const FilterByTechnology = () => {
     }
 
     return <>
-        <Button startIcon={<FilterList className={classes.filterByTechnologyButtonShowModalIcon}/>}
+        <Button startIcon={<FilterList />}
             variant="outlined"
-                color="primary"
-                className={classes.filterByTechnologyButtonShowModal}
+                classes={{
+                    root: classes.filterByTechnologyButtonShowModal,
+                    label: clsx(classes.filterByTechnologyButtonShowModalText, classes.icon),
+                    startIcon: clsx(classes.filterByTechnologyButtonShowModalIcon, classes.icon),
+                }}
                 onClick={(event) => setAnchorEl(event.currentTarget)}>
-            <Typography color={"textPrimary"} className={classes.filterByTechnologyButtonShowModalText}>
                 {t('projectsPage.controlPanel.filter.buttonShowModal')}
-            </Typography>
         </Button>
         <Menu
             classes={{
@@ -172,16 +176,23 @@ const FilterByTechnology = () => {
             onClose={() => setAnchorEl(null)}
         >
             <ListItem className={clsx(classes.menuTechnologiesItem, classes.menuTechnologiesLastItem)}>
-                <Button className={classes.menuTechnologiesItemButton}
+                <Button classes={{
+                    root: classes.menuTechnologiesItemButton,
+                    startIcon: classes.iconReset,
+                    label: classes.iconReset,
+                }}
                         fullWidth
                         startIcon={<BiReset/>}
-                        color="secondary" onClick={() => addTechnologies([])}>
+                        onClick={() => addTechnologies([])}>
                     {t('projectsPage.controlPanel.filter.buttonReset')}
                 </Button>
-                <Button className={classes.menuTechnologiesItemButton}
+                <Button classes={{
+                            root: classes.menuTechnologiesItemButton,
+                            startIcon: classes.icon,
+                            label: classes.icon,
+                        }}
                         fullWidth
                         startIcon={<BsCheckAll/>}
-                        color="primary"
                         onClick={() => addTechnologies(storeFilterProjects.allProjectsWithTechnologies)}>
                     {t('projectsPage.controlPanel.filter.buttonSelectAll')}
                 </Button>

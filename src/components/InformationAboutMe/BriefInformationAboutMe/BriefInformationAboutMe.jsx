@@ -3,6 +3,7 @@ import {useTranslation} from "react-i18next";
 import {Box, Link, List, ListItem, makeStyles, Paper, Typography} from "@material-ui/core";
 import {FaInstagram, FaMailBulk, FaTelegramPlane, FaVk} from "react-icons/fa";
 import clsx from "clsx";
+import storeApp from "../../../store/storeApp";
 
 const useStyles = makeStyles(theme => ({
     list: {},
@@ -10,6 +11,9 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('lg')]: {
             padding: 4,
         },
+    },
+    icons: {
+        color: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main,
     },
     itemContacts: {},
     itemContactsLinkSocial: {},
@@ -110,8 +114,8 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const BriefInformationAboutMe = () => {
-    const classes = useStyles();
-    const {t} = useTranslation();
+    const classes = useStyles({darkMode: storeApp.darkMode})
+    const {t} = useTranslation()
 
     return <Box mx={"auto"} classes={{root: classes.informationWrapper}}>
         <List className={classes.list}>
@@ -126,19 +130,19 @@ const BriefInformationAboutMe = () => {
                 </Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <FaMailBulk className={classes.iconContacts}/>
+                <FaMailBulk className={clsx(classes.iconContacts, classes.icons)}/>
                 <Typography classes={{root: classes.contactsText}}>araikrasoian@gmail.com</Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Link target="_blank" className={classes.itemContactsLinkSocial} href="https://vk.com/araiikk">
-                    <FaVk className={classes.iconContacts}/>
+                    <FaVk className={clsx(classes.iconContacts, classes.icons)}/>
                 </Link>
                 <Link className={classes.itemContactsLinkSocial} target="_blank"
                       href="https://www.instagram.com/araiikk">
-                    <FaInstagram className={classes.iconContacts}/>
+                    <FaInstagram className={clsx(classes.iconContacts, classes.icons)}/>
                 </Link>
                 <Link className={classes.itemContactsLinkSocial} href="tel:+375256643070">
-                    <FaTelegramPlane className={clsx(classes.iconContacts)}/>
+                    <FaTelegramPlane className={clsx(classes.iconContacts, classes.icons)}/>
                 </Link>
             </ListItem>
         </List>
