@@ -4,23 +4,18 @@ import {useLocation} from "react-router-dom";
 import storeFilterProjects from "../../store/storeFilterProjects";
 import FilterByTechnology from "./FilterByTechnology";
 import SortingElements from "./SortingElements";
-import {ListItem, Paper} from "@material-ui/core";
+import {ListItem} from "@material-ui/core";
 import List from "@material-ui/core/List";
-import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
-    filtersContainer: {
-        padding: 10
-    },
-    filtersAndSortingList: {
+    list: {
         display: "flex",
         [theme.breakpoints.down('sm')]: {
             justifyContent: "center"
         },
     },
-
-    filtersAndSortingListItem: {
+    listItem: {
         width: "max-content",
         padding: 0,
         marginRight: 20,
@@ -57,15 +52,11 @@ const FilterMenuOfMyProjects = () => {
     }, [])
 
     return <>
-            <List classes={{root: classes.filtersAndSortingList}}>
-                <ListItem
-                    classes={{root: classes.filtersAndSortingListItem}}
-                >
+            <List classes={{root: classes.list}}>
+                <ListItem classes={{root: classes.listItem}}>
                     <SortingElements/>
                 </ListItem>
-                <ListItem
-                    classes={{root: classes.filtersAndSortingListItem}}
-                >
+                <ListItem classes={{root: classes.listItem}}>
                     <FilterByTechnology/>
                 </ListItem>
             </List>

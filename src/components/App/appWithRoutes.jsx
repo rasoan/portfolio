@@ -5,12 +5,11 @@ import Profile from "../../pages/Profile";
 import Projects from "../../pages/Projects";
 
 const AppWithRoutes = () => {
-
     return (<>
         <Switch>
-            <Route path={PATH.PROFILE} component={() => <Profile/>}/>
-            <Route path={PATH.PROJECTS} component={Projects}/>
-            <Route path={PATH.ALL} render={() => <Profile/>}/>
+            <Route path={PATH.PROFILE} component={() => <Profile />}/>
+            <Route path={PATH.PROJECTS} component={() => <Projects />}/>
+            <Route path={PATH.ALL} render={() => <Profile />}/>
         </Switch>
     </>);
 }
