@@ -1,15 +1,14 @@
-import React from "react";
-import AppWithRoutes from "./appWithRoutes";
-import {Container, makeStyles} from "@material-ui/core";
-import Navigation from "../Navigation";
-import Header from "../Header";
-import Footer from "../Footer";
-import {withTranslation} from 'react-i18next';
-import {themeDarkMode, themeDefault} from "../../Theme/Theme";
-import {createTheme, ThemeProvider} from '@material-ui/core/styles';
-import storeApp from "../../store/storeApp";
-import {observer} from "mobx-react";
-
+import React from "react"
+import AppWithRoutes from "./appWithRoutes"
+import {Box, Container, makeStyles} from "@material-ui/core"
+import Navigation from "../Navigation"
+import Header from "../Header"
+import Footer from "../Footer"
+import {withTranslation} from 'react-i18next'
+import {themeDarkMode, themeDefault} from "../../Theme/Theme"
+import {createTheme, ThemeProvider} from '@material-ui/core/styles'
+import storeApp from "../../store/storeApp"
+import {observer} from "mobx-react"
 
 const useStyles = makeStyles(theme => ({
     wrapper: {
@@ -19,7 +18,7 @@ const useStyles = makeStyles(theme => ({
         flexDirection: "column",
         padding: 0,
     },
-    mainContainerContent: {
+    pagesWrapper: {
         backgroundColor: props => props.palette.background.default,
         flexGrow: 1,
         padding: theme.spacing(4),
@@ -30,12 +29,14 @@ const useStyles = makeStyles(theme => ({
             padding: theme.spacing(2),
         },
     },
-    toolbar: theme.mixins.toolbar,
-}));
+}))
 
 const App = () => {
-    const theme =  createTheme(storeApp.darkMode ? {...themeDefault, palette: themeDarkMode.palette}: {...themeDefault})
-    const classes = useStyles(theme);
+    const theme =  createTheme(
+        storeApp.darkMode ? {...themeDefault, palette: themeDarkMode.palette}:
+            {...themeDefault}
+    )
+    const classes = useStyles(theme)
 
     return (<>
         <ThemeProvider theme={theme}>
@@ -43,13 +44,14 @@ const App = () => {
                 className={classes.wrapper}
                 maxWidth={"xl"}
             >
-                <Header/>
-                <div style={{display: "flex", flexGrow: 1}}>
-                    <Navigation/>
-                    <main className={classes.mainContainerContent}>
-                        <AppWithRoutes/>
+                <Header />
+                <Box display={"flex"}
+                     flexGrow={1}>
+                    <Navigation />
+                    <main className={classes.pagesWrapper}>
+                        <AppWithRoutes />
                     </main>
-                </div>
+                </Box>
                 <Footer/>
             </Container>
         </ThemeProvider>
