@@ -63,4 +63,4 @@ const FilterMenuOfMyProjects = () => {
     </>
 }
 
-export default observer(FilterMenuOfMyProjects);
+export default observer(FilterMenuOfMyProjects)
