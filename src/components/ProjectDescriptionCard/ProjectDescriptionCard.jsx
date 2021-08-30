@@ -37,15 +37,24 @@ import storeApp from "../../store/storeApp";
 import {observer} from "mobx-react";
 
 const useStyles = makeStyles(theme => ({
-    tittleCardWrapper: {
+    cardHeaderContent: {
         fontSize: 30,
         overflow: "hidden",
         whiteSpace: "nowrap",
     },
-    tittleCardHeader: {
+    cardHeaderTittle: {
         overflow: "hidden",
         textOverflow: "ellipsis",
     },
+    projectAvatarCompleted: {
+        backgroundColor: green[500],
+    },
+    projectAvatarUnfinished: {
+        backgroundColor: red[500],
+    },
+
+
+
     projectLinks: {
         display: "flex",
         justifyContent: "space-between",
@@ -53,7 +62,7 @@ const useStyles = makeStyles(theme => ({
         height: "100%",
     },
     icon: {
-       color: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main
+        color: props => props.darkMode ? theme.palette.common.white : theme.palette.primary.main
     },
     projectLink: {
         width: "max-content",
@@ -73,29 +82,6 @@ const useStyles = makeStyles(theme => ({
         overflowY: "scroll",
         width: "50vw",
         maxHeight: "90vh",
-        // width: 450,
-        // maxHeight: 550,
-        // xs: 0,
-        // sm: 400,
-        // md: 600,
-        // lg: 760,
-        // xl: 1280,
-        // [theme.breakpoints.down('lg')]: {
-        //     width: 400,
-        //     height: 500,
-        // },
-        // [theme.breakpoints.down('md')]: {
-        //     width: 400,
-        //     height: 550,
-        // },
-        // [theme.breakpoints.down('sm')]: {
-        //     width: 360,
-        //     height: 500,
-        // },
-        // [theme.breakpoints.down('xs')]: {
-        //     width: 280,
-        //     height: 400,
-        // },
     },
     visibleAndHiddenBlock: {},
     media: {
@@ -112,12 +98,7 @@ const useStyles = makeStyles(theme => ({
     expandOpen: {
         transform: 'rotate(180deg)',
     },
-    completedProjectAvatar: {
-        backgroundColor: green[500],
-    },
-    unfinishedProjectAvatar: {
-        backgroundColor: red[500],
-    },
+
     projectDescriptionWrapper: {},
     characteristicsHeaderIcon: {
         fontSize: 20,
@@ -164,35 +145,29 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-
-const FullProjectDescriptionProjectDescription = observer((props) => {
-    const {
-        buttonShowMoreInfo = null,
-        isCardInModal = false,
-        showModal = () => {}
-    } = props
+const ProjectCard = observer((props) => {
+    const {isModal, showModal} = props
     const classes = useStyles({darkMode: storeApp.darkMode})
     const {project} = props
 
     return <>
-        <Card className={clsx({[classes.cardModal]: isCardInModal})}>
-            <CardActionArea disabled={!!isCardInModal}
-                            onClick={!isCardInModal ? showModal: () => {}}>
-                <CardHeader
-                    classes={{
-                        content: classes.tittleCardWrapper,
-                        title: classes.tittleCardHeader,
-                    }}
-                    avatar={
+        <Card className={clsx({[classes.cardModal]: isModal})}>
+            <CardActionArea disabled={isModal}
+                            onClick={!isModal && showModal}>
+                <CardHeader avatar={
                         <Avatar
                             aria-label="recipe"
-                            className={clsx({[classes.completedProjectAvatar]: !!project.releaseDate.done},
-                                {[classes.unfinishedProjectAvatar]: !project.releaseDate.done})}>
+                            className={clsx({[classes.projectAvatarCompleted]: !!project.releaseDate.done},
+                                {[classes.projectAvatarUnfinished]: !project.releaseDate.done})}>
                             {!!project.releaseDate.done ? <GiCheckMark/> : <GiTimeTrap/>}
                         </Avatar>
                     }
                     title={project.title}
                     subheader={project.releaseDate.date}
+                    classes={{
+                        content: classes.cardHeaderContent,
+                        title: classes.cardHeaderTittle,
+                    }}
                 />
                 <CardMedia
                     className={classes.media}
@@ -201,8 +176,8 @@ const FullProjectDescriptionProjectDescription = observer((props) => {
                 />
             </CardActionArea>
             <Box className={clsx({
-                [classes.cardContentWrapper]: !isCardInModal,
-                [classes.cardContentWrapperModal]: isCardInModal
+                [classes.cardContentWrapper]: !isModal,
+                [classes.cardContentWrapperModal]: isModal
             })}>
                 <Box classes={{root: classes.projectLinks}}>
                     <Link classes={{root: clsx(classes.projectLink, classes.icon)}}
@@ -225,10 +200,10 @@ const FullProjectDescriptionProjectDescription = observer((props) => {
                 <Box borderColor="transparent">
                     <Rating name="read-only" value={project.rating} readOnly/>
                 </Box>
-                <Typography className={clsx({[classes.technologiesUsed]: !isCardInModal})}>
+                <Typography className={clsx({[classes.technologiesUsed]: !isModal})}>
                     {project.technologiesUsed.join(", ")}
                 </Typography>
-                {isCardInModal && <>
+                {isModal && <>
                     <Box className={classes.visibleAndHiddenBlock}>
                         <Box classes={{root: classes.projectDescriptionWrapper}}>
                             <Box display={"flex"} alignItems={"center"}>
@@ -245,8 +220,7 @@ const FullProjectDescriptionProjectDescription = observer((props) => {
                                 <Typography
                                     classes={{root: classes.characteristicsHeaderText}}>{project.benefits.header}</Typography>
                             </Box>
-                            <ul className={classes.characteristicsList}
-                            >
+                            <ul className={classes.characteristicsList}>
                                 {project.benefits.description.map((advantage, index) => {
                                     return <React.Fragment key={`advantage-${index}`}>
                                         <li classes={{root: classes.characteristicsItem}}>
@@ -275,48 +249,29 @@ const FullProjectDescriptionProjectDescription = observer((props) => {
                         })}
                     </ul>
                 </>}
-                {buttonShowMoreInfo}
+                {!isModal ? <Button fullWidth
+                                    color={storeApp.darkMode ? "default" : "primary"}
+                                    onClick={showModal}
+                                    startIcon={<SiFurrynetwork />}
+                >
+                    Подробнее
+                </Button> : null}
             </Box>
         </Card>
     </>
 })
 
 
-const ProjectDescriptionCard = (props) => {
+const ProjectCardManager = (props) => {
     const {project} = props
-    const classes = useStyles(storeApp.darkMode)
 
     const showModal = () => {
-        storeModalWindow.setContent(
-            <>
-                <FullProjectDescriptionProjectDescription
-                    project={project}
-                    isCardInModal={true}
-                />
-            </>
-        )
+        storeModalWindow.setContent(<ProjectCard project={project} isModal={true} />)
         storeModalWindow.toggle(true)
     }
 
-    const buttonShowMoreInfo = <>
-        <Button fullWidth
-                color={storeApp.darkMode ? "default": "primary"}
-                onClick={showModal}
-                startIcon={<SiFurrynetwork/>}
-        >
-            Подробнее
-        </Button>
-    </>
-
-
-    return <>
-        <FullProjectDescriptionProjectDescription
-            project={project}
-            buttonShowMoreInfo={buttonShowMoreInfo}
-            showModal={showModal}
-        />
-    </>
+    return <ProjectCard project={project}
+                        showModal={showModal} />
 }
 
-
-export default observer(ProjectDescriptionCard)
+export default observer(ProjectCardManager)

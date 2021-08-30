@@ -3,13 +3,13 @@ import {useTranslation} from "react-i18next";
 import {Grid} from "@material-ui/core";
 import storeFilterProjects from "../../store/storeFilterProjects";
 import {observer} from "mobx-react";
-import {convertStringToDate} from "../../additionalFunctions/additionalFunctions"
+import {filterProjects, sortProjects} from "../../additionalFunctions/additionalFunctions"
 import ProjectDescriptionCard from "../ProjectDescriptionCard";
 import {makeStyles} from "@material-ui/core/styles";
 import MyModal from "../MyModal";
 
 const useStyles = makeStyles(theme => ({
-    listOfMyProjects: {
+    list: {
         margin: 0,
         [theme.breakpoints.down('sm')]: {
             padding: theme.spacing(1),
@@ -21,52 +21,7 @@ const useStyles = makeStyles(theme => ({
             padding: theme.spacing(2),
         }
     },
-    listOfMyProjectsItem: {}
 }))
-
-const sortProjects = (projects, sorting) => {
-    let result = []
-    const parameters = sorting.find(parameters => parameters.switched)
-    if (!parameters) return projects
-    switch (parameters.name) {
-        case 'sortByReleaseDate':
-            result = projects.sort((previousProject, nextProject) => {
-                if (parameters.ascending) {
-                    if (!previousProject.releaseDate.done) return 1;
-                    return convertStringToDate(previousProject.releaseDate.date) - convertStringToDate(nextProject.releaseDate.date)
-                } else {
-                    if (!nextProject.releaseDate.done) return 1;
-                    return convertStringToDate(nextProject.releaseDate.date) - convertStringToDate(previousProject.releaseDate.date)
-                }
-            })
-            return result
-        case 'sortByRating':
-            result = projects.sort((previousProject, nextProject) => {
-                if (parameters.ascending) {
-                    return previousProject.rating - nextProject.rating
-                } else {
-                    return nextProject.rating - previousProject.rating
-                }
-            })
-            return result
-    }
-    return projects
-}
-
-const filterProjects = (projects, showProjectsWithTechnologies, allProjectsWithTechnologies) => {
-    let result = []
-    if (showProjectsWithTechnologies.length === allProjectsWithTechnologies.length) return projects
-    result = projects.filter(project => {
-        let flag = false
-        showProjectsWithTechnologies.forEach(technology => {
-            if (project.technologiesUsed.find(projectTechnology => projectTechnology.toUpperCase() === technology.toUpperCase())) {
-                flag = true
-            }
-        })
-        return flag
-    })
-    return result
-}
 
 const ListOfMyProjects = () => {
     const classes = useStyles();
@@ -77,9 +32,8 @@ const ListOfMyProjects = () => {
 
     return <>
         <MyModal/>
-        <Grid
-            container
-            xs={12}>
+        <Grid container
+              xs={12}>
             {projects.map((project, index) => {
                 return <React.Fragment key={`project-${index}`}>
                     <Grid
@@ -88,9 +42,9 @@ const ListOfMyProjects = () => {
                         md={6}
                         lg={6}
                         xl={4}
-                        classes={{root: classes.listOfMyProjects}}
+                        classes={{root: classes.list}}
                     >
-                        <ProjectDescriptionCard project={project}/>
+                        <ProjectDescriptionCard project={project} />
                     </Grid>
                 </React.Fragment>
             })}
