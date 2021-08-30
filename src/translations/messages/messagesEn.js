@@ -95,23 +95,13 @@ const messagesEn = {
                     "volleyball, sometimes table tennis).",
             },
         ],
-        keySkills: [
-            {
-                header: "Programming languages",
-                description: ["HTML", "CSS / SCSS", "JavaScript"],
-            },
-            {
-                header: "Libraries and frameworks:",
-                description: ["Material ui", "Bootstrap", "Redux",
-                    "Mobx", "Clsx", "Classes",
-                    "React-hook-form", "Yup", "Jquery",
-                    "i18next", "TypeScript"],
-            },
-            {
-                header: "Graphic Editors",
-                description: ["Adobe Photoshop", "Figma"],
-            }
-        ],
+        keySkills: {
+            header: "Libraries and frameworks:",
+            description: ["Material ui", "Bootstrap", "Redux",
+                "Mobx", "Clsx", "Classes",
+                "React-hook-form", "Yup", "Jquery",
+                "i18next", "TypeScript"],
+        },
     },
     projectsPage: {
         controlPanel: {

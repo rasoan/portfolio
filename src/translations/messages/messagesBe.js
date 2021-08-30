@@ -50,7 +50,7 @@ const messagesBe = {
             {
                 header: "Валодаю наступнымі мовамі:",
                 columnDirection: false,
-                description: [ "Рускі"],
+                description: ["Рускі"],
             },
             {
                 header: "Грамадзянства:",
@@ -95,23 +95,13 @@ const messagesBe = {
                     "Валейбол, часам настольны тэніс).",
             },
         ],
-        keySkills: [
-            {
-                header: "Мовы праграмавання",
-                description: [ "HTML", "CSS / SCSS", "JavaScript"],
-            },
-            {
-                header: "Бібліятэкі і фреймворка:",
-                description: [ "Material ui", "Bootstrap", "Redux",
-                    "Mobx", "Clsx", "Classes",
-                    "React-hook-form", "Yup", "Jquery",
-                    "I18next", "TypeScript"],
-            },
-            {
-                header: "Графічныя рэдактары",
-                description: [ "Adobe Photoshop", "Figma"],
-            }
-        ],
+        keySkills: {
+            header: "Бібліятэкі і фреймворка:",
+            description: ["Material ui", "Bootstrap", "Redux",
+                "Mobx", "Clsx", "Classes",
+                "React-hook-form", "Yup", "Jquery",
+                "I18next", "TypeScript"],
+        },
     },
     projectsPage: {
         controlPanel: {

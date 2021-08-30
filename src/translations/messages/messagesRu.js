@@ -95,23 +95,14 @@ const messagesRu = {
                     "волейбол, иногда настольный теннис).",
             },
         ],
-        keySkills: [
-            {
-                header: "Языки программирования",
-                description: ["HTML", "CSS/SCSS", "JavaScript"],
-            },
-            {
-                header: "Библиотеки и фреймворки:",
-                description: ["Material ui", "Bootstrap", "Redux",
-                    "Mobx", "Clsx", "Classes",
-                    "React-hook-form", "Yup", "Jquery",
-                    "i18next", "TypeScript"],
-            },
-            {
-                header: "Графические редакторы",
-                description: ["Adobe Photoshop", "Figma"],
-            }
-        ],
+        keySkills: {
+            header: "Библиотеки и фреймворки:",
+            description: ["Material ui", "Bootstrap", "Redux",
+                "Mobx", "Clsx", "Classes",
+                "React-hook-form", "Yup", "Jquery",
+                "i18next", "TypeScript"],
+        },
+
     },
     projectsPage: {
         controlPanel: {
@@ -130,8 +121,8 @@ const messagesRu = {
             },
         },
         cardProject: {
-          linkDemo: "Демо",
-          linkCode: "Код",
+            linkDemo: "Демо",
+            linkCode: "Код",
         },
     }
 }
