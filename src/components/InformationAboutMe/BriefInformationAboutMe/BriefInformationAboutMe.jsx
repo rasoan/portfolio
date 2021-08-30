@@ -1,53 +1,26 @@
 import React from "react";
 import {useTranslation} from "react-i18next";
-import {Box, Link, List, ListItem, makeStyles, Paper, Typography} from "@material-ui/core";
+import {Box, Link, List, ListItem, makeStyles, Typography} from "@material-ui/core";
 import {FaInstagram, FaMailBulk, FaTelegramPlane, FaVk} from "react-icons/fa";
 import clsx from "clsx";
 import storeApp from "../../../store/storeApp";
 
 const useStyles = makeStyles(theme => ({
-    list: {},
+    darkMode: {
+        color: props => props.darkMode ? theme.palette.common.white : theme.palette.primary.main,
+    },
     listItem: {
         [theme.breakpoints.down('lg')]: {
             padding: 4,
         },
     },
-    icons: {
-        color: props => props.darkMode ? theme.palette.common.white: theme.palette.primary.main,
-    },
-    itemContacts: {},
-    itemContactsLinkSocial: {},
-    informationWrapper: {
-        // marginLeft: 20,
-        [theme.breakpoints.down('md')]: {
-            // marginLeft: 16,
-        },
-        [theme.breakpoints.down('sm')]: {
-            // marginLeft: 10,
-        },
-        [theme.breakpoints.down('xs')]: {
-            // marginLeft: 4,
-        },
-    },
-    listItemFullName: {
-        maxWidth: 390,
-        [theme.breakpoints.down('lg')]: {
-            maxWidth: 300,
-        },
-        // [theme.breakpoints.down('md')]: {
-        // },
-        [theme.breakpoints.down('sm')]: {
-            maxWidth: 200,
-        },
-        [theme.breakpoints.down('xs')]: {
-            maxWidth: 160,
-        },
-    },
     fullName: {
+        maxWidth: 390,
         lineHeight: "1.2",
         fontSize: 50,
         fontWeight: "bold",
         [theme.breakpoints.down('lg')]: {
+            maxWidth: 300,
             fontSize: 30,
             lineHeight: "1.1",
         },
@@ -56,13 +29,13 @@ const useStyles = makeStyles(theme => ({
             lineHeight: "1.1",
         },
         [theme.breakpoints.down('sm')]: {
+            maxWidth: 200,
             fontSize: 20,
             lineHeight: "1",
         },
-        // [theme.breakpoints.down('xs')]: {
-        //     fontSize: 15,
-        //     lineHeight: "1",
-        // },
+        [theme.breakpoints.down('xs')]: {
+            maxWidth: 160,
+        },
     },
     years: {
         fontSize: 50,
@@ -75,11 +48,8 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             fontSize: 20,
         },
-        // [theme.breakpoints.down('xs')]: {
-        //     fontSize: 15,
-        // },
     },
-    contactsText: {
+    textContacts: {
         fontSize: 40,
         [theme.breakpoints.down('lg')]: {
             fontSize: 20,
@@ -101,8 +71,7 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down('lg')]: {
             fontSize: 25,
         },
-        [theme.breakpoints.down('md')]: {
-        },
+        [theme.breakpoints.down('md')]: {},
         [theme.breakpoints.down('sm')]: {
             fontSize: 20,
             marginRight: 8,
@@ -117,36 +86,35 @@ const BriefInformationAboutMe = () => {
     const classes = useStyles({darkMode: storeApp.darkMode})
     const {t} = useTranslation()
 
-    return <Box mx={"auto"} classes={{root: classes.informationWrapper}}>
-        <List className={classes.list}>
-            <ListItem className={clsx(classes.listItem, classes.listItemFullName)}>
-                <Typography component={"h4"} classes={{root: classes.fullName}}>
-                    {t('profilePage.briefInformationAboutMe.fullName')}
+    return <Box mx={"auto"}>
+        <List>
+            <ListItem className={clsx(classes.listItem, classes.fullName)}>
+                {t('profilePage.briefInformationAboutMe.fullName')}
+            </ListItem>
+            <ListItem className={clsx(classes.listItem, classes.years)}>
+                {t('profilePage.briefInformationAboutMe.years')}
+            </ListItem>
+            <ListItem className={classes.listItem}>
+                <FaMailBulk className={clsx(classes.iconContacts, classes.darkMode)} />
+                <Typography classes={{root: classes.textContacts}}>
+                    araikrasoian@gmail.com
                 </Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Typography variant="h4" classes={{root: classes.years}}>
-                    {t('profilePage.briefInformationAboutMe.years')}
-                </Typography>
-            </ListItem>
-            <ListItem className={classes.listItem}>
-                <FaMailBulk className={clsx(classes.iconContacts, classes.icons)}/>
-                <Typography classes={{root: classes.contactsText}}>araikrasoian@gmail.com</Typography>
-            </ListItem>
-            <ListItem className={classes.listItem}>
-                <Link target="_blank" className={classes.itemContactsLinkSocial} href="https://vk.com/araiikk">
-                    <FaVk className={clsx(classes.iconContacts, classes.icons)}/>
+                <Link target="_blank"
+                      href="https://vk.com/araiikk">
+                    <FaVk className={clsx(classes.iconContacts, classes.darkMode)} />
                 </Link>
-                <Link className={classes.itemContactsLinkSocial} target="_blank"
+                <Link target="_blank"
                       href="https://www.instagram.com/araiikk">
-                    <FaInstagram className={clsx(classes.iconContacts, classes.icons)}/>
+                    <FaInstagram className={clsx(classes.iconContacts, classes.darkMode)} />
                 </Link>
-                <Link className={classes.itemContactsLinkSocial} href="tel:+375256643070">
-                    <FaTelegramPlane className={clsx(classes.iconContacts, classes.icons)}/>
+                <Link href="tel:+375256643070">
+                    <FaTelegramPlane className={clsx(classes.iconContacts, classes.darkMode)} />
                 </Link>
             </ListItem>
         </List>
     </Box>
 }
 
-export default BriefInformationAboutMe;
+export default BriefInformationAboutMe

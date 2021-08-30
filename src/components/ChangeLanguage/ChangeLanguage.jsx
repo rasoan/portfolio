@@ -25,9 +25,6 @@ const useStyles = makeStyles(theme => ({
         [theme.breakpoints.down("sm")]: {
             fontSize: "0.8rem",
         },
-        [theme.breakpoints.down("xs")]: {
-            display: "none",
-        }
     },
     showModalStartIcon: {
         marginRight: 8,
