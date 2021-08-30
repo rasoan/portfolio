@@ -46,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     navigationPanel: {
         flexGrow: 1,
     },
-    controlElementsContainer: {
+    controlPanel: {
         margin: "0 10px 0 auto",
         [theme.breakpoints.down("xs")]: {
             marginRight: 0,
@@ -89,7 +89,7 @@ const Header = () => {
                                     variant={"h6"}>
                             {t('header')}
                         </Typography>
-                        <Box className={classes.controlElementsContainer}>
+                        <Box className={classes.controlPanel}>
                             <ChangeLanguage />
                             <ToggleDarkMode />
                         </Box>
