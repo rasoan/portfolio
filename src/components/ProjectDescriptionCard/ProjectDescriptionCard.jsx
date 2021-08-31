@@ -37,6 +37,9 @@ import storeApp from "../../store/storeApp";
 import {observer} from "mobx-react";
 
 const useStyles = makeStyles(theme => ({
+    darkMode: {
+        color: props => props.darkMode ? theme.palette.common.white : theme.palette.primary.main
+    },
     cardHeaderContent: {
         fontSize: 30,
         overflow: "hidden",
@@ -52,23 +55,29 @@ const useStyles = makeStyles(theme => ({
     projectAvatarUnfinished: {
         backgroundColor: red[500],
     },
-
-
-
-    projectLinks: {
-        display: "flex",
-        justifyContent: "space-between",
-        width: "100%",
-        height: "100%",
-    },
-    icon: {
-        color: props => props.darkMode ? theme.palette.common.white : theme.palette.primary.main
+    preview: {
+        height: 0,
+        paddingTop: '56.25%', // 16:9
     },
     projectLink: {
         width: "max-content",
         display: "flex",
         alignItems: "center",
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     projectLinkIcon: {
         marginRight: 6,
 
@@ -84,10 +93,8 @@ const useStyles = makeStyles(theme => ({
         maxHeight: "90vh",
     },
     visibleAndHiddenBlock: {},
-    media: {
-        height: 0,
-        paddingTop: '56.25%', // 16:9
-    },
+
+
     expand: {
         transform: 'rotate(0deg)',
         marginLeft: 'auto',
@@ -137,10 +144,10 @@ const useStyles = makeStyles(theme => ({
             maxWidth: 225,
         },
     },
-    cardContentWrapper: {
+    contentWrapper: {
         padding: theme.spacing(2, 2, 1, 2)
     },
-    cardContentWrapperModal: {
+    contentWrapperModal: {
         padding: theme.spacing(2)
     },
 }))
@@ -155,41 +162,47 @@ const ProjectCard = observer((props) => {
             <CardActionArea disabled={isModal}
                             onClick={!isModal && showModal}>
                 <CardHeader avatar={
-                        <Avatar
-                            aria-label="recipe"
-                            className={clsx({[classes.projectAvatarCompleted]: !!project.releaseDate.done},
-                                {[classes.projectAvatarUnfinished]: !project.releaseDate.done})}>
-                            {!!project.releaseDate.done ? <GiCheckMark/> : <GiTimeTrap/>}
-                        </Avatar>
-                    }
-                    title={project.title}
-                    subheader={project.releaseDate.date}
-                    classes={{
-                        content: classes.cardHeaderContent,
-                        title: classes.cardHeaderTittle,
-                    }}
+                    <Avatar
+                        aria-label="recipe"
+                        className={clsx({[classes.projectAvatarCompleted]: !!project.releaseDate.done},
+                            {[classes.projectAvatarUnfinished]: !project.releaseDate.done})}>
+                        {!!project.releaseDate.done ? <GiCheckMark/> : <GiTimeTrap/>}
+                    </Avatar>
+                }
+                            title={project.title}
+                            subheader={project.releaseDate.date}
+                            classes={{
+                                content: classes.cardHeaderContent,
+                                title: classes.cardHeaderTittle,
+                            }}
                 />
                 <CardMedia
-                    className={classes.media}
+                    className={classes.preview}
                     image={require(`../../images/projects/${project.screenshots[0]}`).default}
                     title={project.title}
                 />
             </CardActionArea>
             <Box className={clsx({
-                [classes.cardContentWrapper]: !isModal,
-                [classes.cardContentWrapperModal]: isModal
+                [classes.contentWrapper]: !isModal,
+                [classes.contentWrapperModal]: isModal
             })}>
-                <Box classes={{root: classes.projectLinks}}>
-                    <Link classes={{root: clsx(classes.projectLink, classes.icon)}}
-                          href={project.demoLink.link} target={"_blank"}
+                <Box display={"flex"}
+                     justifyContent={"space-between"}
+                     width={"100%"}
+                     height={"100%"}
+                >
+                    <Link className={clsx(classes.projectLink, classes.darkMode)}
+                          href={project.demoLink.link}
+                          target={"_blank"}
                     >
                         <IoEyeOutline className={classes.projectLinkIcon}/>
                         <Typography>
                             {project.demoLink.text}
                         </Typography>
                     </Link>
-                    <Link classes={{root: clsx(classes.projectLink, classes.icon)}}
-                          href={project.projectLink.link} target={"_blank"}
+                    <Link className={clsx(classes.projectLink, classes.darkMode)}
+                          href={project.projectLink.link}
+                          target={"_blank"}
                     >
                         <FiSettings className={classes.projectLinkIcon}/>
                         <Typography>
@@ -252,7 +265,7 @@ const ProjectCard = observer((props) => {
                 {!isModal ? <Button fullWidth
                                     color={storeApp.darkMode ? "default" : "primary"}
                                     onClick={showModal}
-                                    startIcon={<SiFurrynetwork />}
+                                    startIcon={<SiFurrynetwork/>}
                 >
                     Подробнее
                 </Button> : null}
@@ -266,12 +279,12 @@ const ProjectCardManager = (props) => {
     const {project} = props
 
     const showModal = () => {
-        storeModalWindow.setContent(<ProjectCard project={project} isModal={true} />)
+        storeModalWindow.setContent(<ProjectCard project={project} isModal={true}/>)
         storeModalWindow.toggle(true)
     }
 
     return <ProjectCard project={project}
-                        showModal={showModal} />
+                        showModal={showModal}/>
 }
 
 export default observer(ProjectCardManager)
