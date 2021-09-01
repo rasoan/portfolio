@@ -1,38 +1,28 @@
-import React, {useEffect, useRef, useState} from "react";
+import React from "react";
 import {
     Avatar,
     Box, Button,
-    Card, CardActionArea, CardActions,
-    CardContent,
+    Card, CardActionArea,
     CardHeader,
-    CardMedia, Collapse,
+    CardMedia,
     Link,
-    ListItem, ListSubheader,
-    Paper,
     Typography
 } from "@material-ui/core";
-import style from "./style.module.scss";
-import List from "@material-ui/core/List";
 import Rating from '@material-ui/lab/Rating';
 import {makeStyles} from "@material-ui/core/styles";
 import {green, red} from "@material-ui/core/colors";
-import IconButton from "@material-ui/core/IconButton";
 import clsx from "clsx";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import {
-    BiAtom,
-    BsDot,
     BsInfoCircle,
     FiSettings,
     GiAchievement,
     GiCheckMark,
     GiTimeTrap,
     IoEyeOutline,
-    MdErrorOutline, SiFurrynetwork, TiDocumentText, TiInputCheckedOutline
+    MdErrorOutline,
+    SiFurrynetwork
 } from "react-icons/all";
-import MyModal from "../MyModal";
 import storeModalWindow from "../../store/storeModalWindow";
-import {useTranslation} from "react-i18next";
 import storeApp from "../../store/storeApp";
 import {observer} from "mobx-react";
 
@@ -57,78 +47,47 @@ const useStyles = makeStyles(theme => ({
     },
     preview: {
         height: 0,
-        paddingTop: '56.25%', // 16:9
+        paddingTop: '56.25%',
     },
     projectLink: {
         width: "max-content",
         display: "flex",
         alignItems: "center",
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     projectLinkIcon: {
         marginRight: 6,
-
-    },
-    card: {
-        "&:hover": {
-            cursor: "pointer",
-        }
     },
     cardModal: {
         overflowY: "scroll",
-        width: "50vw",
+        width: 800,
         maxHeight: "90vh",
+        [theme.breakpoints.down('lg')]: {
+            width: "80vw",
+        },
+        [theme.breakpoints.down('md')]: {
+            width: "80vw",
+        },
+        [theme.breakpoints.down('xs')]: {
+            width: "85vw",
+        },
     },
-    visibleAndHiddenBlock: {},
-
-
-    expand: {
-        transform: 'rotate(0deg)',
-        marginLeft: 'auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    },
-    expandOpen: {
-        transform: 'rotate(180deg)',
-    },
-
-    projectDescriptionWrapper: {},
     characteristicsHeaderIcon: {
         fontSize: 20,
         marginRight: 10,
     },
-    projectDescriptionTitleIcon: {
+    descriptionTitleIcon: {
         fontSize: 20,
         marginRight: 10,
     },
-    projectDescriptionTitle: {},
-    projectDescription: {
+    description: {
         paddingLeft: 10,
     },
     characteristicsList: {
         margin: 0,
     },
-
-    characteristicsHeaderText: {},
     characteristicsItem: {
         padding: 0,
     },
-
-    characteristicsItemText: {},
     technologiesUsed: {
         marginBottom: 20,
         overflow: "hidden",
@@ -166,7 +125,7 @@ const ProjectCard = observer((props) => {
                         aria-label="recipe"
                         className={clsx({[classes.projectAvatarCompleted]: !!project.releaseDate.done},
                             {[classes.projectAvatarUnfinished]: !project.releaseDate.done})}>
-                        {!!project.releaseDate.done ? <GiCheckMark/> : <GiTimeTrap/>}
+                        {!!project.releaseDate.done ? <GiCheckMark /> : <GiTimeTrap />}
                     </Avatar>
                 }
                             title={project.title}
@@ -195,7 +154,7 @@ const ProjectCard = observer((props) => {
                           href={project.demoLink.link}
                           target={"_blank"}
                     >
-                        <IoEyeOutline className={classes.projectLinkIcon}/>
+                        <IoEyeOutline className={classes.projectLinkIcon} />
                         <Typography>
                             {project.demoLink.text}
                         </Typography>
@@ -204,59 +163,56 @@ const ProjectCard = observer((props) => {
                           href={project.projectLink.link}
                           target={"_blank"}
                     >
-                        <FiSettings className={classes.projectLinkIcon}/>
+                        <FiSettings className={classes.projectLinkIcon} />
                         <Typography>
                             {project.projectLink.text}
                         </Typography>
                     </Link>
                 </Box>
                 <Box borderColor="transparent">
-                    <Rating name="read-only" value={project.rating} readOnly/>
+                    <Rating name="read-only" value={project.rating} readOnly />
                 </Box>
                 <Typography className={clsx({[classes.technologiesUsed]: !isModal})}>
                     {project.technologiesUsed.join(", ")}
                 </Typography>
                 {isModal && <>
-                    <Box className={classes.visibleAndHiddenBlock}>
-                        <Box classes={{root: classes.projectDescriptionWrapper}}>
+                    <Box>
+                        <Box>
                             <Box display={"flex"} alignItems={"center"}>
-                                <BsInfoCircle className={classes.projectDescriptionTitleIcon}/>
-                                <Typography
-                                    className={classes.projectDescriptionTitle}>{project.description.header}</Typography>
+                                <BsInfoCircle className={classes.descriptionTitleIcon} />
+                                <Typography>
+                                    {project.description.header}
+                                </Typography>
                             </Box>
-                            <Typography
-                                className={classes.projectDescription}>{project.description.description}</Typography>
+                            <Typography className={classes.description}>
+                                {project.description.description}
+                            </Typography>
                         </Box>
                         <Box>
                             <Box display={"flex"} alignItems={"center"}>
                                 <GiAchievement className={classes.characteristicsHeaderIcon}/>
-                                <Typography
-                                    classes={{root: classes.characteristicsHeaderText}}>{project.benefits.header}</Typography>
+                                <Typography>{project.benefits.header}</Typography>
                             </Box>
                             <ul className={classes.characteristicsList}>
                                 {project.benefits.description.map((advantage, index) => {
                                     return <React.Fragment key={`advantage-${index}`}>
-                                        <li classes={{root: classes.characteristicsItem}}>
-                                            <Typography
-                                                classes={{root: classes.characteristicsItemText}}>{advantage}</Typography>
+                                        <li className={classes.characteristicsItem}>
+                                            {advantage}
                                         </li>
                                     </React.Fragment>
                                 })}
                             </ul>
                             <Box display={"flex"} alignItems={"center"}>
                                 <MdErrorOutline className={classes.characteristicsHeaderIcon}/>
-                                <Typography
-                                    classes={{root: classes.characteristicsHeaderText}}>{project.limitations.header}</Typography>
+                                <Typography>{project.limitations.header}</Typography>
                             </Box>
                         </Box>
                     </Box>
-                    <ul className={classes.characteristicsList}
-                    >
+                    <ul className={classes.characteristicsList}>
                         {project.limitations.description.map((flaw, index) => {
                             return <React.Fragment key={`flaw-${index}`}>
-                                <li className={{root: classes.characteristicsItem}}>
-                                    <Typography
-                                        classes={{root: classes.characteristicsItemText}}>{flaw}</Typography>
+                                <li className={classes.characteristicsItem}>
+                                    {flaw}
                                 </li>
                             </React.Fragment>
                         })}
@@ -265,7 +221,7 @@ const ProjectCard = observer((props) => {
                 {!isModal ? <Button fullWidth
                                     color={storeApp.darkMode ? "default" : "primary"}
                                     onClick={showModal}
-                                    startIcon={<SiFurrynetwork/>}
+                                    startIcon={<SiFurrynetwork />}
                 >
                     Подробнее
                 </Button> : null}
@@ -274,17 +230,16 @@ const ProjectCard = observer((props) => {
     </>
 })
 
-
 const ProjectCardManager = (props) => {
     const {project} = props
 
     const showModal = () => {
-        storeModalWindow.setContent(<ProjectCard project={project} isModal={true}/>)
+        storeModalWindow.setContent(<ProjectCard project={project} isModal={true} />)
         storeModalWindow.toggle(true)
     }
 
     return <ProjectCard project={project}
-                        showModal={showModal}/>
+                        showModal={showModal} />
 }
 
 export default observer(ProjectCardManager)
