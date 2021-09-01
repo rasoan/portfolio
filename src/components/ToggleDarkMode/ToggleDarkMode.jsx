@@ -11,14 +11,14 @@ const useStyles = makeStyles(theme => ({
     darkMode: {
         color: props => props.darkMode ? theme.palette.common.white : theme.palette.primary.main
     },
-    mySwgIconRoot: {
+    icon: {
         width: 20,
         height: 20,
     },
-    themeBlackAndWhiteFormControl: {
+    switch: {
         marginRight: 0,
     },
-    switchBase: {
+    mySwitchBase: {
         '&.Mui-checked': {
             color: theme.palette.common.white,
             transform: "none",
@@ -30,19 +30,18 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const ToggleDarkMode = () => {
-    const classes = useStyles()
+    const classes = useStyles({darkMode: storeApp.darkMode})
 
-    return <Switch
-        icon={<Brightness4Icon classes={{root: classes.mySwgIconRoot}}/>}
-        checkedIcon={<Brightness7Icon classes={{root: classes.mySwgIconRoot}}/>}
-        classes={{
-            root: classes.themeBlackAndWhiteFormControl,
-            switchBase: clsx(classes.darkMode, classes.switchBase),
-            track: classes.switchTrack,
-        }}
-        checked={storeApp.darkMode}
-        onChange={() => storeApp.toggleDarkMode()}
-        name="Theme"
+    return <Switch icon={<Brightness4Icon className={classes.icon} />}
+                   checkedIcon={<Brightness7Icon className={classes.icon} />}
+                   checked={storeApp.darkMode}
+                   onChange={() => storeApp.toggleDarkMode()}
+                   name="Theme"
+                   classes={{
+                       root: classes.switch,
+                       switchBase: clsx(classes.mySwitchBase, classes.darkMode),
+                       track: classes.switchTrack,
+                   }}
     />
 }
 
