@@ -25,6 +25,7 @@ import {
 import storeModalWindow from "../../store/storeModalWindow";
 import storeApp from "../../store/storeApp";
 import {observer} from "mobx-react";
+import {useTranslation} from "react-i18next";
 
 const useStyles = makeStyles(theme => ({
     darkMode: {
@@ -50,7 +51,7 @@ const useStyles = makeStyles(theme => ({
         paddingTop: '56.25%',
     },
     previewModal: {
-        boxShadow: theme.shadows[3],
+        boxShadow: theme.shadows[2],
     },
     projectLink: {
         width: "max-content",
@@ -118,6 +119,7 @@ const ProjectCard = observer((props) => {
     const {isModal, showModal} = props
     const classes = useStyles({darkMode: storeApp.darkMode})
     const {project} = props
+    const {t} = useTranslation()
 
     return <>
         <Card className={clsx({[classes.cardModal]: isModal})}>
@@ -139,7 +141,7 @@ const ProjectCard = observer((props) => {
                             }}
                 />
                 <CardMedia
-                    className={clsx(classes.preview, {[classes.previewModal]: isModal})}
+                    className={clsx(classes.preview)}
                     image={require(`../../images/projects/${project.screenshots[0]}`).default}
                     title={project.title}
                 />
@@ -226,7 +228,7 @@ const ProjectCard = observer((props) => {
                                     onClick={showModal}
                                     startIcon={<SiFurrynetwork />}
                 >
-                    Подробнее
+                    {t('projectsPage.cardProject.moreDetails')}
                 </Button> : null}
             </Box>
         </Card>

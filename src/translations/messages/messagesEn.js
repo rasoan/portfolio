@@ -122,6 +122,7 @@ const messagesEn = {
         cardProject: {
             linkDemo: "Demo",
             linkCode: "Code",
+            moreDetails: "more details",
         },
     }
 }

@@ -260,44 +260,44 @@
     ]
   },
   {
-    "Title": "Форма рэгістрацыі",
-    "Description": {
-      "Header": "Апісанне праекта",
-      "Description": "Тэставы праект."
+    "title": "Форма рэгістрацыі",
+    "description": {
+      "header": "Апісанне праекта",
+      "description": "Тэставы праект."
     },
-    "ReleaseDate": {
-      "Date": "2021/09/04",
-      "Done": false
+    "releaseDate": {
+      "date": "2021/09/04",
+      "done": false
     },
-    "TechnologiesUsed": [
+    "technologiesUsed": [
       "SCSS",
       "JavaScript",
       "Next.js",
       "Ant.design"
     ],
-    "DemoLink": {
+    "demoLink": {
       "Link": "https://github.com/Rasoan/registration",
       "Text": "Дэма"
     },
-    "ProjectLink": {
-      "Link": "https://github.com/Rasoan/registration",
-      "Text": "Код"
+    "projectLink": {
+      "link": "https://github.com/Rasoan/registration",
+      "text": "Код"
     },
-    "Rating": 2,
-    "Benefits": {
-      "Header": "Перавагі",
-      "Description": [
+    "rating": 2,
+    "benefits": {
+      "header": "Перавагі",
+      "description": [
         "Next.js",
         "Ёсць праверка на валіднасць формы"
       ]
     },
-    "Limitations": {
-      "Header": "Недахопы",
-      "Description": [
+    "limitations": {
+      "header": "Недахопы",
+      "description": [
         "Вельмі сырой праект, бо гэта першы праект на, next.js"
       ]
     },
-    "Screenshots": [
+    "screenshots": [
       "FormRegistrationsNextJs.jpg"
     ]
   }
