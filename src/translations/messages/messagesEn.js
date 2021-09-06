@@ -25,7 +25,7 @@ const messagesEn = {
             },
             {
                 header: "Date of birth:",
-                description: "21.03.1993",
+                description: "03.21.1993",
             },
             {
                 header: "Phone:",
@@ -33,7 +33,7 @@ const messagesEn = {
             },
             {
                 header: "Address of residence",
-                description: "Minsk, Plekhanov st. 52",
+                description: "Bobruisk, Uritskogo street 7",
             },
             {
                 header: "Smoking habits:",
@@ -41,14 +41,14 @@ const messagesEn = {
             },
             {
                 header: "Ready to get started:",
-                description: "I'm ready right away, it is advisable to start with the remote option, but I will consider all the options",
+                description: "ready right away, preferably starting with the remote version, but I will consider all the options",
             },
             {
                 header: "Desired salary level:",
-                description: "You can start with $ 300",
+                description: "I am ready to work for free the first time",
             },
             {
-                header: "I speak the following languages:",
+                header: "I speak these languages:",
                 columnDirection: false,
                 description: ["Russian"],
             },
@@ -62,10 +62,7 @@ const messagesEn = {
             },
             {
                 header: "Desired travel time to work:",
-                description: "30 minutes, but in general I live in a rented apartment," +
-                    "which means that I can take pictures and get closer to work," +
-                    "but my priority is a place of work near the metro," +
-                    "but I will consider all the options.",
+                description: "currently looking for a remote job",
             },
             {
                 header: "Education:",
@@ -80,19 +77,14 @@ const messagesEn = {
                 header: "Work experience:",
                 columnDirectionList: true,
                 description: [
-                    "Amateur sports (boxing) from 2009 to 2015",
-                    "tourism manager from 2015 to 2016",
-                    "physical education teacher from 2016 to 2019",
-                    `system administrator at the institute from 2019 to $ {new Date (). getFullYear ()}`,
+                    "I worked in a team on commercial projects for 2 months",
+                    `system administrator at the institute from 2019 to ${new Date().getFullYear()}`,
                 ],
             },
             {
                 header: "About me:",
-                description: "A hardworking guy, I spend my free time on portfolio projects," +
-                    "a month before the session, 2 times a year I deviate from the course and immerse myself in studies," +
-                    "to pass the session)" +
-                    "I love sports (basketball," +
-                    "volleyball, sometimes table tennis).",
+                description: "Programming day and night," +
+                    "I love sports and enjoy the results of my work"
             },
         ],
         keySkills: {
