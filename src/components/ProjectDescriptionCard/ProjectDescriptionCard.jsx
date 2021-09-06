@@ -49,6 +49,9 @@ const useStyles = makeStyles(theme => ({
         height: 0,
         paddingTop: '56.25%',
     },
+    previewModal: {
+        boxShadow: theme.shadows[3],
+    },
     projectLink: {
         width: "max-content",
         display: "flex",
@@ -136,7 +139,7 @@ const ProjectCard = observer((props) => {
                             }}
                 />
                 <CardMedia
-                    className={classes.preview}
+                    className={clsx(classes.preview, {[classes.previewModal]: isModal})}
                     image={require(`../../images/projects/${project.screenshots[0]}`).default}
                     title={project.title}
                 />
