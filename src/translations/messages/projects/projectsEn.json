@@ -258,5 +258,47 @@
     "screenshots": [
       "Portfolio.jpg"
     ]
+  },
+  {
+    "title": "Registration form",
+    "description": {
+      "header": "Project Description",
+      "description": "Test project."
+    },
+    "releaseDate": {
+      "date": "09/04/2021",
+      "done": false
+    },
+    "technologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "Next.js",
+      "ant.design"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/registration",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/registration",
+      "text": "Code"
+    },
+    "rating": 2,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "Next.js",
+        "There is a check for the validity of the form"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "a very crude project, since this is the first project on next.js"
+      ]
+    },
+    "screenshots": [
+      "FormRegistrationsNextJs.jpg"
+    ]
   }
 ]

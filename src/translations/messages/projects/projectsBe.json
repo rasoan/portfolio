@@ -258,5 +258,47 @@
     "screenshots": [
       "Portfolio.jpg"
     ]
+  },
+  {
+    "Title": "Форма рэгістрацыі",
+    "Description": {
+      "Header": "Апісанне праекта",
+      "Description": "Тэставы праект."
+    },
+    "ReleaseDate": {
+      "Date": "2021/09/04",
+      "Done": false
+    },
+    "TechnologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "Next.js",
+      "Ant.design"
+    ],
+    "DemoLink": {
+      "Link": "https://github.com/Rasoan/registration",
+      "Text": "Дэма"
+    },
+    "ProjectLink": {
+      "Link": "https://github.com/Rasoan/registration",
+      "Text": "Код"
+    },
+    "Rating": 2,
+    "Benefits": {
+      "Header": "Перавагі",
+      "Description": [
+        "Next.js",
+        "Ёсць праверка на валіднасць формы"
+      ]
+    },
+    "Limitations": {
+      "Header": "Недахопы",
+      "Description": [
+        "Вельмі сырой праект, бо гэта першы праект на, next.js"
+      ]
+    },
+    "Screenshots": [
+      "FormRegistrationsNextJs.jpg"
+    ]
   }
 ]
