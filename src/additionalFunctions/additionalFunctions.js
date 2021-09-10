@@ -31,11 +31,20 @@ export const sortProjects = (projects, sorting) => {
         case 'sortByReleaseDate':
             result = projects.sort((previousProject, nextProject) => {
                 if (parameters.ascending) {
-                    if (!previousProject.releaseDate.done) return 1;
-                    return convertStringToDate(previousProject.releaseDate.date) - convertStringToDate(nextProject.releaseDate.date)
+                    if (!previousProject.releaseDate.done) {
+                        return 1
+                    } else if (!nextProject.releaseDate.done) {
+                        return -1
+                    }
+
+                    return Date.parse(new Date(previousProject.releaseDate.date)) - Date.parse(new Date(nextProject.releaseDate.date))
                 } else {
-                    if (!nextProject.releaseDate.done) return 1;
-                    return convertStringToDate(nextProject.releaseDate.date) - convertStringToDate(previousProject.releaseDate.date)
+                    if (!previousProject.releaseDate.done) {
+                        return -1
+                    } else if (!nextProject.releaseDate.done) {
+                        return 1
+                    }
+                    return Date.parse(new Date(nextProject.releaseDate.date)) - Date.parse(new Date(previousProject.releaseDate.date))
                 }
             })
             return result

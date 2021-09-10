@@ -134,7 +134,10 @@ const ProjectCard = observer((props) => {
                     </Avatar>
                 }
                             title={project.title}
-                            subheader={project.releaseDate.date}
+                            subheader={project.releaseDate.done ?
+                                new Date(project.releaseDate.date).toLocaleDateString():
+                                project.releaseDate.date
+                            }
                             classes={{
                                 content: classes.cardHeaderContent,
                                 title: classes.cardHeaderTittle,

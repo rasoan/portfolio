@@ -6,7 +6,7 @@
       "description": "One page, completed as part of the 'Rolling-scopes-school' course"
     },
     "releaseDate": {
-      "date": "03.08.2020",
+      "date": "2020-08-03",
       "done": true
     },
     "technologiesUsed": [
@@ -48,7 +48,7 @@
       "description": "Children's simulator for learning English, made as part of the course \"Rolling-scopes-school\""
     },
     "releaseDate": {
-      "date": "04.22.2020",
+      "date": "2020-22-04",
       "done": true
     },
     "technologiesUsed": [
@@ -91,7 +91,7 @@
       "description": "Multifunctional slider, made as part of the course \"Rolling-scopes-school\""
     },
     "releaseDate": {
-      "date": "05.08.2020",
+      "date": "2020-08-05",
       "done": true
     },
     "technologiesUsed": [
@@ -134,7 +134,7 @@
       "description": "Test project for employment in IT company \"Borovoy Studio\""
     },
     "releaseDate": {
-      "date": "07.25.2021",
+      "date": "2021-25-07",
       "done": true
     },
     "technologiesUsed": [
@@ -266,8 +266,8 @@
       "description": "Test project."
     },
     "releaseDate": {
-      "date": "09/04/2021",
-      "done": false
+      "date": "2021-04-09",
+      "done": true
     },
     "technologiesUsed": [
       "SCSS",

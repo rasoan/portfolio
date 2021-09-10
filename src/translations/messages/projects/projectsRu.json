@@ -6,7 +6,7 @@
       "description": "Одностраничник, выполнен был в рамках курса 'Rolling-scopes-school'"
     },
     "releaseDate": {
-      "date": "08.03.2020",
+      "date": "2020-03-08",
       "done": true
     },
     "technologiesUsed": [
@@ -48,7 +48,7 @@
       "description": "Детский тренажёр для изучения английского языка, выполнен был в рамках курса \",Rolling-scopes-school\""
     },
     "releaseDate": {
-      "date": "22.04.2020",
+      "date": "2020-04-22",
       "done": true
     },
     "technologiesUsed": [
@@ -91,7 +91,7 @@
       "description": "Многофункциональный слайдер, выполнен был в рамках курса \"Rolling-scopes-school\""
     },
     "releaseDate": {
-      "date": "08.05.2020",
+      "date": "2020-05-08",
       "done": true
     },
     "technologiesUsed": [
@@ -134,7 +134,7 @@
       "description": "Тестовый проект выполненный для трудоустройства в IT компанию \"Студия Борового\""
     },
     "releaseDate": {
-      "date": "25.07.2021",
+      "date": "2021-07-25",
       "done": true
     },
     "technologiesUsed": [
@@ -266,8 +266,8 @@
       "description": "Тестовый проект."
     },
     "releaseDate": {
-      "date": "04.09.2021",
-      "done": false
+      "date": "2021-09-04",
+      "done": true
     },
     "technologiesUsed": [
       "SCSS",
