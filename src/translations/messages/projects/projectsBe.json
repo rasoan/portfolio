@@ -218,7 +218,7 @@
   {
     "title": "Партфолiо",
     "description": {
-      "header": "Описание проекта",
+      "header": "Апісанне праекта",
       "description": "Портфолио в котором я рассказываю подробную информацию о себе и выполненных проектах."
     },
     "releaseDate": {
@@ -235,7 +235,7 @@
     ],
     "demoLink": {
       "link": "https://rasoan.github.io/portfolio",
-      "text": "Демо"
+      "text": "Дема"
     },
     "projectLink": {
       "link": "https://github.com/Rasoan/portfolio",
@@ -243,14 +243,14 @@
     },
     "rating": 5,
     "benefits": {
-      "header": "Преимущества",
+      "header": "Перавагі",
       "description": [
         "интернациональное приложение",
         "Фильтры записываются в url адрес"
       ]
     },
     "limitations": {
-      "header": "Недостатки",
+      "header": "Недахопы",
       "description": [
         "не красивая история коммитов"
       ]
@@ -299,6 +299,240 @@
     },
     "screenshots": [
       "FormRegistrationsNextJs.jpg"
+    ]
+  },
+  {
+    "title": "Рэдактар шаблонаў паведамленняў",
+    "description": {
+      "header": "Апісанне праекта",
+      "description": "распрацавана для www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "TypeScript",
+      "React"
+    ],
+    "demoLink": {
+      "link": "https://rasoan.github.io/messageTemplateEditor",
+      "text": "Дема"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/messageTemplateEditor/tree/master",
+      "text": "Код"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Перавагі",
+      "description": [
+        "Архітэктура"
+      ]
+    },
+    "limitations": {
+      "header": "Недахопы",
+      "description": [
+        "Можна было і прыгажэй звярстаць"
+      ]
+    },
+    "screenshots": [
+      "messageTemplateEditor.png"
+    ]
+  },
+  {
+    "title": "Усе шляхі з падмноствам мэтавай сумы",
+    "description": {
+      "header": "Апісанне праекта",
+      "description": "распрацавана для www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_allPathsWithTargetSumSubset",
+      "text": "Дема"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_allPathsWithTargetSumSubset",
+      "text": "Код"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Перавагі",
+      "description": [
+        "Код"
+      ]
+    },
+    "limitations": {
+      "header": "Недахопы",
+      "description": [
+        "няма"
+      ]
+    },
+    "screenshots": [
+      "print_all_paths_with_target_sum_subset_11.png"
+    ]
+  },
+  {
+    "title": "Мэнэджэр задач",
+    "description": {
+      "header": "Апісанне праекта",
+      "description": "распрацавана для www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_taskManager",
+      "text": "Дема"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_taskManager",
+      "text": "Код"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Перавагі",
+      "description": [
+        "Код"
+      ]
+    },
+    "limitations": {
+      "header": "Недахопы",
+      "description": [
+        "няма"
+      ]
+    },
+    "screenshots": [
+      "runTasksLinkedin.png"
+    ]
+  },
+  {
+    "title": "SQL",
+    "description": {
+      "header": "Апісанне праекта",
+      "description": "распрацавана для www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_sqlRequest",
+      "text": "Дема"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_sqlRequest",
+      "text": "Код"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Перавагі",
+      "description": [
+        "Код"
+      ]
+    },
+    "limitations": {
+      "header": "Недахопы",
+      "description": [
+        "няма"
+      ]
+    },
+    "screenshots": [
+      "sqlLinkedin.jpg"
+    ]
+  },
+  {
+    "title": "Hëävÿ Mëtäl Ümläüts",
+    "description": {
+      "header": "Апісанне праекта",
+      "description": "Цікавая задача ў codewars"
+    },
+    "releaseDate": {
+      "date": "2023-02-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/latinaCapitalLeter",
+      "text": "Дема"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/latinaCapitalLeter",
+      "text": "Код"
+    },
+    "rating": 4,
+    "benefits": {
+      "header": "Перавагі",
+      "description": [
+        "Код"
+      ]
+    },
+    "limitations": {
+      "header": "Недахопы",
+      "description": [
+        "няма"
+      ]
+    },
+    "screenshots": [
+      "latinaCapitalLetter.png"
+    ]
+  },
+  {
+    "title": "Tic tac toe",
+    "description": {
+      "header": "Апісанне праекта",
+      "description": "Цікавая задача на ўзровень middle распрацоўніка, ідэя ў стварэнні гульні \"крыжыкі нулікі\", ды такі, што б можна было змяняць размерную сетку, усё некалькі складаней, чым здаецца на першы погляд."
+    },
+    "releaseDate": {
+      "date": "2023-02-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript",
+      "TypeScript",
+      "SCSS"
+    ],
+    "demoLink": {
+      "link": "https://rasoan.github.io/TicTacToe/index.html",
+      "text": "Дема"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/TicTacToe",
+      "text": "Код"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Перавагі",
+      "description": [
+        "ванільны js (проста чысты js/ts)",
+        "клёвы алгарытм пошуку пераможцы"
+      ]
+    },
+    "limitations": {
+      "header": "Недахопы",
+      "description": [
+        "вёрстка примитивная (не старался красоту навести)"
+      ]
+    },
+    "screenshots": [
+      "ticTacToe.png"
     ]
   }
 ]

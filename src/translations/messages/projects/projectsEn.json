@@ -300,5 +300,241 @@
     "screenshots": [
       "FormRegistrationsNextJs.jpg"
     ]
+  },
+  {
+    "title": "Message Template Editor",
+    "description": {
+      "header": "Project description",
+      "description": "designed for www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "TypeScript",
+      "React"
+    ],
+    "demoLink": {
+      "link": "https://rasoan.github.io/messageTemplateEditor",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/messageTemplateEditor/tree/master",
+      "text": "Code"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "Architecture"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "It could have been more beautiful"
+      ]
+    },
+    "screenshots": [
+      "messageTemplateEditor.png"
+    ]
+  },
+  {
+    "title": "All paths with target sum subset",
+    "description": {
+      "header": "Project description",
+      "description": "designed for www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_allPathsWithTargetSumSubset",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_allPathsWithTargetSumSubset",
+      "text": "Code"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "Code"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "There is not"
+      ]
+    },
+    "screenshots": [
+      "print_all_paths_with_target_sum_subset_11.png"
+    ]
+  },
+  {
+    "title": "Task Manager",
+    "description": {
+      "header": "Project description",
+      "description": "designed for www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_taskManager",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_taskManager",
+      "text": "Code"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "Code"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "There is not"
+      ]
+    },
+    "screenshots": [
+      "runTasksLinkedin.png"
+    ]
+  },
+  {
+    "title": "SQL",
+    "description": {
+      "header": "Project description",
+      "description": "designed for www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_sqlRequest",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_sqlRequest",
+      "text": "Code"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "Code"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "There is not"
+      ]
+    },
+    "screenshots": [
+      "sqlLinkedin.jpg"
+    ]
+  },
+  {
+    "title": "Hëävÿ Mëtäl Ümläüts",
+    "description": {
+      "header": "Project description",
+      "description": "An interesting problem in codewars"
+    },
+    "releaseDate": {
+      "date": "2023-02-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/latinaCapitalLeter",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/latinaCapitalLeter",
+      "text": "Code"
+    },
+    "rating": 4,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "Code"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "There is not"
+      ]
+    },
+    "screenshots": [
+      "latinaCapitalLetter.png"
+    ]
+  },
+  {
+    "title": "Tic tac toe",
+    "description": {
+      "header": "Project description",
+      "description": "An interesting task for the middle level of a developer, the idea of creating a tic-tac-toe game, and such that it would be possible to change the dimensional grid, everything is somewhat more complicated than it seems at first glance."
+    },
+    "releaseDate": {
+      "date": "2023-02-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript",
+      "TypeScript",
+      "SCSS"
+    ],
+    "demoLink": {
+      "link": "https://rasoan.github.io/TicTacToe/index.html",
+      "text": "Demo"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/TicTacToe",
+      "text": "Code"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Benefits",
+      "description": [
+        "vanilla js (just pure js/ts)",
+        "cool algorithm for finding a winner"
+      ]
+    },
+    "limitations": {
+      "header": "Disadvantages",
+      "description": [
+        "primitive layout (did not try to bring beauty)"
+      ]
+    },
+    "screenshots": [
+      "ticTacToe.png"
+    ]
   }
 ]
+
+

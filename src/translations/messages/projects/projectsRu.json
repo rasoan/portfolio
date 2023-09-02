@@ -300,5 +300,239 @@
     "screenshots": [
       "FormRegistrationsNextJs.jpg"
     ]
+  },
+  {
+    "title": "Редактор шаблонов сообщений",
+    "description": {
+      "header": "Описание проекта",
+      "description": "разработано для www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "SCSS",
+      "JavaScript",
+      "TypeScript",
+      "React"
+    ],
+    "demoLink": {
+      "link": "https://rasoan.github.io/messageTemplateEditor",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/messageTemplateEditor/tree/master",
+      "text": "Код"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "Архитектура"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "Можно было и красивее сверстать"
+      ]
+    },
+    "screenshots": [
+      "messageTemplateEditor.png"
+    ]
+  },
+  {
+    "title": "Все пути с подмножеством целевой суммы",
+    "description": {
+      "header": "Описание проекта",
+      "description": "разработано для www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_allPathsWithTargetSumSubset",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_allPathsWithTargetSumSubset",
+      "text": "Код"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "Код"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "Нет"
+      ]
+    },
+    "screenshots": [
+      "print_all_paths_with_target_sum_subset_11.png"
+    ]
+  },
+  {
+    "title": "Менеджер задач",
+    "description": {
+      "header": "Описание проекта",
+      "description": "разработано для www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_taskManager",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_taskManager",
+      "text": "Код"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "Код"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "Нет"
+      ]
+    },
+    "screenshots": [
+      "runTasksLinkedin.png"
+    ]
+  },
+  {
+    "title": "SQL",
+    "description": {
+      "header": "Описание проекта",
+      "description": "разработано для www.linkedhelper.com"
+    },
+    "releaseDate": {
+      "date": "2023-09-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_sqlRequest",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_sqlRequest",
+      "text": "Код"
+    },
+    "rating": 3,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "Код"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "Нет"
+      ]
+    },
+    "screenshots": [
+      "sqlLinkedin.jpg"
+    ]
+  },
+  {
+    "title": "Hëävÿ Mëtäl Ümläüts",
+    "description": {
+      "header": "Описание проекта",
+      "description": "Интересная задачка в codewars"
+    },
+    "releaseDate": {
+      "date": "2023-02-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/latinaCapitalLeter",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/latinaCapitalLeter",
+      "text": "Код"
+    },
+    "rating": 4,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "Код"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "Нет"
+      ]
+    },
+    "screenshots": [
+      "latinaCapitalLetter.png"
+    ]
+  },
+  {
+    "title": "Tic tac toe",
+    "description": {
+      "header": "Описание проекта",
+      "description": "Интересная задачка на уровень  middle разработчика, идея в создании игры \"крестики нолики\", да такой, что бы можно было изменять размерную сетку, всё несколько сложней, чем кажется на первый взгляд."
+    },
+    "releaseDate": {
+      "date": "2023-02-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript",
+      "TypeScript",
+      "SCSS"
+    ],
+    "demoLink": {
+      "link": "https://rasoan.github.io/TicTacToe/index.html",
+      "text": "Демо"
+    },
+    "projectLink": {
+      "link": "https://github.com/Rasoan/TicTacToe",
+      "text": "Код"
+    },
+    "rating": 5,
+    "benefits": {
+      "header": "Преимущества",
+      "description": [
+        "ванильный js (просто чистый js/ts)",
+        "клёвый алгоритм поиска победителя"
+      ]
+    },
+    "limitations": {
+      "header": "Недостатки",
+      "description": [
+        "вёрстка примитивная (не старался красоту навести)"
+      ]
+    },
+    "screenshots": [
+      "ticTacToe.png"
+    ]
   }
 ]
