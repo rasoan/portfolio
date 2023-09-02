@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/MyAvatar/style.module.scss"],"names":[],"mappings":"AAAA,oBACE,gBAAA,CACA,iBAAA","file":"main.cbb81f68.chunk.css","sourcesContent":[".image {\r\n  object-fit: cover;\r\n  border-radius: 5px;\r\n}\r\n\r\n"]}
