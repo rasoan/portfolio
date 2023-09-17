@@ -151,7 +151,7 @@
       "link": "https://github.com/Rasoan/studioBorovogo",
       "text": "Код"
     },
-    "rating": 4,
+    "rating": 2,
     "benefits": {
       "header": "Преимущества",
       "description": [
@@ -177,8 +177,8 @@
       "description": "Проект связанный с прохождением youtube курса \"Путь самурая\" от \"It-kamasutra\""
     },
     "releaseDate": {
-      "date": "в разработке",
-      "done": false
+      "date": "01.05.2020",
+      "done": true
     },
     "technologiesUsed": [
       "SCSS",
@@ -196,7 +196,7 @@
       "link": "https://github.com/Rasoan/my-app",
       "text": "Код"
     },
-    "rating": 5,
+    "rating": 2,
     "benefits": {
       "header": "Преимущества",
       "description": [
@@ -222,8 +222,8 @@
       "description": "Портфолио в котором я рассказываю подробную информацию о себе и выполненных проектах."
     },
     "releaseDate": {
-      "date": "в разработке",
-      "done": false
+      "date": "01.01.2020",
+      "done": true
     },
     "technologiesUsed": [
       "SCSS",
@@ -241,7 +241,7 @@
       "link": "https://github.com/Rasoan/portfolio",
       "text": "Код"
     },
-    "rating": 5,
+    "rating": 3,
     "benefits": {
       "header": "Преимущества",
       "description": [
@@ -283,7 +283,7 @@
       "link": "https://github.com/Rasoan/registration",
       "text": "Код"
     },
-    "rating": 2,
+    "rating": 0,
     "benefits": {
       "header": "Преимущества",
       "description": [
@@ -517,7 +517,7 @@
       "link": "https://github.com/Rasoan/TicTacToe",
       "text": "Код"
     },
-    "rating": 5,
+    "rating": 4,
     "benefits": {
       "header": "Преимущества",
       "description": [

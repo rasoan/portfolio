@@ -48,7 +48,7 @@
       "description": "Children's simulator for learning English, made as part of the course \"Rolling-scopes-school\""
     },
     "releaseDate": {
-      "date": "2020-22-04",
+      "date": "04-22-2020",
       "done": true
     },
     "technologiesUsed": [
@@ -134,7 +134,7 @@
       "description": "Test project for employment in IT company \"Borovoy Studio\""
     },
     "releaseDate": {
-      "date": "2021-25-07",
+      "date": "2021-07-25",
       "done": true
     },
     "technologiesUsed": [
@@ -151,7 +151,7 @@
       "link": "https://github.com/Rasoan/studioBorovogo",
       "text": "Code"
     },
-    "rating": 4,
+    "rating": 2,
     "benefits": {
       "header": "Benefits",
       "description": [
@@ -177,8 +177,8 @@
       "description": "Project related to the youtube course \"The Way of the Samurai\" from \"It-kamasutra\""
     },
     "releaseDate": {
-      "date": "in developing",
-      "done": false
+      "date": "01.05.2020",
+      "done": true
     },
     "technologiesUsed": [
       "SCSS",
@@ -196,7 +196,7 @@
       "link": "https://github.com/Rasoan/my-app",
       "text": "Code"
     },
-    "rating": 5,
+    "rating": 2,
     "benefits": {
       "header": "Benefits",
       "description": [
@@ -222,8 +222,8 @@
       "description": "A portfolio in which I share detailed information about myself and completed projects."
     },
     "releaseDate": {
-      "date": "in developing",
-      "done": false
+      "date": "01.01.2020",
+      "done": true
     },
     "technologiesUsed": [
       "SCSS",
@@ -241,7 +241,7 @@
       "link": "https://github.com/Rasoan/portfolio",
       "text": "Code"
     },
-    "rating": 5,
+    "rating": 3,
     "benefits": {
       "header": "Benefits",
       "description": [
@@ -283,7 +283,7 @@
       "link": "https://github.com/Rasoan/registration",
       "text": "Code"
     },
-    "rating": 2,
+    "rating": 0,
     "benefits": {
       "header": "Benefits",
       "description": [
@@ -517,7 +517,7 @@
       "link": "https://github.com/Rasoan/TicTacToe",
       "text": "Code"
     },
-    "rating": 5,
+    "rating": 4,
     "benefits": {
       "header": "Benefits",
       "description": [
