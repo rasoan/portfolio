@@ -29,7 +29,7 @@ const messagesEn = {
             },
             {
                 header: "Phone:",
-                description: "+375 25 664 60 70",
+                description: "+375 29 684 90 05",
             },
             {
                 header: "Address of residence",
@@ -41,11 +41,7 @@ const messagesEn = {
             },
             {
                 header: "Ready to get started:",
-                description: "ready right away, preferably starting with the remote version, but I will consider all the options",
-            },
-            {
-                header: "Desired salary level:",
-                description: "I am ready to work for free the first time",
+                description: "interested in remote work option?",
             },
             {
                 header: "I speak these languages:",
@@ -71,14 +67,6 @@ const messagesEn = {
                     'BSUFK (in absentia) - specialty "Management in Tourism" from 2011 to 2016',
                     `BNTU (in absentia) - specialty -" Information technology software "from 2018 to 2023`,
                     'Rolling-scopes-school - "Frontend developer" from 01.02.2019 to 01.08.2019',
-                ],
-            },
-            {
-                header: "Work experience:",
-                columnDirectionList: true,
-                description: [
-                    "I worked in a team on commercial projects for 2 months",
-                    `system administrator at the institute from 2019 to ${new Date().getFullYear()}`,
                 ],
             },
             {
