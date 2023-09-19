@@ -22,7 +22,7 @@
       "link": "https://github.com/Rasoan/singolo",
       "text": "Код"
     },
-    "rating": 3,
+    "rating": 0,
     "benefits": {
       "header": "Перавагі",
       "description": [
@@ -64,7 +64,7 @@
       "link": "https://github.com/Rasoan/English-for-kids",
       "text": "Код"
     },
-    "rating": 3,
+    "rating": 1,
     "benefits": {
       "header": "Перавагі",
       "description": [
@@ -108,7 +108,7 @@
       "link": "https://github.com/Rasoan/MovieSearch",
       "text": "Код"
     },
-    "rating": 3,
+    "rating": 1,
     "benefits": {
       "header": "Перавагі",
       "description": [
@@ -151,7 +151,7 @@
       "link": "https://github.com/Rasoan/studioBorovogo",
       "text": "Код"
     },
-    "rating": 2,
+    "rating": 0,
     "benefits": {
       "header": "Перавагі",
       "description": [
@@ -196,7 +196,7 @@
       "link": "https://github.com/Rasoan/my-app",
       "text": "Код"
     },
-    "rating": 2,
+    "rating": 0,
     "benefits": {
       "header": "Перавагі",
       "description": [
@@ -241,7 +241,7 @@
       "link": "https://github.com/Rasoan/portfolio",
       "text": "Код"
     },
-    "rating": 3,
+    "rating": 2,
     "benefits": {
       "header": "Перавагі",
       "description": [
@@ -343,158 +343,6 @@
     ]
   },
   {
-    "title": "Усе шляхі з падмноствам мэтавай сумы",
-    "description": {
-      "header": "Апісанне праекта",
-      "description": "распрацавана для www.linkedhelper.com"
-    },
-    "releaseDate": {
-      "date": "2023-09-01",
-      "done": true
-    },
-    "technologiesUsed": [
-      "JavaScript"
-    ],
-    "demoLink": {
-      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_allPathsWithTargetSumSubset",
-      "text": "Дема"
-    },
-    "projectLink": {
-      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_allPathsWithTargetSumSubset",
-      "text": "Код"
-    },
-    "rating": 3,
-    "benefits": {
-      "header": "Перавагі",
-      "description": [
-        "Код"
-      ]
-    },
-    "limitations": {
-      "header": "Недахопы",
-      "description": [
-        "няма"
-      ]
-    },
-    "screenshots": [
-      "print_all_paths_with_target_sum_subset_11.png"
-    ]
-  },
-  {
-    "title": "Мэнэджэр задач",
-    "description": {
-      "header": "Апісанне праекта",
-      "description": "распрацавана для www.linkedhelper.com"
-    },
-    "releaseDate": {
-      "date": "2023-09-01",
-      "done": true
-    },
-    "technologiesUsed": [
-      "JavaScript"
-    ],
-    "demoLink": {
-      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_taskManager",
-      "text": "Дема"
-    },
-    "projectLink": {
-      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_taskManager",
-      "text": "Код"
-    },
-    "rating": 3,
-    "benefits": {
-      "header": "Перавагі",
-      "description": [
-        "Код"
-      ]
-    },
-    "limitations": {
-      "header": "Недахопы",
-      "description": [
-        "няма"
-      ]
-    },
-    "screenshots": [
-      "runTasksLinkedin.png"
-    ]
-  },
-  {
-    "title": "SQL",
-    "description": {
-      "header": "Апісанне праекта",
-      "description": "распрацавана для www.linkedhelper.com"
-    },
-    "releaseDate": {
-      "date": "2023-09-01",
-      "done": true
-    },
-    "technologiesUsed": [
-      "JavaScript"
-    ],
-    "demoLink": {
-      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_sqlRequest",
-      "text": "Дема"
-    },
-    "projectLink": {
-      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/linkedinHelper_sqlRequest",
-      "text": "Код"
-    },
-    "rating": 3,
-    "benefits": {
-      "header": "Перавагі",
-      "description": [
-        "Код"
-      ]
-    },
-    "limitations": {
-      "header": "Недахопы",
-      "description": [
-        "няма"
-      ]
-    },
-    "screenshots": [
-      "sqlLinkedin.jpg"
-    ]
-  },
-  {
-    "title": "Hëävÿ Mëtäl Ümläüts",
-    "description": {
-      "header": "Апісанне праекта",
-      "description": "Цікавая задача ў codewars"
-    },
-    "releaseDate": {
-      "date": "2023-02-01",
-      "done": true
-    },
-    "technologiesUsed": [
-      "JavaScript"
-    ],
-    "demoLink": {
-      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/latinaCapitalLeter",
-      "text": "Дема"
-    },
-    "projectLink": {
-      "link": "https://github.com/Rasoan/solvingDifferentProblems/tree/master/latinaCapitalLeter",
-      "text": "Код"
-    },
-    "rating": 4,
-    "benefits": {
-      "header": "Перавагі",
-      "description": [
-        "Код"
-      ]
-    },
-    "limitations": {
-      "header": "Недахопы",
-      "description": [
-        "няма"
-      ]
-    },
-    "screenshots": [
-      "latinaCapitalLetter.png"
-    ]
-  },
-  {
     "title": "Tic tac toe",
     "description": {
       "header": "Апісанне праекта",
@@ -533,6 +381,45 @@
     },
     "screenshots": [
       "ticTacToe.png"
+    ]
+  },
+  {
+    "title": "solvingDifferentProblems",
+    "description": {
+      "header": "Апісанне праекта",
+      "description": "У гэтым рэпазітары сабраны рашэнні розных задач"
+    },
+    "releaseDate": {
+      "date": "2023-08-01",
+      "done": true
+    },
+    "technologiesUsed": [
+      "JavaScript",
+      "TypeScript"
+    ],
+    "demoLink": {
+      "link": "https://github.com/rasoan/solvingDifferentProblems",
+      "text": "Дема"
+    },
+    "projectLink": {
+      "link": "https://github.com/rasoan/solvingDifferentProblems",
+      "text": "Код"
+    },
+    "rating": 4,
+    "benefits": {
+      "header": "Перавагі",
+      "description": [
+        "складаныя задачы з дэманстрацыйнымі тэстамі"
+      ]
+    },
+    "limitations": {
+      "header": "Недахопы",
+      "description": [
+        "няма"
+      ]
+    },
+    "screenshots": [
+      "solvingDifferentProblems.jpg"
     ]
   }
 ]
