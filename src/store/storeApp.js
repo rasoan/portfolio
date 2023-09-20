@@ -5,7 +5,7 @@ import i18next from "../translations/i18next";
 class storeApp {
     navBar = false
     language = i18next.language
-    darkMode = false
+    darkMode = true
 
     constructor() {
         makeObservable(this, {
@@ -35,8 +35,7 @@ class storeApp {
     }
 
     toggleDarkMode = () => {
-        this.darkMode = !this.darkMode
-        console.log(this.darkMode)
+        this.darkMode = !this.darkMode;
     }
 }
 

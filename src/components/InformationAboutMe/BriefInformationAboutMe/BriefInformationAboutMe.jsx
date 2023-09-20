@@ -101,15 +101,7 @@ const BriefInformationAboutMe = () => {
                 </Typography>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Link target="_blank"
-                      href="https://vk.com/araiikk">
-                    <FaVk className={clsx(classes.iconContacts, classes.darkMode)} />
-                </Link>
-                <Link target="_blank"
-                      href="https://www.instagram.com/araiikk">
-                    <FaInstagram className={clsx(classes.iconContacts, classes.darkMode)} />
-                </Link>
-                <Link href="tel:+375256643070">
+                <Link target={'_blank'} href="https://t.me/araik_rasayan">
                     <FaTelegramPlane className={clsx(classes.iconContacts, classes.darkMode)} />
                 </Link>
             </ListItem>

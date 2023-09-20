@@ -1,3 +1,6 @@
+'use strict';
+
+import {getFullYears} from "../../additionalFunctions/additionalFunctions";
 import projectsEn from "./projects/projectsEn.json";
 
 const messagesEn = {
@@ -10,13 +13,11 @@ const messagesEn = {
     projects: projectsEn,
     profilePage: {
         socialMedia: {
-            vkontakte: "vkontakte",
-            instagram: "instagram",
             telegram: "telegram",
         },
         briefInformationAboutMe: {
             fullName: "Rasoyan Arayik Jasmovich",
-            years: "28 years old",
+            years: `${getFullYears()} years old`,
         },
         essentialInformationAboutMe: [
             {
@@ -33,7 +34,7 @@ const messagesEn = {
             },
             {
                 header: "Address of residence",
-                description: "Bobruisk, Uritskogo street 7",
+                description: "Minsk, Belarus",
             },
             {
                 header: "Smoking habits:",
@@ -46,7 +47,7 @@ const messagesEn = {
             {
                 header: "I speak these languages:",
                 columnDirection: false,
-                description: ["Russian"],
+                description: ["Russian", 'English - A1', ],
             },
             {
                 header: "Citizenship:",
@@ -58,29 +59,35 @@ const messagesEn = {
             },
             {
                 header: "Desired travel time to work:",
-                description: "currently looking for a remote job",
+                description: "currently looking for a remote job, relocation possible",
+            },
+            {
+                header: "Experience as a programmer",
+                description: "5 years",
             },
             {
                 header: "Education:",
                 columnDirectionList: true,
                 description: [
-                    'BSUFK (in absentia) - specialty "Management in Tourism" from 2011 to 2016',
-                    `BNTU (in absentia) - specialty -" Information technology software "from 2018 to 2023`,
-                    'Rolling-scopes-school - "Frontend developer" from 01.02.2019 to 01.08.2019',
+                    'BSUFK - specialty "Management in Tourism" from 2011 to 2016',
+                    `BNTU - specialty -" Information technology software "from 2018 to 2023`,
                 ],
             },
             {
                 header: "About me:",
-                description: "Programming day and night," +
-                    "I love sports and enjoy the results of my work"
+                description: 'Programmer'
             },
         ],
         keySkills: {
             header: "Libraries and frameworks:",
-            description: ["Material ui", "Bootstrap", "Redux",
-                "Mobx", "Clsx", "Classes",
-                "React-hook-form", "Yup", "Jquery",
-                "i18next", "TypeScript"],
+            description: [
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "Redux",
+                "Mobx",
+                "Zustand",
+            ],
         },
     },
     projectsPage: {

@@ -26,7 +26,13 @@ export const filterProjects = (projects, showProjectsWithTechnologies, allProjec
 export const sortProjects = (projects, sorting) => {
     let result = []
     const parameters = sorting.find(parameters => parameters.switched)
-    if (!parameters) return projects
+
+    if (!parameters) {
+        return projects.sort((previousProject, nextProject) => {
+            return nextProject.rating - previousProject.rating;
+        });
+    }
+
     switch (parameters.name) {
         case 'sortByReleaseDate':
             result = projects.sort((previousProject, nextProject) => {
@@ -59,4 +65,8 @@ export const sortProjects = (projects, sorting) => {
             return result
     }
     return projects
+}
+
+export function getFullYears() {
+    return new Date().getFullYear() - new Date('1993-03-21').getFullYear();
 }

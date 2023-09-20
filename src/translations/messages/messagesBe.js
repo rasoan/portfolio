@@ -1,3 +1,6 @@
+'use strict';
+
+import {getFullYears} from "../../additionalFunctions/additionalFunctions";
 import projectsBe from "./projects/projectsBe.json";
 
 const messagesBe = {
@@ -10,13 +13,11 @@ const messagesBe = {
     projects: projectsBe,
     profilePage: {
         socialMedia: {
-            vkontakte: "вконтакте",
-            instagram: "instagram",
             telegram: "telegram",
         },
         briefInformationAboutMe: {
             fullName: "Расаян Араик Джасмавiч",
-            years: "28 гадоў",
+            years: `${getFullYears()} гадоў`,
         },
         essentialInformationAboutMe: [
             {
@@ -33,7 +34,7 @@ const messagesBe = {
             },
             {
                 header: "Адрас пражывання",
-                description: "г Бабруйск, вул Урыцкага 7",
+                description: "г. Мінск, Беларусь",
             },
             {
                 header: "Стаўленне да палення:",
@@ -46,7 +47,7 @@ const messagesBe = {
             {
                 header: "Валодаю наступнымі мовамі:",
                 columnDirection: false,
-                description: [ "Рускі"],
+                description: [ "Рускі", 'Англійская - А1' ],
             },
             {
                 header: "Грамадзянства:",
@@ -58,29 +59,35 @@ const messagesBe = {
             },
             {
                 header: "Пажадана час шляху да працы:",
-                description: "на бягучы момант шукаю адна сцёртая працу",
+                description: "на бягучы момант шукаю адна сцёртая працу, рэлакацыя магчыма",
+            },
+            {
+                header: "Вопыт працы праграмістам",
+                description: "5 гадоў",
             },
             {
                 header: "Адукацыя:",
                 columnDirectionList: true,
                 description: [
-                    'БДУФК (завочна) - спецыяльнасць "Менеджмент ў турызме" c 2011 г. па 2016',
-                    `БНТУ (завочна) - спецыяльнасць -" Праграмнае забеспячэнне інфармацыйных тэхналогій "c 2018 па 2023`,
-                    'Rolling-scopes-school - "Frontend распрацоўшчык" з 2019/02/01 па 2019/08/01',
+                    'БДУФК - спецыяльнасць "Менеджмент ў турызме" c 2011 г. па 2016',
+                    `БНТУ - спецыяльнасць -" Праграмнае забеспячэнне інфармацыйных тэхналогій "c 2018 па 2023`,
                 ],
             },
             {
                 header: "Пра мяне:",
-                description: "праграмуюць дзень і ноч," +
-                    "Люблю спорт і атрымліваю кайф ад вынікаў сваёй працы"
+                description: 'Праграміст'
             },
         ],
         keySkills: {
             header: "Бібліятэкі і фреймворка:",
-            description: ["Material ui", "Bootstrap", "Redux",
-                "Mobx", "Clsx", "Classes",
-                "React-hook-form", "Yup", "Jquery",
-                "I18next", "TypeScript"],
+            description: [
+                "JavaScript",
+                "TypeScript",
+                "React",
+                "Redux",
+                "Mobx",
+                "Zustand",
+            ],
         },
     },
     projectsPage: {
