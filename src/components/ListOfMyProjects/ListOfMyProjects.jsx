@@ -4,9 +4,9 @@ import {Grid} from "@material-ui/core";
 import storeFilterProjects from "../../store/storeFilterProjects";
 import {observer} from "mobx-react";
 import {filterProjects, sortProjects} from "../../additionalFunctions/additionalFunctions"
-import ProjectDescriptionCard from "../ProjectDescriptionCard";
+import ProjectDescriptionCard from "../ProjectDescriptionCard/ProjectDescriptionCard";
 import {makeStyles} from "@material-ui/core/styles";
-import MyModal from "../MyModal";
+import MyModal from "../MyModal/MyModal";
 
 const useStyles = makeStyles(theme => ({
     list: {
@@ -31,9 +31,8 @@ const ListOfMyProjects = () => {
     projects = sortProjects(projects, storeFilterProjects.sorting)
 
     return <>
-        <MyModal/>
-        <Grid container
-              xs={12}>
+        <MyModal />
+        <Grid container>
             {projects.map((project, index) => {
                 return <React.Fragment key={`project-${index}`}>
                     <Grid

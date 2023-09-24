@@ -1,8 +1,8 @@
 import React from "react";
 import PATH from '../../constants/path';
 import {Route, Switch} from 'react-router-dom';
-import Profile from "../../pages/Profile";
-import Projects from "../../pages/Projects";
+import Profile from "../../pages/Profile/Profile";
+import Projects from "../../pages/Projects/Projects";
 
 const AppWithRoutes = () => {
     return (<>

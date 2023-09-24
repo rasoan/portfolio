@@ -1,9 +1,9 @@
 import React from "react"
 import AppWithRoutes from "./appWithRoutes"
 import {Box, Container, makeStyles} from "@material-ui/core"
-import Navigation from "../Navigation"
-import Header from "../Header"
-import Footer from "../Footer"
+import Navigation from "../Navigation/Navigation"
+import Header from "../Header/Header"
+import Footer from "../Footer/Footer"
 import {withTranslation} from 'react-i18next'
 import {themeDarkMode, themeDefault} from "../../Theme/Theme"
 import {createTheme, ThemeProvider} from '@material-ui/core/styles'

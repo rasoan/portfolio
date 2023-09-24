@@ -12,7 +12,8 @@ import {observer} from "mobx-react";
 import {useHistory} from "react-router-dom";
 import {FilterList} from "@material-ui/icons";
 import clsx from "clsx";
-import {BiReset, BsCheckAll} from "react-icons/all";
+import {BiReset} from "react-icons/bi";
+import {BsCheckAll} from "react-icons/bs";
 import {useTranslation} from "react-i18next";
 import storeApp from "../../../store/storeApp";
 
@@ -98,7 +99,7 @@ const useStyles = makeStyles((theme) => ({
 const FilterByTechnology = () => {
     const {t} = useTranslation()
     const classes = useStyles({darkMode: storeApp.darkMode});
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = React.useState(false);
     const history = useHistory()
     const selectTechnologiesTest = (event) => {
         const newSet = new Set(storeFilterProjects.showProjectsWithTechnologies)
@@ -142,7 +143,7 @@ const FilterByTechnology = () => {
               anchorEl={anchorEl}
               keepMounted
               open={Boolean(anchorEl)}
-              onClose={() => setAnchorEl(null)}
+              onClose={() => setAnchorEl(false)}
               classes={{
                   paper: classes.menu,
                   list: classes.menuInteriorContainer
@@ -173,22 +174,23 @@ const FilterByTechnology = () => {
                 </Button>
             </ListItem>
             {storeFilterProjects.allProjectsWithTechnologies.map((technology, index) => {
-                return <React.Fragment key={`technologyFilterCheckbox-${index}`}>
-                    <ListItem className={classes.menuItem}>
-                        <FormControlLabel
-                            classes={{
-                                root: classes.checkBoxContainer,
-                                label: classes.checkBoxLabel
-                            }}
-                            checked={(new Set(storeFilterProjects.showProjectsWithTechnologies)).has(technology)}
-                            control={<Checkbox color="default"
-                                               classes={{root: classes.checkBox}}
-                                               onChange={selectTechnologiesTest}
-                                               name={technology}/>}
-                            label={technology}
-                        />
-                    </ListItem>
-                </React.Fragment>
+                return <ListItem
+                    key={`technologyFilterCheckbox-${index}`}
+                    className={classes.menuItem}
+                >
+                    <FormControlLabel
+                        classes={{
+                            root: classes.checkBoxContainer,
+                            label: classes.checkBoxLabel
+                        }}
+                        checked={(new Set(storeFilterProjects.showProjectsWithTechnologies)).has(technology)}
+                        control={<Checkbox color="default"
+                                           classes={{root: classes.checkBox}}
+                                           onChange={selectTechnologiesTest}
+                                           name={technology}/>}
+                        label={technology}
+                    />
+                </ListItem>
             })}
         </Menu>
     </>

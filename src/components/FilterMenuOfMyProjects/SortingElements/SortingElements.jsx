@@ -53,7 +53,7 @@ const SortingElements = () => {
     const {t} = useTranslation()
     const classes = useStyles({darkMode: storeApp.darkMode})
     const history = useHistory()
-    const [anchorEl, setAnchorEl] = React.useState(null)
+    const [anchorEl, setAnchorEl] = React.useState(false)
     const open = Boolean(anchorEl);
     const selectSorting = (sortByReleaseDate, sortByRating) => {
         const showProjectsWithTechnologiesUrl = storeFilterProjects.showProjectsWithTechnologies.length > 0 &&
@@ -67,9 +67,9 @@ const SortingElements = () => {
             storeFilterProjects.selectSorting("sortByRating", sortByRating)
         } else {
             history.push(`?${showProjectsWithTechnologiesUrl}`)
-            storeFilterProjects.selectSorting(null, null)
+            storeFilterProjects.selectSorting(false, false)
         }
-        setAnchorEl(null)
+        setAnchorEl(false)
     }
 
     return <>
@@ -91,35 +91,35 @@ const SortingElements = () => {
             anchorEl={anchorEl}
             keepMounted
             open={open}
-            onClose={() => setAnchorEl(null)}
+            onClose={() => setAnchorEl(false)}
             TransitionComponent={Fade}
         >
             <MenuItem className={classes.menuItem}
-                      onClick={() => selectSorting("true", null)}>
+                      onClick={() => selectSorting("true", false)}>
                 <ExpandLessIcon className={clsx(classes.menuIcon, classes.darkMode)}/>
                 {t('projectsPage.controlPanel.sort.sortingCategories.date')}
             </MenuItem>
             <Divider/>
             <MenuItem className={classes.menuItem}
-                      onClick={() => selectSorting("false", null)}>
+                      onClick={() => selectSorting("false", false)}>
                 <ExpandMoreIcon className={clsx(classes.menuIcon, classes.darkMode)}/>
                 {t('projectsPage.controlPanel.sort.sortingCategories.date')}
             </MenuItem>
             <Divider/>
             <MenuItem className={classes.menuItem}
-                      onClick={() => selectSorting(null, "true")}>
+                      onClick={() => selectSorting(false, "true")}>
                 <ExpandLessIcon className={clsx(classes.menuIcon, classes.darkMode)}/>
                 {t('projectsPage.controlPanel.sort.sortingCategories.rating')}
             </MenuItem>
             <Divider/>
             <MenuItem className={classes.menuItem}
-                      onClick={() => selectSorting(null, "false")}>
+                      onClick={() => selectSorting(false, "false")}>
                 <ExpandMoreIcon className={clsx(classes.menuIcon, classes.darkMode)}/>
                 {t('projectsPage.controlPanel.sort.sortingCategories.rating')}
             </MenuItem>
             <Divider/>
             <MenuItem className={classes.menuItem}
-                      onClick={() => selectSorting(null, null)}>
+                      onClick={() => selectSorting(false, false)}>
                 <ClearIcon className={clsx(classes.menuIcon, classes.darkMode)}/>
                 {t('projectsPage.controlPanel.sort.sortingCategories.reset')}
             </MenuItem>

@@ -12,7 +12,7 @@ import {Box} from "@material-ui/core";
 import {useTranslation} from 'react-i18next';
 import {observer} from "mobx-react";
 import clsx from "clsx";
-import ToggleDarkMode from "../ToggleDarkMode";
+import ToggleDarkMode from "../ToggleDarkMode/ToggleDarkMode";
 import ChangeLanguage from "../ChangeLanguage/ChangeLanguage";
 
 const useStyles = makeStyles((theme) => ({

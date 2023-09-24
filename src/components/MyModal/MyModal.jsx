@@ -5,7 +5,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import storeModalWindow from "../../store/storeModalWindow";
 import {observer} from "mobx-react";
-import {AiOutlineClose} from "react-icons/all";
+import {AiOutlineClose} from "react-icons/ai";
 import {Box, Button, Paper} from "@material-ui/core";
 import storeApp from "../../store/storeApp";
 import clsx from "clsx";

@@ -14,14 +14,25 @@ import {green, red} from "@material-ui/core/colors";
 import clsx from "clsx";
 import {
     BsInfoCircle,
+} from "react-icons/bs";
+import {
     FiSettings,
+} from "react-icons/fi";
+import {
     GiAchievement,
     GiCheckMark,
     GiTimeTrap,
-    IoEyeOutline,
-    MdErrorOutline,
+} from "react-icons/gi";
+import {
     SiFurrynetwork
-} from "react-icons/all";
+} from "react-icons/si";
+import {
+    IoEyeOutline,
+} from "react-icons/io5";
+import {
+    MdErrorOutline,
+} from "react-icons/md";
+
 import storeModalWindow from "../../store/storeModalWindow";
 import storeApp from "../../store/storeApp";
 import {observer} from "mobx-react";

@@ -48,10 +48,10 @@ const useStyles = makeStyles(theme => ({
 
 const ChangeLanguage = () => {
     const classes = useStyles({darkMode: storeApp.darkMode})
-    const [showMenuLanguage, setShowMenuLanguage] = useState(null)
+    const [showMenuLanguage, setShowMenuLanguage] = useState(false)
     const changeLanguage = (language) => {
         storeApp.changeLanguage(language);
-        setShowMenuLanguage(null);
+        setShowMenuLanguage(false);
     }
 
     return <>
@@ -74,7 +74,7 @@ const ChangeLanguage = () => {
             anchorEl={showMenuLanguage}
             keepMounted
             open={showMenuLanguage}
-            onClose={() => setShowMenuLanguage(null)}
+            onClose={() => setShowMenuLanguage(false)}
         >
             <MenuItem onClick={() => changeLanguage(languages["be-BE"])}
                       classes={{
