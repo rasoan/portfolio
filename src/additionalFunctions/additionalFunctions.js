@@ -25,12 +25,13 @@ export const filterProjects = (projects, showProjectsWithTechnologies, allProjec
 
 export const sortProjects = (projects, sorting) => {
     let result = []
-    const parameters = sorting.find(parameters => parameters.switched)
+    let parameters = sorting.find(parameters => parameters.switched)
 
     if (!parameters) {
-        return projects.sort((previousProject, nextProject) => {
-            return nextProject.rating - previousProject.rating;
-        });
+        parameters = {
+            name: 'sortByReleaseDate',
+            ascending: false,
+        };
     }
 
     switch (parameters.name) {
