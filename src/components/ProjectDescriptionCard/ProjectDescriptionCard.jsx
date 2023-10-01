@@ -58,7 +58,6 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: red[500],
     },
     preview: {
-        height: 0,
         paddingTop: '56.25%',
     },
     previewModal: {
@@ -73,7 +72,7 @@ const useStyles = makeStyles(theme => ({
         marginRight: 6,
     },
     cardModal: {
-        overflowY: "scroll",
+        overflowY: "auto",
         width: 800,
         maxHeight: "90vh",
         [theme.breakpoints.down('lg')]: {
@@ -135,7 +134,7 @@ const ProjectCard = observer((props) => {
     return <>
         <Card className={clsx({[classes.cardModal]: isModal})}>
             <CardActionArea disabled={isModal}
-                            onClick={!isModal && showModal}>
+                            onClick={!isModal ? showModal : () => {}}>
                 <CardHeader avatar={
                     <Avatar
                         aria-label="recipe"
